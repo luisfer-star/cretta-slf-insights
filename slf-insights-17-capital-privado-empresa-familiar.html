@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital privado y empresa familiar — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+/* HERO split */
+.hero{display:grid;grid-template-columns:54% 46%;min-height:460px}
+.hero-left{background:var(--navy);padding:88px 52px 76px 64px;position:relative;overflow:hidden}
+.hero-left-ring{position:absolute;border-radius:50%;border:1px solid rgba(196,154,60,.07);pointer-events:none}
+.hero-left-ring:nth-child(1){width:460px;height:460px;top:-160px;right:-120px}
+.hero-left-ring:nth-child(2){width:220px;height:220px;bottom:-50px;left:-40px}
+.hero-right{background:var(--cream-dark);padding:56px 44px;display:flex;flex-direction:column;justify-content:center;border-left:3px solid var(--gold)}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,44px);font-weight:700;line-height:1.13;color:var(--cream);margin-bottom:22px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:17px;font-style:italic;color:rgba(244,241,236,.62);line-height:1.62;margin-bottom:40px;max-width:480px}
+.hero-meta{display:flex;flex-direction:column;gap:8px;padding-top:22px;border-top:1px solid rgba(196,154,60,.2)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.42)}
+.hero-meta-item span{color:var(--gold-light)}
+/* right panel */
+.rp-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.rp-item{padding:16px 0;border-bottom:1px solid var(--rule-light)}
+.rp-item:last-child{border-bottom:none;padding-bottom:0}
+.rp-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:4px}
+.rp-text{font-family:'EB Garamond',serif;font-size:15px;line-height:1.5;color:var(--text-mid)}
+/* lead */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+/* section */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+/* pull quote */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+/* phases */
+.phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin:52px 0}
+.phase-card{padding:28px 22px}
+.phase-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;margin-bottom:10px}
+.phase-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:10px;line-height:1.25}
+.phase-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.6}
+.phase-horizon{margin-top:12px;padding-top:10px;border-top:1px solid;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.ph1{background:var(--cream-dark)}
+.ph1 .phase-label{color:var(--text-light)}
+.ph1 .phase-title{color:var(--navy)}
+.ph1 .phase-body{color:var(--text-mid)}
+.ph1 .phase-horizon{border-color:var(--rule-light);color:var(--text-light)}
+.ph2{background:rgba(13,27,62,.1);border:1px solid var(--rule)}
+.ph2 .phase-label{color:var(--gold)}
+.ph2 .phase-title{color:var(--navy)}
+.ph2 .phase-body{color:var(--text-mid)}
+.ph2 .phase-horizon{border-color:rgba(13,27,62,.18);color:var(--navy-mid)}
+.ph3{background:var(--navy)}
+.ph3 .phase-label{color:var(--gold)}
+.ph3 .phase-title{color:var(--cream)}
+.ph3 .phase-body{color:rgba(244,241,236,.65)}
+.ph3 .phase-horizon{border-color:rgba(196,154,60,.2);color:var(--gold-light)}
+/* mistakes list */
+.mistakes-list{margin:48px 0}
+.mistake-item{display:grid;grid-template-columns:64px 1fr;padding:28px 0;border-bottom:1px solid var(--rule-light)}
+.mistake-item:first-child{border-top:1px solid var(--rule-light)}
+.mistake-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:rgba(122,31,31,.15);line-height:1;padding-top:4px}
+.mistake-heading{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.mistake-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.68;color:var(--text-mid)}
+.mistake-body strong{color:var(--navy);font-weight:600}
+/* negotiation table */
+.neg-table{width:100%;border-collapse:collapse;margin:48px 0;font-family:'EB Garamond',serif;font-size:15px}
+.neg-table thead tr{background:var(--navy)}
+.neg-table thead th{padding:13px 20px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.neg-table thead th:first-child{color:rgba(244,241,236,.45)}
+.neg-table tbody tr{border-bottom:1px solid var(--rule-light)}
+.neg-table tbody tr:nth-child(even){background:rgba(244,241,236,.5)}
+.neg-table tbody td{padding:13px 20px;vertical-align:top;line-height:1.55;color:var(--text-mid)}
+.neg-table tbody td:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--navy);text-transform:uppercase;white-space:nowrap}
+/* highlight */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+@media(max-width:768px){.masthead,.article-wrap,.footer{padding-left:22px;padding-right:22px}.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:56px 22px}.phases-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-left-ring"></div><div class="hero-left-ring"></div>
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Empresa Familiar · Capital</div>
+      <h1 class="hero-headline">Capital privado y empresa familiar:<br><em>cómo preparar la estructura antes de abrir el capital</em></h1>
+      <p class="hero-deck">La decisión de abrir el capital de una empresa familiar a un inversor privado es una de las más irreversibles que una familia empresaria puede tomar. El problema no es la decisión — es que la mayoría de las familias llega a ella sin haber preparado la estructura que la hace viable.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Empresa Familiar · Capital Privado</span></div>
+        <div class="hero-meta-item">Lectura <span>~11 minutos</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="rp-label">Las preguntas que definen si la familia está lista</div>
+    <div class="rp-item">
+      <div class="rp-tag">Propiedad</div>
+      <div class="rp-text">¿Está la familia de acuerdo sobre qué porcentaje del capital está disponible para un inversor — y quién tiene autoridad para negociarlo?</div>
+    </div>
+    <div class="rp-item">
+      <div class="rp-tag">Gobierno</div>
+      <div class="rp-text">¿Existe un Consejo que pueda acomodar a un representante del inversor sin que eso cambie el equilibrio de poder de una manera que la familia no ha aceptado?</div>
+    </div>
+    <div class="rp-item">
+      <div class="rp-tag">Gestión</div>
+      <div class="rp-text">¿El equipo directivo puede operar bajo el escrutinio y las métricas de un inversor de capital privado sin que eso produzca fricción que destruya la operación?</div>
+    </div>
+    <div class="rp-item">
+      <div class="rp-tag">Salida</div>
+      <div class="rp-text">¿La familia ha pensado en cómo termina la relación con el inversor — y si esa salida es compatible con lo que la familia quiere que sea la empresa en cinco o siete años?</div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+<div class="lead-block">
+  <p class="lead-text">El capital privado y la empresa familiar pueden ser una combinación extraordinariamente productiva: el inversor aporta capital, disciplina financiera, red de contactos y presión de resultados; la familia aporta conocimiento del negocio, relaciones con clientes y proveedores, cultura organizacional y perspectiva de largo plazo. Cuando funciona, produce empresas significativamente más valiosas que las que cualquiera de las dos partes habría construido sola. Cuando no funciona — y ocurre con frecuencia — produce conflictos que dañan la empresa, erosionan el capital y fracturan las relaciones familiares de maneras que tardan años en sanar.</p>
+</div>
+
+<section class="section">
+  <div class="section-label">I — Por qué la preparación es anterior a la negociación</div>
+  <h2 class="section-title">El error más frecuente: llegar a la mesa de negociación sin haber resuelto la mesa familiar</h2>
+  <div class="body-copy">
+    <p>La mayoría de las empresas familiares que buscan capital privado lo hacen cuando el capital se ha vuelto urgente: hay una oportunidad de crecimiento que no se puede financiar con recursos propios, hay una deuda que renegociar, hay un competidor que acaba de capitalizarse o hay una generación de fundadores que quiere comenzar a liquidar su posición. En todos estos casos, la urgencia produce un error sistemático: la familia negocia con el inversor antes de haber resuelto sus propios acuerdos internos sobre lo que está dispuesta a aceptar.</p>
+    <p>El resultado es predecible. El inversor — que ha hecho esto muchas veces y tiene equipos de abogados, asesores financieros y expertos en gobernanza trabajando en su favor — llega a la mesa con una posición clara sobre valoración, estructura, gobierno, derechos y mecanismos de salida. La familia llega con una necesidad de capital y desacuerdos no resueltos entre sus miembros sobre exactamente los mismos temas que el inversor querrá negociar. <strong>El resultado de esa asimetría no es difícil de predecir: la familia acepta condiciones que no habría aceptado si hubiera tenido tiempo de pensar en ellas con calma, y el inversor obtiene una posición más favorable de la que habría obtenido negociando con una familia preparada.</strong></p>
+    <p>La preparación estructural para recibir capital privado debe ocurrir antes del proceso de búsqueda de inversores — no durante él. Y esa preparación tiene tres dimensiones que deben desarrollarse en el orden correcto.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>La familia que no se pone de acuerdo internamente antes de sentarse con el inversor le regala al inversor su capacidad de negociación. Cada desacuerdo familiar que el inversor detecta en la sala se convierte en una palanca que le permite mejorar sus condiciones.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">II — Las tres fases de preparación</div>
+  <h2 class="section-title">La secuencia que hace viable la apertura del capital</h2>
+  <div class="body-copy">
+    <p>La preparación para capital privado no es un evento — es un proceso de 18 a 36 meses que debe completarse antes de que comience el proceso de inversión formal. Tiene tres fases que deben desarrollarse en orden: la primera es familiar y relacional, la segunda es estructural e institucional, y la tercera es de posicionamiento y mercado.</p>
+  </div>
+
+  <div class="phases-grid">
+    <div class="phase-card ph1">
+      <div class="phase-label">Fase I — Meses 1–9</div>
+      <div class="phase-title">Acuerdos familiares — antes de cualquier estructura</div>
+      <div class="phase-body">La familia resuelve sus acuerdos sobre propiedad (qué porcentaje está disponible y en qué condiciones), gobierno (cómo cambia el Consejo cuando hay un inversor), gestión (qué miembros de la familia mantienen roles operativos), liquidez (cómo se manejan las necesidades de efectivo de accionistas pasivos) y salida (en qué escenarios la familia vendería su posición restante y cuándo).</div>
+      <div class="phase-horizon">Entregable: protocolo familiar pre-capitalización documentado y aceptado por todos los accionistas</div>
+    </div>
+    <div class="phase-card ph2">
+      <div class="phase-label">Fase II — Meses 9–24</div>
+      <div class="phase-title">Preparación institucional — lo que el inversor evaluará</div>
+      <div class="phase-body">La empresa construye la infraestructura que un inversor de capital privado espera encontrar: estados financieros auditados por una firma reconocida, gobierno corporativo con Consejo funcional y consejeros independientes, equipo directivo profesional no dependiente solo del fundador, sistemas de información financiera que soporten el reporte periódico al inversor, y limpieza legal de la estructura societaria.</div>
+      <div class="phase-horizon">Entregable: empresa preparada para due diligence sin hallazgos estructurales que bloqueen la inversión</div>
+    </div>
+    <div class="phase-card ph3">
+      <div class="phase-label">Fase III — Meses 18–36</div>
+      <div class="phase-title">Posicionamiento y proceso — el encuentro con el mercado</div>
+      <div class="phase-body">La empresa desarrolla la narrativa de inversión (el argumento específico sobre por qué este negocio, en este momento, con este equipo, produce el retorno que el capital privado requiere), identifica el perfil de inversor que mejor se alinea con sus objetivos estratégicos, y entra al mercado con un proceso estructurado que maximiza el poder de negociación de la familia.</div>
+      <div class="phase-horizon">Entregable: cierre de inversión en condiciones que reflejan la preparación institucional de la empresa</div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">III — Los temas que la familia debe resolver primero</div>
+  <h2 class="section-title">Lo que no puede quedar pendiente cuando el inversor llega a la mesa</h2>
+  <div class="body-copy">
+    <p>Los temas que producen mayor fricción en la relación entre capital privado y empresa familiar son exactamente los temas que más incomodidad genera discutir dentro de la familia antes de que un inversor esté presente. La tentación es posponer esas conversaciones difíciles y dejar que el proceso de inversión las fuerce. Es la decisión más cara que una familia empresaria puede tomar.</p>
+  </div>
+
+  <table class="neg-table">
+    <thead><tr><th>Tema</th><th>Lo que la familia debe acordar antes</th><th>Lo que ocurre si no lo acuerda</th></tr></thead>
+    <tbody>
+      <tr><td>Valoración</td><td>Un rango de valoración mínima aceptable, basado en un análisis propio — no en la expectativa del fundador</td><td>El inversor ancla la valoración y la familia negocia hacia arriba desde una posición de debilidad</td></tr>
+      <tr><td>Porcentaje a ceder</td><td>El porcentaje máximo que la familia está dispuesta a ceder y los escenarios en que cedería más</td><td>La necesidad de capital produce dilución mayor de la que la familia habría aceptado con tiempo para pensar</td></tr>
+      <tr><td>Gobierno post-inversión</td><td>Cuántos asientos en el Consejo tendrá el inversor y qué decisiones requerirán su aprobación</td><td>El inversor negocia derechos de veto amplios que limitan la autonomía operativa de la familia más de lo esperado</td></tr>
+      <tr><td>Rol de miembros de la familia</td><td>Qué miembros de la familia mantienen roles ejecutivos, bajo qué criterios de evaluación y durante cuánto tiempo</td><td>El inversor impone condiciones sobre el equipo directivo que la familia experimenta como intromisión inaceptable</td></tr>
+      <tr><td>Mecanismo de salida</td><td>En qué plazo y bajo qué condiciones el inversor puede exigir una venta; si la familia tiene derecho de comprar primero</td><td>La familia firma un acuerdo con un mecanismo de arrastre (drag-along) que no comprendió completamente hasta que se activa</td></tr>
+      <tr><td>Distribución de dividendos</td><td>La política de dividendos que la empresa mantendrá durante el período de la inversión</td><td>Los accionistas familiares pasivos presionan por dividendos que el inversor quiere reinvertir en crecimiento, generando conflicto permanente</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <div class="section-label">IV — Los errores que destruyen valor</div>
+  <h2 class="section-title">Los cinco errores que producen inversiones que dañan la empresa y la familia</h2>
+
+  <div class="mistakes-list">
+    <div class="mistake-item">
+      <div class="mistake-num">01</div>
+      <div class="mistake-content">
+        <div class="mistake-heading">Elegir al inversor por el capital — no por la alineación estratégica</div>
+        <div class="mistake-body">No todos los fondos de capital privado son iguales. Algunos tienen horizontes de cinco años y necesitan vender; otros tienen paciencia de diez años. Algunos quieren control operativo; otros prefieren mantenerse como accionistas pasivos. Algunos tienen redes de contactos que son directamente valiosas para el negocio; otros aportan solo capital. <strong>Una familia que elige al inversor que ofrece la valoración más alta sin evaluar la alineación estratégica descubre en los primeros doce meses que la valoración es el parámetro menos importante de la relación.</strong></div>
+      </div>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-num">02</div>
+      <div class="mistake-content">
+        <div class="mistake-heading">Subestimar el cambio cultural que produce la entrada de un inversor</div>
+        <div class="mistake-body">La empresa familiar que ha operado durante décadas con un modelo de toma de decisiones informal — donde el fundador decide y el equipo ejecuta — experimenta un choque cultural significativo cuando un inversor de capital privado instala sus mecanismos: reportes mensuales detallados, comités de inversión con aprobaciones formales, métricas de desempeño con consecuencias explícitas. <strong>Este choque no es necesariamente malo — puede ser exactamente la disciplina que la empresa necesitaba. Pero si la familia no lo ha anticipado y el equipo directivo no está preparado para él, produce fricciones que consumen energía que debería estar en el negocio.</strong></div>
+      </div>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-num">03</div>
+      <div class="mistake-content">
+        <div class="mistake-heading">No separar el rol de la familia como propietaria del rol como gestora</div>
+        <div class="mistake-body">Cuando la familia no ha separado explícitamente su función como accionista de su función como equipo directivo antes de la entrada del inversor, el inversor hace esa separación durante la negociación — en sus propios términos. El resultado frecuente es que miembros de la familia que ocupaban roles directivos sin los estándares de desempeño que un inversor exige se encuentran ante una presión de profesionalización que experimentan como un ataque a su posición en la empresa. <strong>La separación propiedad-gestión hecha por la familia, antes de la inversión, es significativamente menos dolorosa que la misma separación impuesta por el inversor durante el período de inversión.</strong></div>
+      </div>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-num">04</div>
+      <div class="mistake-content">
+        <div class="mistake-heading">Firmar sin entender completamente el mecanismo de arrastre</div>
+        <div class="mistake-body">El drag-along es el derecho del inversor a obligar a los accionistas familiares a vender sus acciones si el inversor recibe una oferta de compra que supere cierto umbral de retorno. Es una cláusula estándar en los acuerdos de capital privado — y una que muchas familias firman sin comprender cabalmente sus implicaciones hasta que se activa. <strong>Una familia que no quiere vender en cinco años no debería aceptar un drag-along que le obliga a hacerlo; y si lo acepta, debe hacerlo con plena consciencia de las circunstancias en que se activará.</strong></div>
+      </div>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-num">05</div>
+      <div class="mistake-content">
+        <div class="mistake-heading">No contar con asesoría estratégica independiente durante el proceso</div>
+        <div class="mistake-body">La asimetría de información entre un fondo de capital privado — que ha estructurado decenas de transacciones similares — y una familia empresaria que está haciendo esto por primera vez es enorme. Los asesores legales y financieros de la familia son necesarios pero no suficientes: el abogado negocia los términos jurídicos, el banco negocia la valoración, pero nadie está manteniendo la coherencia estratégica del conjunto. <strong>El actor que puede hacer eso es el que tiene una visión completa de lo que la familia quiere conseguir — y la capacidad de mantener esa visión coherente a lo largo de una negociación que inevitablemente se complica.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">V — El rol de Cretta en mandatos de capitalización familiar</div>
+  <h2 class="section-title">La integración estratégica que el proceso requiere</h2>
+  <div class="body-copy">
+    <p>Los mandatos de capitalización en empresas familiares son uno de los contextos donde el modelo SLF produce mayor valor diferencial — precisamente porque el proceso requiere exactamente lo que el modelo SLF está diseñado para proveer: presencia continua, integración de múltiples disciplinas, alineación de incentivos con el resultado y capacidad de mantener la coherencia estratégica del proceso completo a lo largo de 18 a 36 meses.</p>
+    <p>En estos mandatos, Cretta opera simultáneamente en tres registros: en el registro familiar — facilitando las conversaciones difíciles que la familia debe tener consigo misma antes de entrar al mercado; en el registro institucional — diseñando y liderando la preparación estructural que el inversor evaluará; y en el registro de mercado — gestionando el proceso de inversión con la narrativa, el posicionamiento y la arquitectura de negociación que maximiza el poder de la familia en la mesa.</p>
+    <p>El resultado, cuando las condiciones del mandato están presentes — confianza bilateral, acceso completo, tiempo suficiente — es una transacción que refleja el valor real de la empresa y los términos que la familia habría querido haber negociado si hubiera tenido el tiempo y la preparación para pensarlos con calma.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">La pregunta que la familia debe responder antes de buscar capital</div>
+    <p>Antes de iniciar cualquier proceso de búsqueda de inversores, la familia empresaria debe ser capaz de responder con honestidad a una pregunta: <strong>¿estamos de acuerdo — todos los accionistas relevantes — sobre qué queremos que sea esta empresa en siete años, y sobre qué estamos dispuestos a ceder y qué no estamos dispuestos a ceder para llegar ahí?</strong></p>
+    <p>Si la respuesta a esa pregunta no existe o no es compartida, el proceso de inversión revelará el desacuerdo en el peor momento posible: frente al inversor, cuando el costo del desacuerdo familiar se traduce directamente en condiciones de inversión más desfavorables. La preparación que evita ese costo comienza con esa conversación — y debe comenzar años antes de que el capital sea urgente.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El capital que fortalece — y el que fractura</h2>
+  <div class="closing-body">
+    <p>El capital privado puede ser una herramienta extraordinaria para acelerar el desarrollo de una empresa familiar — cuando la empresa está preparada para recibirlo y cuando la familia ha resuelto los acuerdos que lo hacen viable. No requiere que la familia renuncie a su identidad, a su control sobre el negocio ni a su visión de largo plazo. Requiere que la familia haya articulado esa identidad, ese control y esa visión con suficiente precisión para defenderlos en una negociación con un actor que sabe exactamente lo que quiere.</p>
+    <p>Las familias que llegan preparadas a esa negociación obtienen capital en condiciones que refuerzan su posición. Las que llegan sin preparación obtienen capital en condiciones que la erosionan — a veces de maneras que solo se hacen completamente visibles años después, cuando ya no es posible renegociar.</p>
+    <p><strong>La preparación es la inversión que determina el retorno de la inversión. Y esa preparación, para ser efectiva, debe comenzar mucho antes de que el capital se vuelva urgente.</strong></p>
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+</body>
+</html>

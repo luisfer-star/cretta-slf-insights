@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fractional CSO vs. The Strategic Leadership Mandate — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — cream dark, typographic treatment */
+.hero{background:var(--cream-dark);padding:96px 64px 84px;border-bottom:3px solid var(--navy);position:relative;overflow:hidden}
+.hero-bg-vs{position:absolute;font-family:'Playfair Display',serif;font-size:280px;font-weight:700;color:rgba(13,27,62,.04);right:-20px;bottom:-40px;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.05em}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.12;color:var(--navy);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--navy-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.14)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* STRUCTURAL COMPARISON TABLE */
+.struct-compare{margin:52px 0;border:1px solid var(--rule)}
+.struct-header{display:grid;grid-template-columns:200px 1fr 1fr}
+.struct-header-cell{padding:18px 26px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase}
+.struct-header-cell.dim{background:rgba(13,27,62,.06);color:var(--text-light);border-right:1px solid var(--rule-light)}
+.struct-header-cell.cso{background:var(--cream-dark);color:var(--text-mid);border-right:1px solid var(--rule-light)}
+.struct-header-cell.mandate{background:var(--navy);color:var(--gold)}
+.struct-row{display:grid;grid-template-columns:200px 1fr 1fr;border-top:1px solid var(--rule-light)}
+.struct-cell{padding:16px 26px;font-family:'EB Garamond',serif;font-size:16px;line-height:1.55;vertical-align:top}
+.struct-cell.dim-cell{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-light);background:rgba(13,27,62,.03);display:flex;align-items:center;border-right:1px solid var(--rule-light)}
+.struct-cell.cso-cell{color:var(--text-mid);background:var(--cream);border-right:1px solid var(--rule-light)}
+.struct-cell.mandate-cell{color:var(--text-mid);background:rgba(13,27,62,.03)}
+.struct-cell.mandate-cell strong{color:var(--navy);font-weight:600}
+
+/* WHERE CSO WORKS / DOESN'T */
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.fit-col{padding:0}
+.fit-col-header{padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+.fit-col.works .fit-col-header{background:rgba(42,92,63,.1);color:rgba(42,92,63,.8);border-right:1px solid var(--rule-light)}
+.fit-col.doesnt .fit-col-header{background:rgba(122,31,31,.07);color:rgba(122,31,31,.7)}
+.fit-item{padding:14px 28px;border-bottom:1px solid var(--rule-light);display:flex;align-items:flex-start;gap:10px;font-family:'EB Garamond',serif;font-size:16px;line-height:1.5}
+.fit-item:last-child{border-bottom:none}
+.fit-col.works .fit-item{color:var(--text-mid);border-right:1px solid var(--rule-light)}
+.fit-col.doesnt .fit-item{color:var(--text-light)}
+.fit-icon{flex-shrink:0;font-weight:700;margin-top:2px}
+.fit-col.works .fit-icon{color:rgba(42,92,63,.7)}
+.fit-col.doesnt .fit-icon{color:rgba(122,31,31,.6)}
+
+/* MANDATE ANATOMY */
+.mandate-anatomy{margin:48px 0}
+.mandate-block{margin-bottom:3px}
+.mandate-block-header{background:var(--navy);padding:18px 28px;display:flex;align-items:center;gap:20px}
+.mandate-block-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:rgba(196,154,60,.3);line-height:1;flex-shrink:0}
+.mandate-block-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.mandate-block-content{background:rgba(13,27,62,.04);border-left:3px solid rgba(196,154,60,.3);padding:22px 28px}
+.mandate-block-content p{font-family:'EB Garamond',serif;font-size:17px;line-height:1.7;color:var(--text-mid);max-width:none;margin-bottom:12px}
+.mandate-block-content p:last-child{margin-bottom:0}
+.mandate-block-content p strong{color:var(--navy);font-weight:600}
+
+/* DECISION MATRIX */
+.decision-matrix{margin:52px 0;border:1px solid var(--rule)}
+.dm-title{background:var(--navy);padding:16px 24px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
+.dm-row{display:grid;grid-template-columns:1fr 80px 80px 80px;border-bottom:1px solid var(--rule-light)}
+.dm-row:last-child{border-bottom:none}
+.dm-row.header{background:rgba(13,27,62,.06)}
+.dm-cell{padding:13px 18px;font-family:'EB Garamond',serif;font-size:15px;line-height:1.5;color:var(--text-mid)}
+.dm-cell.header-cell{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);border-left:1px solid var(--rule-light)}
+.dm-cell.header-cell:first-child{border-left:none;color:var(--navy)}
+.dm-cell.answer{border-left:1px solid var(--rule-light);text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;justify-content:center}
+.dm-cell.answer.yes{color:rgba(42,92,63,.8)}
+.dm-cell.answer.no{color:rgba(122,31,31,.65)}
+.dm-cell.answer.partial{color:var(--amber,#8B5E1A)}
+.dm-cell.answer.both{color:var(--gold)}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.struct-header,.struct-row,.fit-grid,.dm-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Strategic Thinking at the Highest Level</div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg-vs" aria-hidden="true">vs</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Strategic Roles</div>
+      <h1 class="hero-headline">
+        The Fractional CSO vs.<br>
+        The <em>Strategic Leadership Mandate:</em><br>
+        A Structural Comparison
+      </h1>
+      <p class="hero-deck">
+        Both occupy the strategic leadership space. Both serve growing mid-market companies. But they are built on fundamentally different premises — and those premises determine what each one can and cannot do for you.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">By <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Category <span>Strategic Roles</span></div>
+        <div class="hero-meta-item">Read <span>~11 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">The fractional executive model has grown significantly as a category — and for good reason. It solved a real problem: how do companies access high-caliber strategic talent without the cost structure of a full-time C-suite hire? But as fractional CSO services have proliferated, a blurring has occurred between two things that are structurally very different. The fractional CSO is a talent solution. The Strategic Leadership Mandate is an accountability architecture. Confusing them leads to deploying the wrong instrument — and wondering why the results do not match the investment.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — Defining the Comparison</div>
+  <h2 class="section-title">What each model actually is — before comparing them</h2>
+  <div class="body-copy">
+    <p>A <strong>Fractional Chief Strategy Officer</strong> is an experienced strategist who allocates a defined portion of their working time — typically 20–50% — to a company on a contracted basis. They bring strategic expertise, often specific to a sector or function, and operate within the organizational hierarchy as a part-time member of the leadership team. Their value proposition is expertise on demand: senior strategic capability without the full-time cost. The model is borrowed from the broader fractional executive trend — fractional CFOs, fractional CMOs — and applies the same logic to the strategy function.</p>
+    <p>A <strong>Strategic Leadership Mandate</strong> is something categorically different. It is not a talent arrangement — it is an accountability structure. An entity assumes responsibility for producing a defined strategic result, with delegated executive authority, aligned financial incentives, and the capacity to integrate across disciplines and actors to deliver. The mandate is not defined by time allocation — it is defined by the outcome it commits to producing. The entity that holds the mandate is not an employee or a part-time team member — it is a co-responsible actor with skin in the game.</p>
+    <p>The distinction matters enormously in practice. A fractional CSO who cannot produce the result they recommended — because the CEO did not implement, because the Board did not approve, because the market shifted — did not fail in their contractual obligation. Their obligation was to provide strategic guidance. The actor holding a Strategic Leadership Mandate, by contrast, is structurally on the hook for the outcome. That difference changes everything about how they engage, how they advise, and how they behave when the process gets difficult.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>The fractional CSO brings expertise and perspective. The Strategic Leadership Mandate brings accountability and execution. In calm conditions, both look similar. Under pressure, the difference becomes decisive.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II — STRUCTURAL COMPARISON -->
+<section class="section">
+  <div class="section-label">II — The Structural Comparison</div>
+  <h2 class="section-title">Nine dimensions where the models diverge in practice</h2>
+  <div class="body-copy">
+    <p>The differences between a Fractional CSO and a Strategic Leadership Mandate are not matters of degree — they are matters of design. The following comparison maps the structural divergence across the nine dimensions that most directly determine whether a strategic leadership arrangement produces results or produces recommendations.</p>
+  </div>
+
+  <div class="struct-compare">
+    <div class="struct-header">
+      <div class="struct-header-cell dim">Dimension</div>
+      <div class="struct-header-cell cso">Fractional CSO</div>
+      <div class="struct-header-cell mandate">Strategic Leadership Mandate</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Core commitment</div>
+      <div class="struct-cell cso-cell">Time allocation — a defined number of hours or days per month</div>
+      <div class="struct-cell mandate-cell"><strong>Outcome commitment</strong> — responsible for producing a defined strategic result</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Compensation structure</div>
+      <div class="struct-cell cso-cell">Fixed retainer — independent of whether the strategy produces results</div>
+      <div class="struct-cell mandate-cell"><strong>Variable + fixed</strong> — significant portion tied to the outcome of the mandate</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Institutional position</div>
+      <div class="struct-cell cso-cell">Part-time team member operating within the hierarchy</div>
+      <div class="struct-cell mandate-cell"><strong>Co-responsible actor</strong> with delegated authority across the mandate's scope</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Relationship to implementation</div>
+      <div class="struct-cell cso-cell">Advises on what to implement — client implements</div>
+      <div class="struct-cell mandate-cell"><strong>Leads implementation</strong> within the mandate's scope — not just advises</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Integration scope</div>
+      <div class="struct-cell cso-cell">Typically within the strategy function — limited cross-functional authority</div>
+      <div class="struct-cell mandate-cell"><strong>Across all relevant functions and advisors</strong> — integration is central to the role</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Information access</div>
+      <div class="struct-cell cso-cell">Dependent on what management shares — filtered by organizational hierarchy</div>
+      <div class="struct-cell mandate-cell"><strong>Full access by design</strong> — incomplete information makes the mandate impossible to fulfill</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Response when things go wrong</div>
+      <div class="struct-cell cso-cell">Revisits and updates the recommendation — contractual obligation fulfilled</div>
+      <div class="struct-cell mandate-cell"><strong>Stays and resolves</strong> — the mandate does not end because the path became difficult</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Strategic courage</div>
+      <div class="struct-cell cso-cell">Constrained by the desire to maintain the ongoing client relationship</div>
+      <div class="struct-cell mandate-cell"><strong>Structurally demanded</strong> — incentive alignment makes honesty rational</div>
+    </div>
+    <div class="struct-row">
+      <div class="struct-cell dim-cell">Optimal use case</div>
+      <div class="struct-cell cso-cell">Building strategic capability, planning processes, ongoing advisory presence</div>
+      <div class="struct-cell mandate-cell"><strong>Critical mandates</strong> where outcome quality is non-negotiable and cost of failure is high</div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III — WHERE EACH WORKS -->
+<section class="section">
+  <div class="section-label">III — The Right Instrument for the Right Situation</div>
+  <h2 class="section-title">Where a Fractional CSO works — and where it does not</h2>
+  <div class="body-copy">
+    <p>The fractional CSO model is genuinely valuable in the right context. The problem is not the model itself — it is its application to situations that require something structurally different. Understanding where each instrument fits is the most important decision before engaging either.</p>
+  </div>
+
+  <div class="fit-grid">
+    <div class="fit-col works">
+      <div class="fit-col-header">Fractional CSO works well when…</div>
+      <div class="fit-item"><span class="fit-icon">✓</span>The company needs to build a planning process or strategic rhythm it does not currently have</div>
+      <div class="fit-item"><span class="fit-icon">✓</span>The CEO needs a senior thinking partner for ongoing strategic conversations</div>
+      <div class="fit-item"><span class="fit-icon">✓</span>The strategy function exists but lacks seniority — the fractional CSO elevates it</div>
+      <div class="fit-item"><span class="fit-icon">✓</span>The company is in a relatively stable phase and the primary need is strategic coherence, not critical mandate leadership</div>
+      <div class="fit-item"><span class="fit-icon">✓</span>The budget does not support a full-time senior strategy hire and the needs are genuinely part-time</div>
+      <div class="fit-item"><span class="fit-icon">✓</span>The company wants to test the strategic function before hiring internally</div>
+    </div>
+    <div class="fit-col doesnt">
+      <div class="fit-col-header">Fractional CSO is insufficient when…</div>
+      <div class="fit-item"><span class="fit-icon">✕</span>There is a critical mandate — transaction, capital raise, restructuring — where outcome quality is non-negotiable</div>
+      <div class="fit-item"><span class="fit-icon">✕</span>The company needs an actor who will lead implementation, not just advise on it</div>
+      <div class="fit-item"><span class="fit-icon">✕</span>The advisor ecosystem is fragmented and needs active integration toward a coherent result</div>
+      <div class="fit-item"><span class="fit-icon">✕</span>The cost of strategic failure is asymmetric — where getting it wrong produces irreversible consequences</div>
+      <div class="fit-item"><span class="fit-icon">✕</span>The company needs an actor with real authority across functions, not just advisory influence</div>
+      <div class="fit-item"><span class="fit-icon">✕</span>The strategic challenge requires continuity through difficult moments — not just periodic advisory visits</div>
+    </div>
+  </div>
+
+  <div class="body-copy">
+    <p>The practical implication is straightforward: if the strategic challenge is primarily one of <em>capability building and planning process</em>, a fractional CSO is the right instrument. If the strategic challenge is primarily one of <em>outcome delivery on a high-stakes mandate</em>, the fractional CSO model — regardless of how senior the individual — is structurally insufficient. Not because the person lacks capability, but because the model lacks the accountability architecture that high-stakes mandates require.</p>
+  </div>
+</section>
+
+<!-- IV — MANDATE ANATOMY -->
+<section class="section">
+  <div class="section-label">IV — The Mandate Architecture</div>
+  <h2 class="section-title">What makes a Strategic Leadership Mandate structurally different</h2>
+  <div class="body-copy">
+    <p>The Strategic Leadership Mandate is not a superior version of the fractional CSO model — it is a different model built on different structural premises. Four elements define its architecture and distinguish it from any talent-based arrangement.</p>
+  </div>
+
+  <div class="mandate-anatomy">
+    <div class="mandate-block">
+      <div class="mandate-block-header">
+        <div class="mandate-block-num">01</div>
+        <div class="mandate-block-title">Outcome accountability — not time accountability</div>
+      </div>
+      <div class="mandate-block-content">
+        <p>The mandate is defined by the result it commits to producing — not by the hours it allocates. This changes the fundamental logic of the engagement. The entity holding the mandate is not asking "have I fulfilled my time commitment?" — it is asking "have I produced the outcome?" That shift in the accountability question changes how the work is done, how difficult conversations are handled, and how the engagement behaves under pressure.</p>
+        <p><strong>An entity with outcome accountability behaves like an owner. An entity with time accountability behaves like a service provider.</strong> Both can be excellent. But they make fundamentally different decisions when the situation gets difficult — and that difference is most consequential precisely when the stakes are highest.</p>
+      </div>
+    </div>
+    <div class="mandate-block">
+      <div class="mandate-block-header">
+        <div class="mandate-block-num">02</div>
+        <div class="mandate-block-title">Incentive alignment — variable compensation tied to the result</div>
+      </div>
+      <div class="mandate-block-content">
+        <p>The compensation structure of a Strategic Leadership Mandate includes a meaningful variable component tied to the outcome — not to the quality of the recommendation or the satisfaction of the client with the process, but to the actual result the mandate was designed to produce. This alignment is not a commercial arrangement — it is a mechanism of integrity.</p>
+        <p><strong>An advisor whose compensation does not depend on the result is structurally incentivized to give the recommendation that preserves the relationship, not necessarily the recommendation that serves the outcome.</strong> This is not a character flaw — it is the rational response to the incentive structure. Changing the incentive structure changes the behavior — and produces advice that is systematically more honest, more courageous, and more focused on what actually matters.</p>
+      </div>
+    </div>
+    <div class="mandate-block">
+      <div class="mandate-block-header">
+        <div class="mandate-block-num">03</div>
+        <div class="mandate-block-title">Cross-functional integration authority</div>
+      </div>
+      <div class="mandate-block-content">
+        <p>The entity holding the mandate has the authority — and the mandate — to integrate across all functions and advisors relevant to the outcome. This is not advisory influence — it is executive authority within the scope of the mandate. The entity can convene the attorney and the financial advisor in the same room, challenge the assumptions of either, and hold both accountable to the coherence of the whole.</p>
+        <p>A fractional CSO operating as a part-time team member within the hierarchy cannot exercise this authority without organizational permission that is frequently not granted. The mandate structure builds that authority into the agreement from the start. <strong>Without cross-functional integration authority, the strategic leadership function is advisory at best and decorative at worst.</strong></p>
+      </div>
+    </div>
+    <div class="mandate-block">
+      <div class="mandate-block-header">
+        <div class="mandate-block-num">04</div>
+        <div class="mandate-block-title">Continuity through difficulty</div>
+      </div>
+      <div class="mandate-block-content">
+        <p>The Strategic Leadership Mandate does not end when the process becomes difficult. Critical mandates — transactions, restructurings, capital raises — always encounter moments of genuine difficulty: negotiations that stall, information that changes the picture, parties that behave unexpectedly. In those moments, a part-time advisor who is only allocated 20% of their time to this engagement has a natural exit: their contractual commitment is to their time, not to the outcome.</p>
+        <p><strong>The entity holding a mandate stays because its accountability is to the result, not to the process.</strong> This continuity through difficulty is what makes the Strategic Leadership Mandate the right instrument for the moments that truly determine the outcome of the most consequential decisions a company makes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- V — DECISION GUIDE -->
+<section class="section">
+  <div class="section-label">V — The Selection Framework</div>
+  <h2 class="section-title">How to select the right instrument for your specific situation</h2>
+  <div class="body-copy">
+    <p>The selection between a fractional CSO and a Strategic Leadership Mandate is not a question of budget or preference — it is a question of matching the instrument to the structural requirements of the situation. The following framework makes that match explicit.</p>
+  </div>
+
+  <div class="decision-matrix">
+    <div class="dm-title">Instrument selection matrix — Fractional CSO vs. Strategic Leadership Mandate</div>
+    <div class="dm-row header">
+      <div class="dm-cell" style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy)">Situational requirement</div>
+      <div class="dm-cell header-cell">Frac. CSO</div>
+      <div class="dm-cell header-cell">SL Mandate</div>
+      <div class="dm-cell header-cell">Either</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">The outcome is defined and non-negotiable — failure is not an option</div>
+      <div class="dm-cell answer no">No</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">The company needs to build a planning process and strategic rhythm</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer partial">Partial</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">A transaction (M&A, capital raise, restructuring) is active or imminent</div>
+      <div class="dm-cell answer no">No</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">The advisor ecosystem is fragmented and needs active integration</div>
+      <div class="dm-cell answer no">No</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">The CEO needs a senior thinking partner for ongoing strategic conversations</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer both">Both</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">The cost of a strategic error in the next 18 months is asymmetric</div>
+      <div class="dm-cell answer no">No</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">The company is in a stable phase and primarily needs coherence, not urgency</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer partial">Partial</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">Cross-functional integration authority is required to produce the result</div>
+      <div class="dm-cell answer no">No</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell">The engagement must survive periods of difficulty without renegotiating its scope</div>
+      <div class="dm-cell answer no">No</div>
+      <div class="dm-cell answer yes">Yes</div>
+      <div class="dm-cell answer no">—</div>
+    </div>
+  </div>
+
+  <div class="body-copy" style="margin-top:28px">
+    <p>A pattern of "Yes" answers in the Fractional CSO column indicates a situation where strategic capability building is the primary need — and a well-selected fractional CSO can deliver genuine value. A pattern of "Yes" answers in the Strategic Leadership Mandate column indicates a situation where outcome accountability, integration authority, and continuity through difficulty are the non-negotiable requirements — and where the fractional model, regardless of individual quality, is structurally insufficient.</p>
+    <p>The most dangerous assumption is that a highly experienced fractional CSO can function as a de facto Strategic Leadership Mandate without the structural elements that define the mandate. The individual's capability is not in question. <strong>The model's capability is what limits the outcome — and individual excellence cannot compensate for structural deficits when the stakes are highest.</strong></p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">Cretta's model — and why it is not a fractional CSO service</div>
+    <p>Cretta does not offer fractional CSO services. Not because fractional CSO services lack value — in the right context, they deliver it. But because Cretta's model is built on a different structural premise: the Strategic Leadership Mandate, with its outcome accountability, incentive alignment, cross-functional integration authority, and continuity through difficulty.</p>
+    <p>This means Cretta takes fewer clients, with higher minimum requirements of trust, access, and contextual complexity. It means Cretta's compensation includes meaningful variable components tied to mandate outcomes. And it means Cretta's engagement does not end because the process became difficult — it ends when the result is produced.</p>
+    <p><strong>That structural difference is not a positioning choice. It is the architectural requirement for producing the outcomes that Cretta's clients hire it to produce.</strong> In the situations where those outcomes matter most, no other model can reliably deliver them.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">The right instrument — not the most familiar one</h2>
+  <div class="closing-body">
+    <p>The proliferation of the fractional executive model has been genuinely valuable for mid-market companies navigating talent and cost constraints. The fractional CSO fills a real gap in strategic capability at a price point that growing companies can access. That value is real and should not be dismissed.</p>
+    <p>But the growth of a category creates a gravitational pull toward its application even in situations where a different instrument would serve better. The risk is not that fractional CSO services are bad — the risk is that they become the default answer to every strategic leadership question, including the ones that require something structurally different.</p>
+    <p><strong>The discipline of matching instrument to situation — rather than defaulting to the most familiar or most available option — is itself a form of strategic leadership.</strong> It is the discipline that ensures the most critical decisions a company will make are supported by the model that gives them the best chance of the outcome they need.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Thinking for decisions that matter</div>
+</footer>
+
+</body>
+</html>

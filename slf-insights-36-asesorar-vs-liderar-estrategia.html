@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La diferencia entre asesorar la estrategia y liderarla — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+.hero{background:var(--cream-dark);padding:96px 64px 84px;border-bottom:3px solid var(--navy);position:relative;overflow:hidden}
+.hero-watermark{position:absolute;font-family:'Playfair Display',serif;font-size:200px;font-weight:700;color:rgba(13,27,62,.04);right:-10px;bottom:-30px;line-height:1;pointer-events:none}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,50px);font-weight:700;line-height:1.12;color:var(--navy);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:48px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.14)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+.contrast-table{width:100%;border-collapse:collapse;margin:48px 0;font-family:'EB Garamond',serif;font-size:15px}
+.contrast-table thead tr{background:var(--navy)}
+.contrast-table thead th{padding:13px 20px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.contrast-table thead th:first-child{color:rgba(244,241,236,.45)}
+.contrast-table tbody tr{border-bottom:1px solid var(--rule-light)}
+.contrast-table tbody tr:nth-child(even){background:rgba(244,241,236,.5)}
+.contrast-table tbody td{padding:13px 20px;vertical-align:top;line-height:1.55;color:var(--text-mid)}
+.contrast-table tbody td:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--text-light);text-transform:uppercase}
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">liderar</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Liderazgo Estratégico</div>
+      <h1 class="hero-headline">La diferencia entre <em>asesorar la estrategia</em> y liderarla</h1>
+      <p class="hero-deck">Quien asesora entrega su mejor análisis y espera que el cliente actúe. Quien lidera asume responsabilidad por el resultado y actúa. Son dos posiciones distintas en el ecosistema de la decisión — y confundirlas produce relaciones que satisfacen al asesor y frustran al cliente.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Liderazgo Estratégico</span></div>
+        <div class="hero-meta-item">Lectura <span>~10 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="article-wrap">
+<div class="lead-block">
+  <p class="lead-text">La palabra "estrategia" aparece en casi todos los títulos del mercado de asesoramiento de alto nivel. Directores de estrategia, consultores estratégicos, asesores estratégicos — el adjetivo es ubicuo. Lo que raramente se explicita es la diferencia fundamental entre las dos cosas que esa palabra puede describir: asesorar sobre la estrategia, que es una función, y liderar la estrategia, que es otra completamente distinta. La confusión entre ambas no es semántica — produce relaciones mal estructuradas, expectativas no alineadas y resultados que decepcionan a ambas partes sin que ninguna entienda completamente por qué.</p>
+</div>
+
+<section class="section">
+  <div class="section-label">I — La distinción fundamental</div>
+  <h2 class="section-title">Qué separa a quien asesora de quien lidera</h2>
+  <div class="body-copy">
+    <p>Quien asesora la estrategia produce análisis, diagnósticos y recomendaciones. Su valor está en la calidad de su pensamiento: en la capacidad de leer el contexto competitivo, de identificar las opciones disponibles, de anticipar las consecuencias de cada una y de formular una recomendación clara sobre el curso de acción óptimo. Su posición en el ecosistema de la decisión es exterior a ella: entrega su trabajo, el cliente delibera y decide, y el asesor espera el resultado.</p>
+    <p>Quien lidera la estrategia hace todo lo anterior — y además entra en el proceso de decisión como actor con autoridad y responsabilidad. No entrega un reporte para que el cliente lo implemente: coordina los recursos, gestiona las relaciones críticas, mantiene la coherencia del proceso a lo largo del tiempo y responde por el resultado. <strong>Su compensación está alineada con el desenlace, no con la calidad del análisis. Esa diferencia en los incentivos produce una diferencia radical en la naturaleza del trabajo.</strong></p>
+    <p>El asesor puede decir "les recomiendo hacer X" y, si el cliente no hace X o lo hace mal, documentar que su recomendación fue correcta. El líder estratégico no tiene esa salida: si X no produce el resultado esperado, es corresponsable del fracaso — y esa corresponsabilidad cambia todo: cambia la calidad del consejo, cambia la valentía con que se dicen las verdades incómodas y cambia el esfuerzo que se pone en que la implementación sea correcta.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>El asesor tiene el derecho de ser correcto y que el cliente se equivoque. El líder estratégico no tiene ese derecho — porque su rol no termina en la recomendación. Termina en el resultado.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">II — La tabla de diferencias</div>
+  <h2 class="section-title">Asesorar vs. liderar: lo que cambia en cada dimensión</h2>
+
+  <table class="contrast-table">
+    <thead><tr><th>Dimensión</th><th>Asesorar la estrategia</th><th>Liderar la estrategia</th></tr></thead>
+    <tbody>
+      <tr><td>Posición en la decisión</td><td>Exterior — entrega insumos para que el cliente decida</td><td>Interior — participa en el proceso decisional con autoridad</td></tr>
+      <tr><td>Entregable primario</td><td>Análisis, diagnóstico, recomendación</td><td>Resultado — la decisión bien tomada y bien ejecutada</td></tr>
+      <tr><td>Relación con el resultado</td><td>Independiente — el resultado lo produce el cliente</td><td>Compartida — el resultado es responsabilidad mutua</td></tr>
+      <tr><td>Modelo de compensación</td><td>Tiempo, equipo o proyecto — independiente del resultado</td><td>Variable ligada al resultado — skin in the game</td></tr>
+      <tr><td>Valentía del consejo</td><td>Limitada por el riesgo de perder la relación</td><td>Estructuralmente alineada con la honestidad completa</td></tr>
+      <tr><td>Continuidad</td><td>Episódica — engagement puntual o periódico</td><td>Continua — presencia sostenida a lo largo del mandato</td></tr>
+      <tr><td>Integración con el equipo</td><td>Externo — coordina con el cliente, no con su equipo</td><td>Integrado — opera junto al CEO y el equipo directivo</td></tr>
+      <tr><td>Qué ocurre cuando hay resistencia</td><td>El asesor documenta y espera</td><td>El líder gestiona la resistencia como parte del mandato</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">III — Por qué importa la distinción</div>
+  <h2 class="section-title">Las consecuencias de confundir los dos modelos</h2>
+  <div class="body-copy">
+    <p>La confusión entre asesorar y liderar produce tres tipos de problemas, todos costosos y todos evitables.</p>
+    <p>El primero es el <strong>problema de implementación</strong>. El cliente contrata asesoría estratégica esperando que el asesor también gestione la implementación. El asesor entrega el análisis y las recomendaciones, considera que ha cumplido su mandato y pasa al siguiente cliente. La empresa queda con un reporte de alta calidad y sin la capacidad de ejecutarlo — porque la ejecución requiere presencia, autoridad y continuidad que el modelo de asesoría no provee.</p>
+    <p>El segundo es el <strong>problema de honestidad</strong>. El asesor que depende de la continuidad de la relación con el cliente tiene un incentivo estructural para decirle al cliente lo que quiere escuchar, o para formular sus recomendaciones de manera suficientemente ambigua como para que puedan ser interpretadas como correctas independientemente del resultado. Este no es un problema de carácter — es un problema de incentivos. La estructura del modelo produce el comportamiento.</p>
+    <p>El tercero es el <strong>problema de accountability</strong>. Cuando la estrategia no produce los resultados esperados, el asesor puede argumentar que sus recomendaciones eran correctas pero la implementación fue deficiente. El líder estratégico no puede hacer ese argumento — porque la implementación era también su responsabilidad. Esa diferencia en el nivel de accountability produce una diferencia en la calidad del trabajo desde el principio, no solo al final.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">La pregunta que aclara todo</div>
+    <p>Para saber si está contratando asesoría estratégica o liderazgo estratégico, haga una pregunta directa: <strong>¿su compensación depende del resultado que estamos buscando, o de la calidad del trabajo que entregue?</strong></p>
+    <p>Si la respuesta es la segunda — si la persona cobra independientemente de si la empresa logra su objetivo estratégico — está contratando asesoría. No está contratando liderazgo. Y hay contextos donde la asesoría es exactamente lo que se necesita. Pero hay otros contextos — las transacciones que definen el valor de la empresa, las reestructuraciones que la salvan o la condenan, los mandatos que no admiten el lujo del análisis sin acción — donde lo que se necesita es liderazgo. En esos contextos, contratar asesoría es el error más caro que se puede cometer.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El consejo correcto — del actor correcto — en el momento correcto</h2>
+  <div class="closing-body">
+    <p>No toda situación estratégica requiere liderazgo estratégico. Hay diagnósticos que requieren análisis experto externo. Hay decisiones que necesitan perspectiva independiente. Hay momentos donde la asesoría — con su distancia, su objetividad y su especialización — es exactamente el instrumento correcto.</p>
+    <p>Pero hay otros momentos — los que más importan, los que determinan el valor de la empresa y el legado de quienes la construyeron — donde el análisis sin acción, la recomendación sin responsabilidad y la perspectiva sin presencia son insuficientes. En esos momentos, lo que la organización necesita no es alguien que le diga qué hacer. Necesita a alguien que lo haga con ella.</p>
+    <p><strong>La diferencia entre asesorar la estrategia y liderarla no es de grado — es de naturaleza. Y reconocer esa diferencia antes de estructurar la relación es el primer acto de liderazgo estratégico genuino.</strong></p>
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+</body>
+</html>

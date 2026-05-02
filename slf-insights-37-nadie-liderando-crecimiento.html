@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por qué su empresa no tiene a nadie liderando su crecimiento — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+.hero{background:var(--navy);padding:96px 64px 84px;border-bottom:4px solid var(--gold);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;border-radius:50%;border:1px solid rgba(196,154,60,.07);width:500px;height:500px;top:-170px;right:-100px}
+.hero::after{content:'';position:absolute;border-radius:50%;border:1px solid rgba(196,154,60,.05);width:250px;height:250px;bottom:-60px;left:-50px}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,50px);font-weight:700;line-height:1.12;color:var(--cream);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.65);max-width:660px;line-height:1.62;margin-bottom:48px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.22)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.45)}
+.hero-meta-item span{color:var(--gold-light)}
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+.symptom-list{margin:52px 0;display:grid;gap:2px;background:var(--rule-light)}
+.symptom{background:var(--cream);padding:22px 28px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+.symptom-icon{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:rgba(196,154,60,.25);line-height:1;padding-top:4px;text-align:center}
+.symptom-heading{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.symptom-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.62;color:var(--text-mid)}
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.symptom{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+<section class="hero">
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Liderazgo Estratégico</div>
+      <h1 class="hero-headline">Por qué su empresa <em>no tiene a nadie liderando</em> su crecimiento</h1>
+      <p class="hero-deck">El crecimiento en la mayoría de las empresas medianas no tiene dueño. Todos están involucrados. Nadie es responsable. Y esa diferencia entre participación e ownership del crecimiento explica por qué tantas iniciativas ambiciosas producen resultados mediocres.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Liderazgo Estratégico</span></div>
+        <div class="hero-meta-item">Lectura <span>~10 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="article-wrap">
+<div class="lead-block">
+  <p class="lead-text">Haga esta pregunta en cualquier empresa mediana en crecimiento: ¿quién es responsable de que la empresa alcance sus objetivos de crecimiento en los próximos tres años? La respuesta más frecuente no es un nombre ni un cargo — es una descripción colectiva. "El CEO y el equipo directivo." "Todos." "La empresa en su conjunto." Esas respuestas son educadas y suenan razonables. Y son la descripción exacta de la ausencia de ownership del crecimiento — el problema que más claramente distingue a las empresas que crecen de las que aspiran a crecer.</p>
+</div>
+
+<section class="section">
+  <div class="section-label">I — El problema del ownership colectivo</div>
+  <h2 class="section-title">Por qué "todos son responsables" significa que nadie lo es</h2>
+  <div class="body-copy">
+    <p>La responsabilidad colectiva del crecimiento no es un accidente de gestión — es una consecuencia lógica de cómo están diseñados la mayoría de los equipos directivos. El CEO gestiona la empresa en su conjunto pero la operación consume la mayor parte de su tiempo y energía. El director comercial es responsable de los ingresos actuales pero no necesariamente del modelo de crecimiento futuro. El director de operaciones garantiza la capacidad de entregar pero no diseña el crecimiento que esa capacidad debe soportar. El director financiero administra el capital pero no lidera su despliegue estratégico.</p>
+    <p>Cada uno de estos actores participa en el crecimiento desde su función. Ninguno tiene el mandato de liderarlo en su totalidad — de asegurar que las decisiones de crecimiento sean coherentes entre sí, que el capital se asigne contra las prioridades correctas, que la organización esté construyendo las capacidades que su próximo nivel requerirá y que el Consejo tenga la información estratégica que le permita gobernar el proceso.</p>
+    <p><strong>El resultado es que el crecimiento ocurre de manera fragmentada: cada función avanza en su propia dirección, las iniciativas compiten por los mismos recursos sin un árbitro con visión del conjunto, y el CEO actúa como punto de integración por defecto — consumiendo tiempo que debería dedicar a otras funciones.</strong></p>
+  </div>
+
+  <div class="pull-quote">
+    <p>Cuando el crecimiento es responsabilidad de todos, el primer obstáculo que encuentre parará en el escritorio de nadie. Y los obstáculos que no tienen dueño no se resuelven — se acumulan hasta que se convierten en la razón por la que la empresa no creció.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">II — Los síntomas del crecimiento sin ownership</div>
+  <h2 class="section-title">Cómo se ve la organización donde nadie lidera el crecimiento</h2>
+
+  <div class="symptom-list">
+    <div class="symptom">
+      <div class="symptom-icon">01</div>
+      <div>
+        <div class="symptom-heading">Las iniciativas estratégicas mueren sin ser formalmente cerradas</div>
+        <div class="symptom-body">Los proyectos de crecimiento comienzan con entusiasmo y van perdiendo impulso gradualmente hasta desaparecer. Nadie tomó la decisión de cerrarlos — simplemente dejaron de tener prioridad cuando otra urgencia los desplazó. Sin un owner que mantenga la presión, el impulso inicial no es suficiente para superar la resistencia organizacional.</div>
+      </div>
+    </div>
+    <div class="symptom">
+      <div class="symptom-icon">02</div>
+      <div>
+        <div class="symptom-heading">El CEO es el único punto de resolución para todo conflicto de prioridades</div>
+        <div class="symptom-body">Cuando dos funciones tienen visiones distintas sobre cómo avanzar una iniciativa de crecimiento, el conflicto escala al CEO porque no hay otro actor con la autoridad y la visión de conjunto para resolverlo. El CEO dedica una fracción creciente de su tiempo a arbitrar disputas que deberían resolverse a un nivel inferior.</div>
+      </div>
+    </div>
+    <div class="symptom">
+      <div class="symptom-icon">03</div>
+      <div>
+        <div class="symptom-heading">Los objetivos de crecimiento se revisan hacia abajo más frecuentemente de lo esperado</div>
+        <div class="symptom-body">Las revisiones de los objetivos de crecimiento son, en sí mismas, un síntoma neutral — los objetivos bien formulados deben revisarse cuando el contexto cambia. Lo que revela la ausencia de ownership es cuando la revisión a la baja ocurre no porque el contexto cambió sino porque la organización no pudo ejecutar lo que se había comprometido.</div>
+      </div>
+    </div>
+    <div class="symptom">
+      <div class="symptom-icon">04</div>
+      <div>
+        <div class="symptom-heading">El capital se asigna reactivamente en lugar de proactivamente</div>
+        <div class="symptom-body">Sin un actor que mantenga la visión del despliegue de capital contra las prioridades estratégicas, el capital tiende a asignarse de manera reactiva: a las oportunidades que aparecen, a las urgencias del momento y a las funciones con más presencia política — en lugar de a las iniciativas que más importan para el crecimiento de largo plazo.</div>
+      </div>
+    </div>
+    <div class="symptom">
+      <div class="symptom-icon">05</div>
+      <div>
+        <div class="symptom-heading">El Consejo no puede cumplir su función de gobierno del crecimiento</div>
+        <div class="symptom-body">Sin un interlocutor estratégico que le provea la información correcta en el formato correcto, el Consejo recibe reportes operativos pero no tiene visibilidad sobre la coherencia del proceso de crecimiento. Aprueba sin poder evaluar. Supervisa sin poder gobernar. Y pierde la oportunidad de agregar el valor estratégico para el que fue constituido.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">III — Lo que el ownership del crecimiento requiere</div>
+  <h2 class="section-title">Las cuatro condiciones que lo hacen posible</h2>
+  <div class="body-copy">
+    <p>El ownership genuino del crecimiento no es una responsabilidad que se puede asignar a alguien mediante un título o una descripción de puesto. Requiere cuatro condiciones que, cuando están presentes simultáneamente, producen el liderazgo del crecimiento que la organización necesita. Cuando falta cualquiera de ellas, el ownership es nominal — existe en el papel, no en la práctica.</p>
+    <p>La primera condición es <strong>acceso completo</strong>: el actor responsable del crecimiento debe tener acceso completo a la información estratégica de la organización — financiera, operativa, de mercado y de capacidades — sin depender de que otros le proporcionen lo que necesita para tomar decisiones bien informadas.</p>
+    <p>La segunda es <strong>autoridad real</strong>: no la autoridad jerárquica sobre las funciones, sino la autoridad ejecutiva dentro del mandato del crecimiento — la capacidad de tomar decisiones de asignación de recursos, de priorización de iniciativas y de coordinación entre funciones sin tener que elevar cada decisión al CEO.</p>
+    <p>La tercera es <strong>alineación de incentivos</strong>: la compensación del actor responsable del crecimiento debe depender de los resultados de crecimiento que produce — no de la calidad de sus análisis ni de la armonía de sus relaciones. Cuando los incentivos están alineados con el resultado, el comportamiento cambia de manera fundamental.</p>
+    <p>La cuarta es <strong>continuidad</strong>: el crecimiento estratégico de una empresa mediana se desarrolla en horizontes de dos a cinco años. El actor que lo lidera debe tener presencia continua a lo largo de ese horizonte — no episódica. La continuidad es lo que permite que el aprendizaje se acumule, que las relaciones se construyan y que la coherencia del proceso se mantenga cuando el contexto cambia.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">La pregunta de diagnóstico</div>
+    <p>Si quiere saber si su empresa tiene ownership del crecimiento, haga esta pregunta: <strong>¿si el crecimiento de la empresa en los próximos tres años no alcanza su objetivo, quién es la persona específica que debe dar explicaciones — y qué consecuencias tiene esa persona si el objetivo no se cumple?</strong></p>
+    <p>Si la respuesta es difusa, colectiva o apunta al CEO como responsabilidad residual, el ownership no existe. Existe la apariencia del ownership — la ilusión de que el crecimiento tiene dueño porque hay un plan estratégico que todos aprobaron. Pero los planes estratégicos que todos aprobaron y nadie lidera producen exactamente los resultados que las estadísticas de implementación estratégica confirman: una tasa de fracaso sistemáticamente alta que ninguna organización atribuye correctamente a la ausencia del actor que debía liderarlos.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El crecimiento necesita un dueño — no un comité</h2>
+  <div class="closing-body">
+    <p>El crecimiento estratégico de una empresa mediana es uno de los procesos más complejos que una organización puede gestionar: requiere coherencia entre múltiples funciones, consistencia a lo largo de múltiples años, capacidad de adaptación cuando el contexto cambia y valentía para mantener el rumbo cuando la presión de lo urgente empuja en otras direcciones.</p>
+    <p>Ningún comité produce eso. Los comités producen acuerdos, documentos y sesiones de seguimiento. Producen la apariencia de governance del crecimiento. Lo que no producen es el liderazgo que el crecimiento requiere — la presencia de un actor que se levanta cada mañana con el mandato de asegurar que la empresa está avanzando hacia donde dijo que quería estar.</p>
+    <p><strong>Su empresa necesita a alguien liderando su crecimiento. No un responsable nominal. No un comité de seguimiento. Un actor real, con acceso real, con autoridad real, con incentivos reales y con continuidad real. Esa es la diferencia entre las empresas que crecen y las que aspiran a crecer.</strong></p>
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+</body>
+</html>

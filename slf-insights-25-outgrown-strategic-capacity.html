@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Your Company Has Outgrown Its Strategic Capacity — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — bold typographic, cream dark */
+.hero{background:var(--cream-dark);padding:96px 64px 84px;border-bottom:3px solid var(--navy);position:relative;overflow:hidden}
+.hero-watermark{position:absolute;font-family:'Playfair Display',serif;font-size:200px;font-weight:700;color:rgba(13,27,62,.04);right:-20px;bottom:-20px;line-height:1;pointer-events:none;user-select:none}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.12;color:var(--navy);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--navy-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.14)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* SIX SIGNALS — the core of the article */
+.signals-wrap{margin:48px 0}
+.signal-block{margin-bottom:4px}
+.signal-header{display:grid;grid-template-columns:88px 1fr;align-items:stretch}
+.signal-num-col{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 10px}
+.signal-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:rgba(196,154,60,.3);line-height:1}
+.signal-num-label{font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.signal-title-col{background:var(--navy);padding:24px 28px;display:flex;align-items:center;border-left:1px solid rgba(196,154,60,.15)}
+.signal-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--cream);line-height:1.25}
+.signal-body-wrap{background:rgba(13,27,62,.04);border-left:3px solid var(--gold);padding:28px 32px}
+.signal-body-wrap p{font-family:'EB Garamond',serif;font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px;max-width:none}
+.signal-body-wrap p:last-child{margin-bottom:0}
+.signal-body-wrap p strong{color:var(--navy);font-weight:600}
+.signal-check{margin-top:18px;padding:14px 18px;background:rgba(196,154,60,.07);border:1px solid rgba(196,154,60,.2);display:flex;gap:12px}
+.signal-check-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-top:2px;flex-shrink:0}
+.signal-check-text{font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--text-mid);line-height:1.55}
+
+/* CAPACITY SCORE */
+.capacity-score{background:var(--navy);padding:44px 48px;margin:52px 0;border-left:4px solid var(--gold)}
+.capacity-score-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(196,154,60,.1);margin-bottom:20px}
+.score-band{padding:20px 22px}
+.score-band-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;line-height:1;margin-bottom:8px}
+.score-band-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+.score-band-desc{font-family:'EB Garamond',serif;font-size:14px;line-height:1.5}
+.band-a{background:rgba(196,154,60,.08)}
+.band-a .score-band-num,.band-a .score-band-title{color:rgba(196,154,60,.55)}
+.band-a .score-band-desc{color:rgba(244,241,236,.45)}
+.band-b{background:rgba(196,154,60,.18)}
+.band-b .score-band-num,.band-b .score-band-title{color:var(--gold-light)}
+.band-b .score-band-desc{color:rgba(244,241,236,.65)}
+.band-c{background:rgba(196,154,60,.3)}
+.band-c .score-band-num{color:var(--gold)}
+.band-c .score-band-title{color:var(--cream)}
+.band-c .score-band-desc{color:rgba(244,241,236,.8)}
+.capacity-score-note{font-family:'EB Garamond',serif;font-size:15px;font-style:italic;color:rgba(244,241,236,.5);line-height:1.6}
+.capacity-score-note strong{color:var(--gold-light)}
+
+/* RESPONSE GRID */
+.response-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.response-card{background:var(--cream);padding:26px 22px;transition:background .2s}
+.response-card:hover{background:var(--cream-dark)}
+.response-for{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.response-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.28}
+.response-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.58;color:var(--text-mid)}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.signal-header{grid-template-columns:64px 1fr}.score-grid,.response-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Strategic Thinking at the Highest Level</div>
+</header>
+
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">6</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Organizational Diagnosis</div>
+      <h1 class="hero-headline">
+        When Your Company Has<br>
+        <em>Outgrown Its Strategic Capacity:</em><br>
+        6 Verifiable Signals
+      </h1>
+      <p class="hero-deck">
+        The gap between a company's complexity and its strategic capacity almost never announces itself. It accumulates — signal by signal, quarter by quarter — until the cost becomes impossible to ignore. These six signals are the early warning system most companies never installed.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">By <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Category <span>Organizational Diagnosis</span></div>
+        <div class="hero-meta-item">Read <span>~12 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">Strategic capacity is the organizational ability to identify, process, and act on strategic decisions at the speed and quality the company's complexity requires. It is not a fixed attribute — it scales, or it does not, as the company grows. The companies that scale it deliberately tend to outperform their peers over multiple growth stages. The companies that do not discover it as a constraint at the worst possible moment: when a critical decision arrives and the organization does not have the architecture to make it well.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — The Concept</div>
+  <h2 class="section-title">What strategic capacity is — and why companies consistently underestimate when they have outgrown it</h2>
+  <div class="body-copy">
+    <p>Strategic capacity encompasses five elements that must scale together: the quality of strategic thinking available to the company, the speed and quality of its decision-making processes, the effectiveness of coordination between the CEO, the Board, and the management team, the depth of the advisor ecosystem and how well it is integrated, and the coherence of the company's strategic direction as it executes across multiple initiatives simultaneously.</p>
+    <p>When a company grows faster than its strategic capacity, the gap between them does not produce an obvious failure — it produces a slow accumulation of symptoms that look, from the inside, like management challenges, talent problems, or market headwinds. The CEO who is operating at the limit of their bandwidth reads the symptom as being overworked — not as evidence that the organizational architecture no longer fits the complexity it is being asked to manage. The Board that is approving without deliberating reads the symptom as management competence — not as evidence that the governance system is not providing the independent oversight the company's stage requires.</p>
+    <p>This misattribution is the reason the gap persists. <strong>When the symptoms look like management problems, the instinct is to manage better — not to redesign the architecture.</strong> And managing better inside a structural deficit produces better management of a structural deficit — not resolution of the deficit itself.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>The companies that discover they have outgrown their strategic capacity during a crisis are the ones that did not install the signals to discover it earlier. The signals were always there. The diagnostic framework was not.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II — THE SIX SIGNALS -->
+<section class="section">
+  <div class="section-label">II — The Six Signals</div>
+  <h2 class="section-title">Verifiable signals — with diagnostic questions for each</h2>
+  <div class="body-copy">
+    <p>Each signal is described with its observable manifestation, its underlying structural cause, and a diagnostic question that allows any executive team to verify its presence with specificity. A signal is present when the diagnostic question produces an honest "yes" — not a defensive "sometimes" or a qualified "we're working on it."</p>
+  </div>
+
+  <div class="signals-wrap">
+
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-num-col">
+          <div class="signal-num">1</div>
+          <div class="signal-num-label">Signal</div>
+        </div>
+        <div class="signal-title-col">
+          <div class="signal-title">Strategic decisions are consistently made later than the opportunity window requires</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>In competitive markets, the timing of strategic decisions is often as consequential as the quality of the decision itself. A company with sufficient strategic capacity makes decisions when they are optimal — when the information is adequate, when the opportunity is available, and when the competitive context is favorable. A company that has outgrown its strategic capacity makes decisions when they are urgent — after the optimal window has narrowed or closed.</p>
+        <p>The pattern is recognizable: the management team identifies an opportunity, begins the deliberation process, goes through multiple rounds of analysis and escalation, and by the time a decision is reached, either the opportunity has changed materially or a competitor has moved. The problem is not the quality of the analysis — it is the architecture of the decision process. <strong>Decision latency in strategy is not a speed problem — it is a structural problem that manifests as a speed problem.</strong></p>
+        <div class="signal-check">
+          <div class="signal-check-label">Verify</div>
+          <div class="signal-check-text">In the last six months, has your company missed or materially compromised a strategic opportunity because the internal decision process took longer than the market window allowed? If yes, how many times?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-num-col">
+          <div class="signal-num">2</div>
+          <div class="signal-num-label">Signal</div>
+        </div>
+        <div class="signal-title-col">
+          <div class="signal-title">The CEO is the single point of integration for every cross-functional strategic question</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>In every company below a certain scale, the CEO is naturally the integration point for strategic decisions that cross functional boundaries. That is appropriate — it is the CEO's job. But there is a scale threshold beyond which the volume and complexity of cross-functional strategic questions exceeds what one person can integrate well while simultaneously running the business. Beyond that threshold, the CEO's role as integration point becomes a bottleneck rather than a feature.</p>
+        <p>The signal manifests in a specific pattern: functional leaders who cannot resolve strategic conflicts between their areas without escalating to the CEO; Board preparation that requires the CEO's direct involvement in every detail; advisor ecosystems that route every coordination question through the CEO because there is no other integration point. <strong>When the CEO is the only integration mechanism in a complex organization, the organization is operating above the CEO's architectural bandwidth — and both the CEO and the company pay the cost.</strong></p>
+        <div class="signal-check">
+          <div class="signal-check-label">Verify</div>
+          <div class="signal-check-text">If you (the CEO) were unavailable for two weeks, which strategic decisions and coordination questions would stall — because there is no one else in the organization with the mandate to resolve them?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-num-col">
+          <div class="signal-num">3</div>
+          <div class="signal-num-label">Signal</div>
+        </div>
+        <div class="signal-title-col">
+          <div class="signal-title">Strategic initiatives consistently underperform against their own plans — across the portfolio</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>Every company has strategic initiatives that underperform. The signal that matters is portfolio-wide underperformance — when the majority of strategic initiatives, across multiple functions and investment cycles, consistently deliver below their original targets. At that point, the problem is not the individual initiatives — it is the system that produces, resources, and executes them.</p>
+        <p>The most common explanation offered is execution quality: "we know what to do, we just need to do it better." This is sometimes true. But systematic underperformance across a portfolio of initiatives with different owners, different functions, and different market contexts is almost never an execution quality problem. It is an architecture problem — insufficient strategic integration, inadequate resource allocation discipline, or governance mechanisms that allow underperforming initiatives to continue without consequence. <strong>When the pattern repeats across initiatives, look at the system — not the individual initiative performance.</strong></p>
+        <div class="signal-check">
+          <div class="signal-check-label">Verify</div>
+          <div class="signal-check-text">In the last two strategic planning cycles, what percentage of strategic initiatives delivered within 80% of their original targets? If less than 60%, the system is the problem.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-num-col">
+          <div class="signal-num">4</div>
+          <div class="signal-num-label">Signal</div>
+        </div>
+        <div class="signal-title-col">
+          <div class="signal-title">The Board cannot fulfill its governance function because it lacks the information architecture it needs</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>A Board that receives only the information management chooses to prepare — on the schedule management controls, in the format management designs — is not governing; it is reviewing. The governance function requires independent access to strategic information: the kind that surfaces risks management may be minimizing, opportunities management may not be prioritizing, and patterns across the business that only become visible at the Board's level of aggregation.</p>
+        <p>As companies grow in complexity, the gap between the information the Board receives and the information it needs to govern effectively tends to widen — because the CEO's time to prepare and curate Board materials compresses, and because the complexity of the business makes adequate preparation increasingly difficult without a dedicated architecture. <strong>A Board operating without the right information architecture is not a governance failure by the Board — it is a structural failure of the organization that the Board cannot resolve without external help.</strong></p>
+        <div class="signal-check">
+          <div class="signal-check-label">Verify</div>
+          <div class="signal-check-text">In the last Board session, did every director have sufficient time with the materials before the session to ask genuinely probing questions — or did the session consist primarily of directors responding to what they had just been presented?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-num-col">
+          <div class="signal-num">5</div>
+          <div class="signal-num-label">Signal</div>
+        </div>
+        <div class="signal-title-col">
+          <div class="signal-title">The company's advisor ecosystem operates in silos — and the CEO is paying the integration cost</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>Growing companies accumulate advisors: attorneys, accountants, financial advisors, strategy consultants, HR specialists, compliance experts. Each brings genuine expertise in their domain. But the collective value of an advisor ecosystem depends critically on how well their work is integrated — because strategic decisions in high-complexity environments consistently cross the boundaries of individual disciplines.</p>
+        <p>When the advisor ecosystem lacks an integration mechanism, the CEO absorbs the integration function by default — receiving recommendations from each advisor independently, identifying the inconsistencies between them, coordinating the conversations required to resolve those inconsistencies, and synthesizing a decision from inputs that were never designed to be coherent with each other. This is one of the most expensive and least recognized costs of outgrown strategic capacity. <strong>Every hour the CEO spends integrating advisors is an hour not spent on the strategic functions that only the CEO can perform.</strong></p>
+        <div class="signal-check">
+          <div class="signal-check-label">Verify</div>
+          <div class="signal-check-text">In the last quarter, did your company receive conflicting recommendations from two or more advisors on a significant decision — and did you (the CEO) resolve the conflict yourself? How many times?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-num-col">
+          <div class="signal-num">6</div>
+          <div class="signal-num-label">Signal</div>
+        </div>
+        <div class="signal-title-col">
+          <div class="signal-title">A high-stakes decision is approaching for which the company does not have adequate installed capacity</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>This is the most urgent signal of the six — and the one that most directly determines whether acting on the capacity gap is a choice or a necessity. High-stakes decisions include transactions (M&A, capital raises, exits, restructurings), strategic pivots, succession processes, and any decision whose outcome is difficult or impossible to reverse if made incorrectly. They share a characteristic: the quality of the decision-making process is as consequential as the quality of the decision itself.</p>
+        <p>A company that faces a high-stakes decision without the strategic capacity to process it correctly has two options: proceed with inadequate capacity and accept the outcome that produces, or install the missing capacity before the decision is made. The second option requires recognizing the gap early enough to address it — which is why this signal is often detected too late. <strong>The high-stakes decision that arrives without warning is the signal that should have been visible six or twelve months earlier — when the capacity gap was still addressable without crisis-mode urgency.</strong></p>
+        <div class="signal-check">
+          <div class="signal-check-label">Verify</div>
+          <div class="signal-check-text">Is there a decision in the next 18 months — a transaction, a capital event, a strategic pivot — whose outcome will materially affect the company's value or trajectory? If yes, does the company currently have the strategic capacity to process that decision at the quality it requires?</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III — SCORE -->
+<section class="section">
+  <div class="section-label">III — Reading the Results</div>
+  <h2 class="section-title">How to interpret the signals — and what urgency level they indicate</h2>
+  <div class="body-copy">
+    <p>The signals rarely appear in isolation. Their diagnostic power is greatest when assessed as a pattern — not as individual data points. The following framework translates the signal pattern into an urgency level for addressing the strategic capacity gap.</p>
+  </div>
+
+  <div class="capacity-score">
+    <div class="capacity-score-title">Strategic capacity gap — urgency assessment</div>
+    <div class="score-grid">
+      <div class="score-band band-a">
+        <div class="score-band-num">1–2</div>
+        <div class="score-band-title">Emerging tension</div>
+        <div class="score-band-desc">The gap is forming but not yet producing significant costs. The SLL™ is not yet urgent — but should be in the strategic planning horizon for the next 12 months. Monitor trajectory carefully.</div>
+      </div>
+      <div class="score-band band-b">
+        <div class="score-band-num">3–4</div>
+        <div class="score-band-title">Active gap</div>
+        <div class="score-band-desc">The gap is producing measurable costs — in decision quality, CEO bandwidth, and initiative performance. Activating the SLL™ in the next 6 months is advisable before the costs compound further.</div>
+      </div>
+      <div class="score-band band-c">
+        <div class="score-band-num">5–6</div>
+        <div class="score-band-title">Critical gap — act now</div>
+        <div class="score-band-desc">The company is operating significantly above its strategic capacity. Each additional month without intervention increases the cost of the gap and the risk of a consequential failure. Signal 6 presence makes this urgent regardless of the total count.</div>
+      </div>
+    </div>
+    <div class="capacity-score-note">Note: <strong>Signal 6</strong> (high-stakes decision approaching) elevates the urgency level by one band regardless of other signal count. A company with only 2–3 other signals present but a major transaction or capital event approaching should be assessed at the "Active gap" or "Critical gap" level.</div>
+  </div>
+</section>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — The Response Architecture</div>
+  <h2 class="section-title">What closing the gap requires — matched to each signal</h2>
+  <div class="body-copy">
+    <p>Each signal points to a specific architectural deficit — and each deficit has a specific structural response. The following mapping connects the signal to the intervention that addresses its root cause, not just its symptom.</p>
+  </div>
+
+  <div class="response-grid">
+    <div class="response-card">
+      <div class="response-for">Signal 1 response</div>
+      <div class="response-title">Decision architecture redesign</div>
+      <div class="response-body">Rebuild the decision-making process with explicit time parameters, escalation thresholds, and authority levels that match the speed the market requires. Install the Strategic Leadership Layer as the integration function that keeps decisions moving without sacrificing quality.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-for">Signal 2 response</div>
+      <div class="response-title">Integration architecture installation</div>
+      <div class="response-body">Create the organizational layer that absorbs the cross-functional integration function currently performed by the CEO. This requires either a strong internal COO structure or the external SLL™ function — an entity with the mandate and position to integrate without being the CEO.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-for">Signal 3 response</div>
+      <div class="response-title">Portfolio governance redesign</div>
+      <div class="response-body">Install a portfolio governance mechanism that allocates resources to strategic initiatives based on explicit priority criteria, tracks performance against pre-defined metrics, and has the authority to redirect or terminate underperforming initiatives before they become sunk costs.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-for">Signal 4 response</div>
+      <div class="response-title">Board information architecture</div>
+      <div class="response-body">Design the Board's information system from the Board's perspective — not management's. Determine what the Board needs to govern effectively, build the system to provide it, and install the preparation function (ideally the SLL™) that converts operational reality into governance-grade information.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-for">Signal 5 response</div>
+      <div class="response-title">Advisor ecosystem integration</div>
+      <div class="response-body">Install the integration actor — the SLL™ function — that coordinates the advisor ecosystem, identifies and resolves cross-disciplinary inconsistencies, and maintains the coherence of the whole without routing every integration question through the CEO.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-for">Signal 6 response</div>
+      <div class="response-title">Mandate-level capacity activation</div>
+      <div class="response-body">For imminent high-stakes decisions, the response is not gradual capacity building — it is the immediate activation of Strategic Leadership Mandate-level capacity that can lead the critical process with the executive authority, the incentive alignment, and the continuity that the stakes require.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">The timing principle — why early detection changes the nature of the response</div>
+    <p>The single most important insight from the signal framework is this: the earlier the gap is detected, the more options exist for addressing it. A company that detects the gap at the 1–2 signal level has the luxury of designing a deliberate, phased response — building the Strategic Leadership Layer as an ongoing function, investing in architecture before the urgency of a specific mandate makes deliberate design impossible.</p>
+    <p>A company that detects the gap at the 5–6 signal level — or, most commonly, when a critical mandate has arrived — is in a fundamentally different position. The response must be faster, more intensive, and less architecturally elegant because the situation no longer allows for the pace that good architectural design requires.</p>
+    <p><strong>The companies that build strategic capacity before they need it urgently are not being cautious — they are being strategically sophisticated.</strong> They understand that the cost of installed capacity, spread across the quarters before it is needed, is almost always lower than the cost of crisis-mode capacity activation when a high-stakes decision cannot wait.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">The signals were always there</h2>
+  <div class="closing-body">
+    <p>The most consistent finding across companies that have gone through difficult periods — transactions that underperformed, restructurings that were avoidable, growth plateaus that lasted longer than they should have — is that the signals of outgrown strategic capacity were present well before the difficulty became acute. The signals were there. The diagnostic framework was not.</p>
+    <p>Installing the diagnostic framework is the first step. It requires honesty — the kind that is genuinely uncomfortable when the signals are present and the instinctive response is to attribute them to management quality, market conditions, or temporary factors. The companies that make progress are the ones that can sit with the honest answer to each diagnostic question without reflexively explaining it away.</p>
+    <p><strong>The company that identifies the gap early and responds deliberately will almost always outperform the company that discovers it during a crisis. Not because the gap is smaller — but because the response options available before crisis are categorically better than the options available during one.</strong></p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Thinking for decisions that matter</div>
+</footer>
+
+</body>
+</html>

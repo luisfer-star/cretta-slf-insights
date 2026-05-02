@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Architecture for Mid-Market Companies — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — split with growth curve motif */
+.hero{background:var(--navy);padding:96px 64px 84px;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
+.hero-curve{position:absolute;bottom:0;right:0;width:500px;height:280px;pointer-events:none}
+.hero-curve svg{width:100%;height:100%}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;color:var(--cream);max-width:800px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.68);max-width:660px;line-height:1.62;margin-bottom:50px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.22)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.45)}
+.hero-meta-item span{color:var(--gold-light)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* PLATEAU ANATOMY */
+.plateau-anatomy{margin:52px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light)}
+.plateau-col{padding:32px 26px}
+.plateau-col-header{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid}
+.plateau-col.type1{background:var(--cream)}
+.plateau-col.type1 .plateau-col-header{color:var(--text-light);border-color:var(--rule)}
+.plateau-col.type2{background:rgba(13,27,62,.06)}
+.plateau-col.type2 .plateau-col-header{color:var(--navy-mid);border-color:rgba(13,27,62,.2)}
+.plateau-col.type3{background:var(--navy)}
+.plateau-col.type3 .plateau-col-header{color:var(--gold);border-color:rgba(196,154,60,.3)}
+.plateau-type-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:10px;line-height:1.28}
+.plateau-col.type1 .plateau-type-title{color:var(--navy)}
+.plateau-col.type2 .plateau-type-title{color:var(--navy)}
+.plateau-col.type3 .plateau-type-title{color:var(--cream)}
+.plateau-type-desc{font-family:'EB Garamond',serif;font-size:15px;line-height:1.6}
+.plateau-col.type1 .plateau-type-desc{color:var(--text-mid)}
+.plateau-col.type2 .plateau-type-desc{color:var(--text-mid)}
+.plateau-col.type3 .plateau-type-desc{color:rgba(244,241,236,.65)}
+.plateau-signal{margin-top:14px;padding-top:12px;border-top:1px solid;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.plateau-col.type1 .plateau-signal{border-color:var(--rule-light);color:var(--text-light)}
+.plateau-col.type2 .plateau-signal{border-color:rgba(13,27,62,.15);color:var(--navy-light)}
+.plateau-col.type3 .plateau-signal{border-color:rgba(196,154,60,.2);color:var(--gold-light)}
+.plateau-signal::before{content:'Typical signal: '}
+
+/* GROWTH ARCHITECTURE LAYERS */
+.arch-layers{margin:52px 0}
+.arch-layer-row{display:grid;grid-template-columns:52px 1fr;gap:0;margin-bottom:3px}
+.arch-layer-num{display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:rgba(196,154,60,.3)}
+.arch-layer-content{padding:22px 28px}
+.arch-layer-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.arch-layer-desc{font-family:'EB Garamond',serif;font-size:16px;line-height:1.6}
+.arch-layer-key{margin-top:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.6}
+
+.a-layer-1 .arch-layer-num,.a-layer-1 .arch-layer-content{background:var(--navy)}
+.a-layer-1 .arch-layer-title{color:var(--gold)}
+.a-layer-1 .arch-layer-desc{color:rgba(244,241,236,.7)}
+.a-layer-1 .arch-layer-key{color:var(--gold-light)}
+
+.a-layer-2 .arch-layer-num,.a-layer-2 .arch-layer-content{background:rgba(13,27,62,.75)}
+.a-layer-2 .arch-layer-title{color:var(--gold-light)}
+.a-layer-2 .arch-layer-desc{color:rgba(244,241,236,.65)}
+.a-layer-2 .arch-layer-key{color:rgba(196,154,60,.7)}
+
+.a-layer-3 .arch-layer-num,.a-layer-3 .arch-layer-content{background:rgba(13,27,62,.5)}
+.a-layer-3 .arch-layer-title{color:rgba(244,241,236,.9)}
+.a-layer-3 .arch-layer-desc{color:rgba(244,241,236,.6)}
+.a-layer-3 .arch-layer-key{color:rgba(244,241,236,.4)}
+
+.a-layer-4 .arch-layer-num,.a-layer-4 .arch-layer-content{background:var(--cream-dark);border:1px solid var(--rule-light)}
+.a-layer-4 .arch-layer-title{color:var(--navy)}
+.a-layer-4 .arch-layer-desc{color:var(--text-mid)}
+.a-layer-4 .arch-layer-key{color:var(--text-light)}
+
+/* GROWTH VECTORS */
+.vectors-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.vector-card{background:var(--cream);padding:28px 26px;transition:background .2s}
+.vector-card:hover{background:var(--cream-dark)}
+.vector-num{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.vector-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.28}
+.vector-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.62;color:var(--text-mid)}
+.vector-prereq{margin-top:12px;padding-top:10px;border-top:1px solid var(--rule-light);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.06em;color:var(--navy);text-transform:uppercase}
+.vector-prereq::before{content:'Requires: '}
+
+/* SEQUENCING TABLE */
+.seq-table{width:100%;border-collapse:collapse;margin:48px 0;font-family:'EB Garamond',serif;font-size:15px}
+.seq-table thead tr{background:var(--navy)}
+.seq-table thead th{padding:13px 20px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.seq-table thead th:first-child{color:rgba(244,241,236,.45)}
+.seq-table tbody tr{border-bottom:1px solid var(--rule-light)}
+.seq-table tbody tr:nth-child(even){background:rgba(244,241,236,.5)}
+.seq-table tbody td{padding:13px 20px;vertical-align:top;line-height:1.55;color:var(--text-mid)}
+.seq-table tbody td:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--text-light);text-transform:uppercase;white-space:nowrap}
+.seq-table tbody td:nth-child(2){color:var(--text-mid)}
+.seq-table tbody td:last-child{color:var(--navy);font-size:14px}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.plateau-anatomy,.vectors-grid{grid-template-columns:1fr}.arch-layer-row{grid-template-columns:1fr}.arch-layer-num{display:none}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Strategic Thinking at the Highest Level</div>
+</header>
+
+<section class="hero">
+  <div class="hero-curve" aria-hidden="true">
+    <svg viewBox="0 0 500 280" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 280 Q100 200 200 180 Q300 160 350 100 Q400 40 500 20" stroke="rgba(196,154,60,0.12)" stroke-width="2" fill="none"/>
+      <path d="M0 280 Q120 220 220 200 Q320 180 380 120 Q430 60 500 40" stroke="rgba(196,154,60,0.06)" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Growth Strategy</div>
+      <h1 class="hero-headline">
+        Growth Architecture for<br>
+        Mid-Market Companies:<br>
+        <em>Beyond the Revenue Plateau</em>
+      </h1>
+      <p class="hero-deck">
+        Every mid-market company hits a plateau. The question is not whether growth will slow — it is whether the company's architecture will allow it to break through, or whether the ceiling is built into the structure of the company itself.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">By <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Category <span>Growth Strategy</span></div>
+        <div class="hero-meta-item">Read <span>~12 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">There is a phase in the growth trajectory of almost every mid-market company where the engine that built the business stops producing at the same rate. Revenue growth slows. Margins compress. The initiatives that worked at smaller scale produce diminishing returns at larger scale. Most management teams interpret this as a market problem — the market is saturated, competition is intensifying, the economy is difficult. Sometimes those factors are present. But in the majority of cases, the plateau is not a market problem. It is an architectural problem.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — Diagnosing the Plateau</div>
+  <h2 class="section-title">The three types of revenue plateau — and why misdiagnosing them is costly</h2>
+  <div class="body-copy">
+    <p>Not all revenue plateaus are the same. Treating them as if they were — applying the same growth interventions regardless of the underlying cause — is one of the most common sources of wasted strategic investment in mid-market companies. There are three structurally distinct types of plateau, each with a different cause, a different solution, and a different cost of applying the wrong treatment.</p>
+  </div>
+
+  <div class="plateau-anatomy">
+    <div class="plateau-col type1">
+      <div class="plateau-col-header">Type I</div>
+      <div class="plateau-type-title">The market saturation plateau</div>
+      <div class="plateau-type-desc">The company has captured a significant portion of the addressable market in its current configuration. Further growth in the same segment with the same offering requires either a price reduction (destroying margins) or a share-taking battle against entrenched competitors (expensive and uncertain). The market is not growing fast enough to carry the company's growth ambitions.</div>
+      <div class="plateau-signal">Market share at or near 30% in primary segment; growth below sector average; no new customer categories emerging</div>
+    </div>
+    <div class="plateau-col type2">
+      <div class="plateau-col-header">Type II</div>
+      <div class="plateau-type-title">The capability plateau</div>
+      <div class="plateau-type-desc">The company has the market opportunity but lacks the operational capability, the management depth, or the technology infrastructure to capture it at the required speed or quality. The ceiling is internal, not external. More sales effort produces strain without proportional revenue because the delivery system cannot scale faster than it currently does.</div>
+      <div class="plateau-signal">Sales pipeline growing but conversion and delivery quality declining; customer complaints increasing; team operating at visible capacity limits</div>
+    </div>
+    <div class="plateau-col type3">
+      <div class="plateau-col-header">Type III</div>
+      <div class="plateau-type-title">The architecture plateau</div>
+      <div class="plateau-type-desc">The company's growth is limited by the architecture of the organization itself — its decision-making structures, its governance mechanisms, its leadership capacity, and its strategic integration. The business model is sound, the market opportunity is real, but the organizational system cannot produce the decisions and the coordination that capturing the opportunity requires.</div>
+      <div class="plateau-signal">Initiatives that seem strategically correct consistently underperform against plan; the CEO is the bottleneck across multiple growth vectors simultaneously</div>
+    </div>
+  </div>
+
+  <div class="body-copy">
+    <p>Type I requires market development — new segments, new geographies, new offerings, or new customer categories. Type II requires capability investment — operations, technology, talent, and process. Type III requires architectural redesign — the subject of this article. <strong>Applying Type I interventions to a Type III plateau produces the most common and most costly growth mistake in mid-market strategy: investing in sales and market development while the organizational architecture prevents the company from capturing what the market is willing to give it.</strong></p>
+  </div>
+
+  <div class="pull-quote">
+    <p>The company that cannot figure out why its growth initiatives keep underperforming against plan is almost always looking at the wrong layer. The problem is not the initiatives. It is the architecture that is supposed to execute them.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II -->
+<section class="section">
+  <div class="section-label">II — The Growth Architecture</div>
+  <h2 class="section-title">What growth architecture actually means — the four layers</h2>
+  <div class="body-copy">
+    <p>Growth architecture is the organizational infrastructure that allows a company to capture growth opportunities at scale without fragmenting its direction, overloading its leadership, or undermining the operational coherence that made it successful in the first place. It has four layers that must function as a system — not as independent components.</p>
+  </div>
+
+  <div class="arch-layers">
+    <div class="arch-layer-row a-layer-1">
+      <div class="arch-layer-num">1</div>
+      <div class="arch-layer-content">
+        <div class="arch-layer-title">Strategic Direction Architecture — The Coherence Layer</div>
+        <div class="arch-layer-desc">The mechanisms that ensure the company's growth efforts are coherent, coordinated, and oriented toward a consistent long-term direction — not a collection of independently run initiatives that compete for resources and produce divergent outcomes. This layer includes the strategic planning process, the cascade of strategic priorities from the Board to the CEO to the management team, and the integration function that maintains coherence across the whole as the company scales.</div>
+        <div class="arch-layer-key">Key question: who is responsible for maintaining strategic coherence across all growth vectors simultaneously?</div>
+      </div>
+    </div>
+    <div class="arch-layer-row a-layer-2">
+      <div class="arch-layer-num">2</div>
+      <div class="arch-layer-content">
+        <div class="arch-layer-title">Decision-Making Architecture — The Speed Layer</div>
+        <div class="arch-layer-desc">The structures that allow the company to make growth-relevant decisions at the speed the market requires — without bottlenecking at the CEO level, without bureaucratic delay from governance requirements, and without the coordination failures that produce inconsistent execution across functions. This layer includes the decision-rights matrix, the escalation protocols, and the meeting rhythms that convert strategic direction into tactical action.</div>
+        <div class="arch-layer-key">Key question: at what level of the organization are growth decisions actually being made — and is that the right level?</div>
+      </div>
+    </div>
+    <div class="arch-layer-row a-layer-3">
+      <div class="arch-layer-num">3</div>
+      <div class="arch-layer-content">
+        <div class="arch-layer-title">Capability Architecture — The Execution Layer</div>
+        <div class="arch-layer-desc">The talent, processes, and technology that allow the company to deliver its value proposition at the scale the growth ambition requires. The capability architecture must be designed for the next scale — not the current one. A capability architecture that works perfectly today but cannot handle 40% more volume in 18 months is already a growth constraint, even if it is not yet visible as one.</div>
+        <div class="arch-layer-key">Key question: which capabilities would break first if growth doubled in the next 18 months — and are we investing to fix them now?</div>
+      </div>
+    </div>
+    <div class="arch-layer-row a-layer-4">
+      <div class="arch-layer-num">4</div>
+      <div class="arch-layer-content">
+        <div class="arch-layer-title">Governance Architecture — The Accountability Layer</div>
+        <div class="arch-layer-desc">The oversight mechanisms that ensure growth investments are allocated to the right priorities, that performance is tracked against meaningful metrics, and that the Board and management team maintain a shared understanding of where the company is in its growth trajectory and what is required to sustain it. Without this layer, growth capital flows to the loudest advocate rather than the highest-return opportunity.</div>
+        <div class="arch-layer-key">Key question: does the Board have the strategic information it needs to govern growth investments — or only the financial results of past ones?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-copy">
+    <p>The architecture plateau — Type III — almost always manifests as a failure in Layer 1 (coherence) or Layer 2 (speed), which then produces cascading failures in Layers 3 and 4. The most common pattern is a Layer 1 failure: the company has multiple growth vectors running simultaneously, each owned by a different functional leader, with no actor holding the coherence of the whole. The vectors consume resources competitively, produce inconsistent customer experiences, and collectively underdeliver against the growth ambition — not because any single vector is poorly executed, but because they are not coordinated.</p>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III -->
+<section class="section">
+  <div class="section-label">III — The Growth Vectors</div>
+  <h2 class="section-title">The six vectors that break through a revenue plateau — and what each requires</h2>
+  <div class="body-copy">
+    <p>Once the plateau type is correctly diagnosed and the architecture is assessed, the question becomes which growth vectors are available and which the company is positioned to execute. There are six growth vectors available to mid-market companies. Each has a distinct risk profile, a distinct time horizon, and a distinct architectural prerequisite.</p>
+  </div>
+
+  <div class="vectors-grid">
+    <div class="vector-card">
+      <div class="vector-num">Vector 01</div>
+      <div class="vector-title">Customer segment expansion</div>
+      <div class="vector-body">Extending the current offering to adjacent customer segments that share the core problem the company solves — but with different buying dynamics, pricing tolerance, or service requirements. Lower risk than new markets because the offering is proven; higher risk than status quo because the customer understanding must be rebuilt.</div>
+      <div class="vector-prereq">Deep understanding of why current customers buy, and evidence that adjacent segments share the same underlying need</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-num">Vector 02</div>
+      <div class="vector-title">Geographic expansion</div>
+      <div class="vector-body">Replicating the proven model in new geographies. The highest-leverage growth vector when the model is genuinely exportable and the new geography has similar market dynamics. The most frequently misapplied vector when companies assume the model travels without understanding what made it work locally.</div>
+      <div class="vector-prereq">A model that operates well without founder-dependency; sufficient management depth to run two markets simultaneously; local market knowledge acquired before capital commitment</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-num">Vector 03</div>
+      <div class="vector-title">Offer expansion</div>
+      <div class="vector-body">Adding adjacent products or services to the existing customer base — deepening the revenue per customer rather than increasing the customer count. Often the highest-ROI growth vector because it leverages existing relationships and trust; often the most neglected because it requires product or service development discipline.</div>
+      <div class="vector-prereq">Strong customer relationships with clear visibility into unmet adjacent needs; the delivery capacity to add offerings without degrading existing service quality</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-num">Vector 04</div>
+      <div class="vector-title">Channel development</div>
+      <div class="vector-body">Reaching existing or new customer segments through partners, distributors, or platforms that extend the company's commercial reach without proportionally extending its cost structure. Highly capital-efficient when the channel is well-selected; frequently underperforming when the channel relationship is not actively managed and incentivized.</div>
+      <div class="vector-prereq">A value proposition that can be clearly communicated and delivered by a third party; channel management capability that the organization has built or can acquire</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-num">Vector 05</div>
+      <div class="vector-title">Inorganic growth — acquisitions and partnerships</div>
+      <div class="vector-body">Acquiring capabilities, customer bases, or market positions that would take years to build organically. The fastest growth vector available to companies with access to capital; also the most complex to execute well — post-acquisition integration failure is the most common way mid-market M&A destroys the value it was supposed to create.</div>
+      <div class="vector-prereq">A clear strategic rationale (not just financial engineering); the organizational capacity to integrate the acquired entity without compromising the acquiring entity's own operation</div>
+    </div>
+    <div class="vector-card">
+      <div class="vector-num">Vector 06</div>
+      <div class="vector-title">Business model innovation</div>
+      <div class="vector-body">Changing the fundamental structure of how the company creates and captures value — from transactional to recurring, from product to platform, from service to technology-enabled service. The highest-potential and highest-risk growth vector: when it works, it re-rates the company; when it fails, it diverts resources from the core business at a critical moment.</div>
+      <div class="vector-prereq">A clear and evidence-based thesis for why the new model creates more value for the customer; the organizational patience to tolerate a period of lower performance metrics during the transition</div>
+    </div>
+  </div>
+</section>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — The Sequencing Discipline</div>
+  <h2 class="section-title">How to sequence growth vectors — the decision the most companies get wrong</h2>
+  <div class="body-copy">
+    <p>The most common strategic error in mid-market growth is pursuing multiple growth vectors simultaneously without the organizational architecture to execute them in parallel. The result is a strategy that looks ambitious on paper and produces mediocrity in execution — because each vector is under-resourced, under-led, and under-coordinated with the others.</p>
+    <p>The sequencing discipline — deciding which vectors to pursue, in what order, with what prerequisites — is one of the highest-leverage strategic decisions a mid-market company makes. The following framework makes the sequencing logic explicit.</p>
+  </div>
+
+  <table class="seq-table">
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Primary growth vectors</th>
+        <th>Architectural prerequisite</th>
+        <th>Common mistake</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Consolidation ($10–25M)</td>
+        <td>Customer segment expansion + offer expansion. Deepen the core before extending it.</td>
+        <td>A model that operates without founder dependency; consistent delivery quality across the existing base</td>
+        <td>Pursuing geographic expansion before the core model is founder-independent</td>
+      </tr>
+      <tr>
+        <td>Extension ($25–60M)</td>
+        <td>Geographic expansion + channel development. Replicate the proven model in adjacent contexts.</td>
+        <td>Management depth sufficient to run two theaters simultaneously; strong information systems to manage from distance</td>
+        <td>Expanding geography without sufficient management bench — the CEO becomes the operational bottleneck of the new market</td>
+      </tr>
+      <tr>
+        <td>Scaling ($60–150M)</td>
+        <td>Inorganic growth + business model evolution. Acquire what takes too long to build; evolve the model for the next competitive cycle.</td>
+        <td>Board and governance architecture capable of overseeing M&A; the Strategic Leadership Layer active to maintain coherence across the portfolio</td>
+        <td>Pursuing acquisitions without integration capacity — buying growth that cannot be retained because the acquiring entity lacks the integration architecture</td>
+      </tr>
+      <tr>
+        <td>Platform ($150M+)</td>
+        <td>All vectors in parallel, with explicit portfolio management and capital allocation discipline.</td>
+        <td>Full professional management team; institutional governance; dedicated strategic integration function at the SLL™ level</td>
+        <td>Managing a portfolio of growth vectors with the architecture of a single-business operator — producing fragmentation at the moment scale requires coherence most</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="body-copy">
+    <p>The sequencing discipline is not about being cautious — it is about being realistic about what the organizational architecture can actually execute well at any given stage. A company with $30M in revenue that pursues geographic expansion, an acquisition, and a business model pivot simultaneously is not being ambitious. It is being architecturally unrealistic. <strong>Ambition without architecture produces initiative proliferation — the organizational condition where many things are started and few things are finished well.</strong></p>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- V -->
+<section class="section">
+  <div class="section-label">V — The Strategic Integration Imperative</div>
+  <h2 class="section-title">Why growth architecture requires a dedicated integration function</h2>
+  <div class="body-copy">
+    <p>The most consistent finding across mid-market companies that have broken through revenue plateaus and sustained growth to the next stage is this: at some point in that journey, there was an actor — internal or external — whose explicit function was to maintain the coherence of the growth architecture across all vectors simultaneously.</p>
+    <p>This actor is not the CEO. The CEO has the primary responsibility of running the business while the growth architecture is being built — a dual mandate that is structurally incompatible with the depth of attention that maintaining coherence across multiple growth vectors requires. The CEO who attempts to be the integration actor for a multi-vector growth strategy while simultaneously managing the operation consistently ends up doing both at a level below their individual capacity.</p>
+    <p>This actor is not the management team. Individual functional leaders can execute their respective growth vectors with excellence. They cannot maintain the coherence of the whole — because their mandate is bounded by their function, and the coherence of the whole requires a perspective that sits above all functions simultaneously.</p>
+    <p>This actor is not a strategic planning process. A quarterly planning cycle produces coherence at a point in time. The maintenance of coherence across a complex, multi-vector growth strategy requires real-time integration — not periodic re-alignment. <strong>The Strategic Leadership Layer™ is the organizational response to this requirement: the entity whose explicit mandate is the coherence of the growth architecture, operating in continuous presence, with the executive authority to integrate across vectors and advisors toward the result the growth strategy is designed to produce.</strong></p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">Growth architecture and the SLL™ mandate</div>
+    <p>Cretta engages with growth architecture mandates at two distinct levels. The first is diagnostic: identifying which type of plateau the company faces, which growth vectors are available and in what sequence, and what architectural investments are required to break through. The second is executive: leading the design and implementation of the growth architecture — the strategic direction mechanisms, the decision-making structures, the capability investments — while the management team maintains the operation.</p>
+    <p>This is the mandate model, not the advisory model. Cretta does not deliver a growth architecture framework for the company to implement. It designs and drives the implementation of a growth architecture that the company owns and operates — with Cretta's presence maintained through the critical phases where the architecture is most fragile and where integration is most consequential.</p>
+    <p><strong>The measure of success is not the quality of the framework produced. It is whether, 24 months after the engagement, the company has broken through its revenue plateau and is operating at the next stage of scale with the architectural coherence to sustain it.</strong></p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">Beyond the plateau — with architecture, not just ambition</h2>
+  <div class="closing-body">
+    <p>Revenue plateaus are not market sentences. They are organizational signals — signals that the architecture that built the company to its current level is not the architecture that will take it to the next. Reading that signal correctly — diagnosing the type of plateau, assessing the available growth vectors, sequencing the investments in the right order — is the strategic discipline that separates companies that break through from companies that manage their plateau for years while attributing it to market conditions.</p>
+    <p>The companies that break through are not the ones with the most aggressive growth targets or the most capital. They are the ones that invest in the organizational architecture — the coherence mechanisms, the decision structures, the integration function — that makes the targets achievable. They understand that growth at scale is an architectural problem before it is a market problem, a capital problem, or a talent problem.</p>
+    <p><strong>Building the architecture is harder than setting the targets. It requires honesty about the organizational limits the current structure imposes, investment in systems that produce returns that are difficult to attribute directly, and the discipline to sequence growth vectors rather than pursuing all of them simultaneously.</strong> That discipline — architectural, honest, sequenced — is what a genuinely governing growth strategy looks like. And it is what the companies that sustain growth over multiple stages consistently do.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Thinking for decisions that matter</div>
+</footer>
+
+</body>
+</html>

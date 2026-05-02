@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo presentar la agenda estratégica al Consejo — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+.hero{background:var(--cream-dark);padding:96px 64px 84px;border-bottom:3px solid var(--navy);position:relative;overflow:hidden}
+.hero-watermark{position:absolute;font-family:'Playfair Display',serif;font-size:240px;font-weight:700;color:rgba(13,27,62,.04);right:-20px;bottom:-40px;line-height:1;pointer-events:none;user-select:none}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.12;color:var(--navy);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--navy-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.14)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* SESSION BEFORE/AFTER */
+.session-compare{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:52px 0}
+.sc-col{padding:0}
+.sc-header{padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+.sc-col.antes .sc-header{background:var(--cream-dark);color:var(--text-light);border-right:1px solid var(--rule-light)}
+.sc-col.despues .sc-header{background:var(--navy);color:var(--gold)}
+.sc-block{padding:14px 28px;border-bottom:1px solid var(--rule-light);display:flex;gap:10px;align-items:flex-start}
+.sc-block:last-child{border-bottom:none}
+.sc-time{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;white-space:nowrap;padding-top:2px;min-width:52px}
+.sc-col.antes .sc-time{color:var(--text-light)}
+.sc-col.despues .sc-time{color:var(--gold)}
+.sc-content{}
+.sc-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.sc-col.antes .sc-title{color:var(--text-light)}
+.sc-col.despues .sc-title{color:var(--navy-mid)}
+.sc-note{font-family:'EB Garamond',serif;font-size:14px;color:var(--text-light);line-height:1.45}
+
+/* PRINCIPLES */
+.principles-list{margin:48px 0}
+.principle-item{display:grid;grid-template-columns:64px 1fr;padding:28px 0;border-bottom:1px solid var(--rule-light)}
+.principle-item:first-child{border-top:1px solid var(--rule-light)}
+.principle-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:rgba(196,154,60,.2);line-height:1;padding-top:4px}
+.principle-heading{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.principle-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.68;color:var(--text-mid)}
+.principle-body strong{color:var(--navy);font-weight:600}
+
+/* INFORMATION ANATOMY */
+.info-anatomy{margin:52px 0;border:1px solid var(--rule)}
+.ia-title{background:var(--navy);padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
+.ia-row{display:grid;grid-template-columns:180px 1fr 120px;border-bottom:1px solid var(--rule-light)}
+.ia-row:last-child{border-bottom:none}
+.ia-row.header{background:rgba(13,27,62,.06)}
+.ia-cell{padding:13px 20px;font-family:'EB Garamond',serif;font-size:15px;line-height:1.5;color:var(--text-mid)}
+.ia-cell.header-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);border-left:1px solid var(--rule-light)}
+.ia-cell.header-label:first-child{border-left:none;color:var(--navy)}
+.ia-cell.tipo{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--navy)}
+.ia-cell.cuando{border-left:1px solid var(--rule-light)}
+.ia-cell.formato{border-left:1px solid var(--rule-light);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.05em;color:var(--gold);text-transform:uppercase}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.session-compare{grid-template-columns:1fr}.ia-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">consejo</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Gobierno y Dirección</div>
+      <h1 class="hero-headline">Cómo presentar la agenda estratégica al Consejo <em>sin que las sesiones se conviertan en presentaciones</em></h1>
+      <p class="hero-deck">El Consejo que pasa tres horas viendo diapositivas no está gobernando — está siendo informado. Y ser informado, por más completa que sea la información, no es lo mismo que tomar decisiones. La distinción entre ambas cosas define si una sesión del Consejo produce valor o solo produce actas.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Gobierno Corporativo</span></div>
+        <div class="hero-meta-item">Lectura <span>~10 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="article-wrap">
+<div class="lead-block">
+  <p class="lead-text">Existe un patrón que se repite en la mayoría de los Consejos de empresas medianas: la sesión comienza con una presentación del CEO, continúa con presentaciones de los directivos funcionales, y termina con una ronda de preguntas donde los consejeros reaccionan a lo que acaban de ver. Nadie planeó que las sesiones fueran así. Nadie tomó la decisión de convertir el Consejo en audiencia. Ocurrió gradualmente, por acumulación de prácticas que nadie cuestionó, hasta que la presentación se convirtió en el formato natural de la sesión y la deliberación estratégica dejó de tener espacio.</p>
+</div>
+
+<section class="section">
+  <div class="section-label">I — El diagnóstico</div>
+  <h2 class="section-title">Por qué las sesiones del Consejo se convierten en presentaciones</h2>
+  <div class="body-copy">
+    <p>La transformación de una sesión de gobierno en una sesión de presentaciones no es un accidente. Tiene causas estructurales que, una vez identificadas, son completamente corregibles. La primera causa es que <strong>la agenda la controla quien es supervisado</strong>: cuando el CEO o la Dirección General define de qué se hablará en la sesión, la selección de temas refleja naturalmente lo que la Dirección quiere que el Consejo vea — no lo que el Consejo necesita examinar para gobernar con independencia real.</p>
+    <p>La segunda causa es que <strong>la información llega demasiado tarde para ser analizada</strong>. Cuando el paquete de información para la sesión llega 24 o 48 horas antes —o durante la sesión misma— los consejeros no tienen tiempo de prepararse con profundidad. La única respuesta posible es reaccionar a lo que se presenta, no deliberar sobre lo que importa.</p>
+    <p>La tercera causa es que <strong>no existe una distinción explícita entre información y decisión</strong>. En muchas sesiones, los mismos temas que debería haber revisado el Consejo antes de la sesión se presentan durante ella — lo que convierte el tiempo de sesión en tiempo de actualización, y deja sin espacio a la deliberación que es el propósito real del órgano.</p>
+    <p>El resultado es un Consejo que, independientemente de la calidad de sus miembros, está estructuralmente impedido de ejercer su función de gobierno: recibe información que la Dirección decide presentar, la recibe en el momento en que es presentada, y no tiene ni el tiempo ni la estructura para convertirla en deliberación genuina.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>El Consejo que llega a la sesión sin haber leído el material de antemano no puede deliberar — puede solo escuchar. Y un Consejo que escucha no es un Consejo que gobierna.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">II — La distinción fundamental</div>
+  <h2 class="section-title">Información vs. deliberación: la separación que cambia todo</h2>
+  <div class="body-copy">
+    <p>El primer principio para transformar las sesiones del Consejo es la separación explícita entre la información que el Consejo recibe y la deliberación que el Consejo produce. Son dos funciones distintas que requieren tiempos distintos y formatos distintos. Cuando se mezclan en la misma sesión — cuando la información se presenta en el momento en que debe deliberarse sobre ella — ambas funciones se degradan: la información no se absorbe con profundidad y la deliberación no tiene insumos de calidad suficiente para producir decisiones sólidas.</p>
+    <p>La separación funciona así: la información estratégica llega al Consejo con suficiente anticipación —mínimo siete días antes de la sesión— para que los consejeros la analicen individualmente, formulen sus preguntas y lleguen a la sesión con una posición propia sobre los temas que se deliberarán. La sesión entonces no comienza con una presentación — comienza con una deliberación. La Dirección no presenta lo que el Consejo va a decidir: el Consejo ya lo leyó. La sesión es el espacio para que los consejeros confronten sus perspectivas, resuelvan sus diferencias y lleguen a decisiones que ninguno habría tomado solo.</p>
+    <p>Esta separación tiene una implicación directa sobre el formato del paquete de información al Consejo: <strong>no puede ser una colección de presentaciones de PowerPoint diseñadas para ser explicadas oralmente</strong>. Debe ser un documento de lectura — conciso, estructurado, con los indicadores estratégicos que el Consejo necesita para gobernar, las propuestas de decisión claramente formuladas y el contexto suficiente para que cada consejero pueda evaluar las propuestas sin la presencia de la Dirección en la sala.</p>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">III — La anatomía de la información</div>
+  <h2 class="section-title">Qué debe contener el paquete de información al Consejo — y en qué formato</h2>
+
+  <div class="info-anatomy">
+    <div class="ia-title">Anatomía del paquete de información al Consejo</div>
+    <div class="ia-row header">
+      <div class="ia-cell">Tipo de información</div>
+      <div class="ia-cell header-label">Qué contiene y para qué sirve</div>
+      <div class="ia-cell header-label">Formato</div>
+    </div>
+    <div class="ia-row">
+      <div class="ia-cell tipo">Indicadores estratégicos</div>
+      <div class="ia-cell cuando">Las 8–12 métricas que el Consejo definió como indicadores de salud estratégica — no los reportes financieros completos. Con semáforo y varianza respecto al objetivo. Llega 7 días antes.</div>
+      <div class="ia-cell formato">Dashboard de 1–2 páginas. Lectura: 10 min.</div>
+    </div>
+    <div class="ia-row">
+      <div class="ia-cell tipo">Propuestas de decisión</div>
+      <div class="ia-cell cuando">Las iniciativas, inversiones o cambios que requieren aprobación del Consejo según la matriz de atribuciones. Una página por propuesta: contexto, opciones evaluadas, recomendación de la Dirección, implicaciones. Llega 7 días antes.</div>
+      <div class="ia-cell formato">Memo estructurado. 1 pág/propuesta.</div>
+    </div>
+    <div class="ia-row">
+      <div class="ia-cell tipo">Alertas y excepciones</div>
+      <div class="ia-cell cuando">Los únicos temas operativos que llegan al Consejo: situaciones donde algún indicador ha cruzado el umbral de alerta que el propio Consejo definió, o donde hay una contingencia que requiere conocimiento del órgano de gobierno.</div>
+      <div class="ia-cell formato">Nota ejecutiva. Máximo 1 página.</div>
+    </div>
+    <div class="ia-row">
+      <div class="ia-cell tipo">Tema estratégico profundo</div>
+      <div class="ia-cell cuando">Un tema del calendario estratégico del Consejo que se deliberará en profundidad en esta sesión: expansión, capitalización, sucesión, cambio de modelo. Contexto, análisis, preguntas que guiarán la deliberación. Llega 10 días antes.</div>
+      <div class="ia-cell formato">Briefing de 3–5 páginas. Lectura: 20–30 min.</div>
+    </div>
+    <div class="ia-row">
+      <div class="ia-cell tipo">Compromisos previos</div>
+      <div class="ia-cell cuando">El seguimiento de los compromisos que la Dirección asumió ante el Consejo en la sesión anterior — con el estado actual y la explicación de las desviaciones. El instrumento de accountability más directo del gobierno corporativo.</div>
+      <div class="ia-cell formato">Tabla de 1 página con semáforo.</div>
+    </div>
+  </div>
+
+  <div class="body-copy">
+    <p>Lo que no debe estar en el paquete de información es igualmente importante: no deben estar los reportes operativos detallados, los avances de proyectos individuales, los reportes de áreas funcionales que son gestión —no gobierno—, ni ninguna información que deba ser presentada oralmente para ser entendida. Si una información requiere una presentación para ser comprendida, no está lista para el Consejo — necesita ser procesada primero por la Dirección y convertida en un formato que el Consejo pueda leer y evaluar de manera autónoma.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">IV — El diseño de la sesión</div>
+  <h2 class="section-title">Cómo luce una sesión de gobierno real — antes y después</h2>
+  <div class="body-copy">
+    <p>La diferencia entre una sesión que produce gobierno y una que produce presentaciones no está en los temas — puede ser exactamente la misma agenda. Está en cómo está estructurado el tiempo y quién controla el flujo de la conversación.</p>
+  </div>
+
+  <div class="session-compare">
+    <div class="sc-col antes">
+      <div class="sc-header">Sesión típica — 3 horas (produce presentaciones)</div>
+      <div class="sc-block"><div class="sc-time">0:00–0:10</div><div class="sc-content"><div class="sc-title">Apertura y acta anterior</div><div class="sc-note">Trámite formal</div></div></div>
+      <div class="sc-block"><div class="sc-time">0:10–1:00</div><div class="sc-content"><div class="sc-title">Presentación financiera del CEO</div><div class="sc-note">El Consejo ve por primera vez los números. Hace preguntas aclaratorias.</div></div></div>
+      <div class="sc-block"><div class="sc-time">1:00–1:50</div><div class="sc-content"><div class="sc-title">Presentaciones de directivos funcionales</div><div class="sc-note">Cada director presenta su área. El Consejo escucha. Pocas preguntas de fondo.</div></div></div>
+      <div class="sc-block"><div class="sc-time">1:50–2:40</div><div class="sc-content"><div class="sc-title">Aprobación de propuestas de la Dirección</div><div class="sc-note">Se aprueban sin debate sustantivo. El Consejo no tuvo tiempo de analizar.</div></div></div>
+      <div class="sc-block"><div class="sc-time">2:40–3:00</div><div class="sc-content"><div class="sc-title">Asuntos varios y cierre</div><div class="sc-note">Sin agenda estratégica propia del Consejo.</div></div></div>
+    </div>
+    <div class="sc-col despues">
+      <div class="sc-header">Sesión rediseñada — 3 horas (produce gobierno)</div>
+      <div class="sc-block"><div class="sc-time">0:00–0:20</div><div class="sc-content"><div class="sc-title">Sesión privada de consejeros</div><div class="sc-note">Sin Dirección. El Consejo alinea perspectivas sobre el paquete ya leído.</div></div></div>
+      <div class="sc-block"><div class="sc-time">0:20–0:50</div><div class="sc-content"><div class="sc-title">Revisión de indicadores — solo excepciones</div><div class="sc-note">El Consejo ya leyó el dashboard. Se discute solo lo que cruzó umbral de alerta.</div></div></div>
+      <div class="sc-block"><div class="sc-time">0:50–1:50</div><div class="sc-content"><div class="sc-title">Deliberación sobre el tema estratégico del trimestre</div><div class="sc-note">Expansión, capitalización, sucesión. El Consejo delibera y decide. La Dirección escucha.</div></div></div>
+      <div class="sc-block"><div class="sc-time">1:50–2:30</div><div class="sc-content"><div class="sc-title">Aprobación de propuestas</div><div class="sc-note">Ya analizadas. La deliberación es sobre fondo, no sobre contenido que se acaba de ver.</div></div></div>
+      <div class="sc-block"><div class="sc-time">2:30–3:00</div><div class="sc-content"><div class="sc-title">Agenda del próximo trimestre y accountability del CEO</div><div class="sc-note">El Consejo revisa compromisos anteriores y define su agenda propia para el próximo período.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">V — Los principios de diseño</div>
+  <h2 class="section-title">Cinco principios que transforman la dinámica del Consejo</h2>
+  <div class="principles-list">
+    <div class="principle-item">
+      <div class="principle-num">01</div>
+      <div class="principle-content">
+        <div class="principle-heading">El paquete de información nunca se presenta en la sesión</div>
+        <div class="principle-body">Toda la información que el Consejo necesita para deliberar llega antes de la sesión, en formato de lectura, con tiempo suficiente para ser analizada individualmente. La sesión no comienza con ninguna presentación. Si algún consejero tiene preguntas de aclaración sobre el paquete, las envía por escrito antes de la sesión para que la Dirección responda antes de que comience. <strong>El tiempo de sesión es tiempo de deliberación, no de actualización.</strong></div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">02</div>
+      <div class="principle-content">
+        <div class="principle-heading">La agenda estratégica del Consejo es del Consejo — no de la Dirección</div>
+        <div class="principle-body">El Consejo desarrolla su propio calendario estratégico de 12 meses: los temas que quiere examinar en profundidad a lo largo del año, independientemente de lo que la Dirección tenga planeado presentar. Este calendario se construye al inicio del año, se revisa trimestralmente y determina el tema estratégico profundo de cada sesión. <strong>Una Dirección que controla la agenda del Consejo no está siendo gobernada — está siendo supervisada en los términos que ella misma define.</strong></div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">03</div>
+      <div class="principle-content">
+        <div class="principle-heading">La sesión privada de consejeros es no negociable</div>
+        <div class="principle-body">Todas las sesiones del Consejo incluyen un bloque de tiempo — mínimo 20 minutos, idealmente 30 — donde los consejeros deliberan sin presencia de la Dirección. Este espacio no es para resolver conspiraciones contra el CEO: es para que los consejeros puedan hablar con la franqueza que la presencia de la Dirección frecuentemente inhibe, y para que el Consejo llegue a las decisiones con una perspectiva genuinamente independiente. <strong>El Consejo que nunca delibera sin la Dirección presente no tiene independencia real — tiene independencia declarada.</strong></div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">04</div>
+      <div class="principle-content">
+        <div class="principle-heading">Las propuestas de decisión tienen estructura estándar y llegan completas</div>
+        <div class="principle-body">Cada iniciativa que llega al Consejo para su aprobación viene en el mismo formato: contexto estratégico, opciones consideradas con sus pros y contras, la recomendación de la Dirección y su justificación, las implicaciones financieras y de riesgo, y la pregunta específica que el Consejo debe responder. Este formato estandarizado le permite al Consejo preparar su posición antes de la sesión y deliberar sobre el fondo — no sobre cómo está presentada la propuesta. <strong>Una propuesta que requiere una presentación oral para ser evaluada no está lista para el Consejo.</strong></div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">05</div>
+      <div class="principle-content">
+        <div class="principle-heading">El cierre de cada sesión define los compromisos con nombre y fecha</div>
+        <div class="principle-body">Los últimos 15 minutos de cada sesión se dedican a documentar explícitamente los compromisos: qué comprometió la Dirección, para cuándo, y cómo se verificará el cumplimiento en la siguiente sesión. Este registro —que abre la siguiente sesión en la revisión de compromisos— es el mecanismo de accountability más directo del gobierno corporativo real. <strong>El Consejo que no cierra con compromisos explícitos no tiene accountability — tiene conversaciones registradas en actas que nadie revisará.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">VI — El rol del SLL™</div>
+  <h2 class="section-title">Por qué este rediseño no ocurre solo — y quién puede liderarlo</h2>
+  <div class="body-copy">
+    <p>El rediseño de la dinámica del Consejo es uno de los mandatos donde la presencia del Strategic Leadership Layer™ produce mayor impacto con menor visibilidad. No es un mandato de alto perfil — no hay una transacción que cerrar ni una reestructuración que ejecutar. Pero produce una mejora en la calidad de las decisiones estratégicas de la empresa que se acumula sesión tras sesión, año tras año.</p>
+    <p>La razón por la que este rediseño no ocurre solo es que requiere un actor que opere en la intersección entre el Consejo y la Dirección — que entienda los requerimientos del gobierno corporativo y la realidad operativa de la Dirección, que pueda diseñar el sistema de información estratégica que el Consejo necesita y que pueda liderar la implementación del nuevo formato sin crear un conflicto entre los dos actores que debe servir simultáneamente.</p>
+    <p>El CEO no puede liderarlo solo: tiene un conflicto de interés estructural en el diseño de la información que lo supervisa. El Consejo no puede liderarlo solo: no tiene suficiente visibilidad sobre la realidad operativa para diseñar un sistema de información que sea práctico. El actor que puede hacerlo es el que tiene acceso completo a ambos lados de la interfaz — y el mandato de mantener su coherencia en el tiempo.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">La pregunta de diagnóstico más directa</div>
+    <p>Si quiere saber si las sesiones de su Consejo producen gobierno o producen presentaciones, haga una pregunta simple a cualquier consejero: <strong>¿cuándo fue la última vez que el Consejo modificó de manera sustantiva una propuesta de la Dirección — no en un detalle, sino en su dirección o su estructura?</strong></p>
+    <p>Si la respuesta requiere remontarse más de tres sesiones, el Consejo no está gobernando. Puede estar informado, puede estar actualizado, puede estar aprobando — pero no está gobernando. Y la diferencia entre ambas cosas no es de forma sino de función: el gobierno real cambia decisiones que la Dirección habría tomado de otra manera sin él.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">Las sesiones que el Consejo merece — y que la empresa necesita</h2>
+  <div class="closing-body">
+    <p>Las sesiones del Consejo que producen gobierno genuino no requieren más tiempo ni más consejeros ni más información. Requieren que el tiempo disponible esté diseñado para la deliberación, no para la actualización. Que la información llegue antes de la sesión, no durante ella. Que la agenda sea del Consejo, no de la Dirección. Y que los compromisos sean explícitos y rastreables, no implícitos y olvidables.</p>
+    <p>Cada uno de estos cambios es técnicamente simple. Ninguno es políticamente fácil — porque cada uno redistribuye el control sobre el proceso entre la Dirección y el Consejo en favor del gobierno y en detrimento de la comodidad operativa de quien es gobernado. Ese es exactamente el punto. El gobierno corporativo que no incomoda a quien supervisa no está gobernando.</p>
+    <p><strong>El Consejo que gobierna realmente produce decisiones mejores que las que la empresa tomaría sin él. Eso es el estándar. Y ese estándar se alcanza con diseño — no con buenas intenciones.</strong></p>
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+</body>
+</html>

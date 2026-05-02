@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo institucionalizar una empresa familiar sin fracturar la relación entre accionistas — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11);--amber:#8B5E1A}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — warm cream with strong navy type */
+.hero{background:var(--cream-dark);padding:92px 64px 80px;position:relative;overflow:hidden;border-bottom:3px solid var(--navy)}
+.hero-watermark{position:absolute;font-family:'Playfair Display',serif;font-size:220px;font-weight:700;color:rgba(13,27,62,.04);bottom:-20px;right:-10px;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,50px);font-weight:700;line-height:1.12;color:var(--navy);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--navy-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.15)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* TENSION MAP — two-column narrative */
+.tension-map{margin:52px 0;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light)}
+.tension-col{padding:36px 32px}
+.tension-col-left{background:rgba(13,27,62,.05)}
+.tension-col-right{background:var(--navy)}
+.tension-col-header{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;margin-bottom:20px}
+.tension-col-left .tension-col-header{color:var(--text-light)}
+.tension-col-right .tension-col-header{color:var(--gold)}
+.tension-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(196,154,60,.12)}
+.tension-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.tension-item-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.tension-col-left .tension-item-title{color:var(--navy-mid)}
+.tension-col-right .tension-item-title{color:var(--gold-light)}
+.tension-item-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.6}
+.tension-col-left .tension-item-body{color:var(--text-mid)}
+.tension-col-right .tension-item-body{color:rgba(244,241,236,.62)}
+
+/* THREE SYSTEMS — pillars */
+.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.system-card{padding:32px 28px;background:var(--cream);transition:background .2s}
+.system-card:hover{background:var(--cream-dark)}
+.system-num{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:rgba(196,154,60,.2);line-height:1;margin-bottom:12px}
+.system-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
+.system-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.65;color:var(--text-mid)}
+.system-examples{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule-light);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.08em;color:var(--text-light);text-transform:uppercase}
+
+/* SEQUENCE — phased timeline */
+.sequence{margin:48px 0}
+.sequence-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.sequence-phase{display:flex;gap:0;margin-bottom:2px;position:relative}
+.phase-marker{width:52px;flex-shrink:0;display:flex;flex-direction:column;align-items:center}
+.phase-dot{width:20px;height:20px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:18px}
+.phase-dot-inner{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.phase-line{flex:1;width:2px;background:rgba(13,27,62,.15);margin-top:4px}
+.sequence-phase:last-child .phase-line{display:none}
+.phase-content{flex:1;background:var(--cream);padding:20px 28px;border:1px solid var(--rule-light);margin-bottom:2px}
+.phase-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.phase-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.25}
+.phase-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.65;color:var(--text-mid)}
+.phase-body strong{color:var(--navy);font-weight:600}
+
+/* FRACTURE SIGNALS */
+.fracture-list{margin:48px 0}
+.fracture-item{display:grid;grid-template-columns:64px 1fr;padding:28px 0;border-bottom:1px solid var(--rule-light)}
+.fracture-item:first-child{border-top:1px solid var(--rule-light)}
+.fracture-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:rgba(196,154,60,.2);line-height:1;padding-top:4px}
+.fracture-heading{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.fracture-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.68;color:var(--text-mid)}
+.fracture-body strong{color:var(--navy);font-weight:600}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.tension-map,.systems-grid{grid-template-columns:1fr}.sequence-phase{flex-direction:column}.phase-marker{flex-direction:row;width:auto;gap:12px}.phase-line{width:100%;height:2px;margin:0}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">familia</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Empresa Familiar</div>
+      <h1 class="hero-headline">
+        Cómo institucionalizar una empresa familiar<br>
+        <em>sin fracturar la relación<br>entre accionistas</em>
+      </h1>
+      <p class="hero-deck">
+        La institucionalización de la empresa familiar es la transición más delicada del ciclo de vida empresarial. No porque sea técnicamente compleja — sino porque ocurre en el tejido más frágil que existe: la relación entre personas que comparten apellido, historia y dinero.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Empresa Familiar</span></div>
+        <div class="hero-meta-item">Lectura <span>~12 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">Las empresas familiares que fracturan sus relaciones durante la institucionalización rara vez lo hacen por errores técnicos. Los estatutos estaban bien redactados. El protocolo familiar era razonable. La estructura jurídica era correcta. La fractura ocurre porque el proceso de institucionalización, que en apariencia es un ejercicio de diseño organizacional, toca en realidad algo mucho más profundo: la narrativa de quién construyó qué, quién merece qué, y quién tiene el derecho de decidir sobre lo que todos llaman suyo.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — La naturaleza del problema</div>
+  <h2 class="section-title">Por qué la institucionalización es una transición de identidad, no solo de estructura</h2>
+  <div class="body-copy">
+    <p>La empresa familiar es, en su forma más elemental, una extensión de la familia que la fundó. Sus valores, su cultura, sus formas de tomar decisiones y sus criterios de distribución del poder son inseparables de las personas que la construyeron. Esto es una fortaleza en las etapas tempranas: la cohesión familiar produce velocidad de decisión, lealtad organizacional y una visión compartida que pocas empresas no familiares pueden replicar.</p>
+    <p>Pero a medida que la empresa crece, que la familia se expande a través de generaciones y que los roles se diversifican — algunos miembros activos en la empresa, otros pasivos como accionistas, otros con intereses completamente distintos —, la identidad fusionada entre familia y empresa comienza a generar fricciones que el modelo original no estaba diseñado para manejar.</p>
+    <p>La institucionalización es el proceso de separar lo que debe separarse sin destruir lo que debe preservarse. Separar la empresa de la familia en términos de gobierno, de decisiones y de distribución de poder — sin separar a la familia de su historia compartida, de su proyecto común y de los vínculos que le dan sentido a la propiedad colectiva. Esa separación quirúrgica es la operación más difícil de ejecutar en el contexto empresarial. Y la más frecuentemente mal ejecutada.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>La institucionalización no fractura las relaciones familiares porque los nuevos sistemas son malos. Las fractura porque los nuevos sistemas cambian quién tiene poder — y ese cambio activa narrativas de agravio, injusticia y deslealtad que ningún protocolo jurídico puede contener por sí solo.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II -->
+<section class="section">
+  <div class="section-label">II — Las tensiones constitutivas</div>
+  <h2 class="section-title">Las tensiones que toda empresa familiar carga — y que la institucionalización activa</h2>
+  <div class="body-copy">
+    <p>La institucionalización no crea las tensiones en la empresa familiar. Las revela — y las amplifica, porque obliga a la familia a tomar decisiones explícitas sobre cosas que hasta ese momento podían permanecer implícitas, ambiguas o simplemente ignoradas. Hay cinco tensiones constitutivas que toda empresa familiar lleva y que cualquier proceso de institucionalización bien diseñado debe anticipar, nombrar y resolver.</p>
+  </div>
+
+  <div class="tension-map">
+    <div class="tension-col tension-col-left">
+      <div class="tension-col-header">La tensión y su origen</div>
+      <div class="tension-item">
+        <div class="tension-item-title">Propiedad vs. Mérito</div>
+        <div class="tension-item-body">¿Los accionistas tienen el mismo peso en las decisiones independientemente de su contribución a la empresa? El hijo que trabajó toda su vida en la empresa y el hermano que eligió otra carrera tienen los mismos derechos accionarios — pero expectativas de influencia muy distintas.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Familia vs. Empresa</div>
+        <div class="tension-item-body">Las decisiones que son buenas para la empresa no siempre son buenas para todos los miembros de la familia, y viceversa. La contratación de un directivo externo más competente que el hijo del fundador enfrenta esta tensión en su forma más directa.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Liquidez vs. Reinversión</div>
+        <div class="tension-item-body">Los accionistas pasivos quieren dividendos. Los accionistas activos quieren reinvertir las utilidades para crecer. Esta tensión es estructural en cualquier empresa familiar con socios en diferentes situaciones económicas personales.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Control vs. Profesionalización</div>
+        <div class="tension-item-body">Profesionalizar la dirección significa ceder control a personas que no son familia. Para los fundadores que construyeron la empresa con sus propias manos, esa cesión puede sentirse como una pérdida de identidad, no solo de poder.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Pasado vs. Futuro</div>
+        <div class="tension-item-body">Los fundadores custodian la historia y los valores que hicieron posible el éxito. Las generaciones siguientes necesitan adaptar esa herencia a contextos que el fundador no anticipó. El conflicto entre ambas perspectivas es inherente al paso generacional.</div>
+      </div>
+    </div>
+    <div class="tension-col tension-col-right">
+      <div class="tension-col-header">Lo que activa en la institucionalización</div>
+      <div class="tension-item">
+        <div class="tension-item-title">Detonador: diseño del Consejo</div>
+        <div class="tension-item-body">Cuando el proceso de institucionalización define quién tiene asiento en el Consejo y quién no, la tensión propiedad vs. mérito se vuelve explícita. Los criterios de selección — ¿porcentaje accionario? ¿competencia demostrada? ¿rol activo? — producen ganadores y perdedores con nombre y apellido.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Detonador: política de talento</div>
+        <div class="tension-item-body">La decisión de contratar o no contratar directivos externos, y en qué condiciones los familiares pueden aspirar a roles directivos, convierte esta tensión en política explícita. Pocos temas generan más fricción en el proceso de institucionalización.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Detonador: política de dividendos</div>
+        <div class="tension-item-body">El diseño de la política de dividendos obliga a la familia a explicitar sus prioridades relativas entre crecimiento y liquidez — y a reconocer que distintos accionistas tienen intereses legítimos pero distintos sobre esta pregunta.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Detonador: protocolo de sucesión</div>
+        <div class="tension-item-body">El momento en que el fundador debe definir quién lo sucede — y en qué rol — es el momento de mayor riesgo de fractura relacional. Involucra juicios sobre capacidad, confianza y lealtad que son difíciles de hacer entre personas que comparten una mesa en Navidad.</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-item-title">Detonador: transformación del modelo</div>
+        <div class="tension-item-body">Cuando el proceso de institucionalización implica cambiar prácticas que el fundador estableció, el debate sobre el cambio se convierte frecuentemente en un debate sobre el legado — con toda la carga emocional que esa conversación arrastra.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III -->
+<section class="section">
+  <div class="section-label">III — Los tres sistemas</div>
+  <h2 class="section-title">La arquitectura de la institucionalización: los tres sistemas que deben construirse en paralelo</h2>
+  <div class="body-copy">
+    <p>La institucionalización de la empresa familiar requiere construir simultáneamente tres sistemas que están íntimamente relacionados pero que tienen lógicas, actores y ritmos distintos. El error más frecuente es construirlos de manera secuencial — o construir solo uno y asumir que los demás surgirán solos. No surgen.</p>
+  </div>
+
+  <div class="systems-grid">
+    <div class="system-card">
+      <div class="system-num">01</div>
+      <div class="system-title">Sistema de Gobierno Empresarial</div>
+      <div class="system-body">La arquitectura de decisiones, supervisión y accountability de la empresa como entidad económica. Consejo de Administración, comités especializados, atribuciones, sistema de información estratégica, políticas de partes relacionadas. Este sistema separa la empresa de la familia en el plano institucional.</div>
+      <div class="system-examples">Consejo · Comités · Matriz de atribuciones · Política de dividendos</div>
+    </div>
+    <div class="system-card">
+      <div class="system-num">02</div>
+      <div class="system-title">Sistema de Gobierno Familiar</div>
+      <div class="system-body">La arquitectura de relación entre los miembros de la familia como accionistas, como familia y como personas. Asamblea familiar, consejo familiar, protocolo familiar, políticas de empleo de familiares, mecanismos de liquidez para accionistas pasivos. Este sistema preserva la cohesión familiar en el plano relacional.</div>
+      <div class="system-examples">Asamblea familiar · Protocolo · Política de empleo familiar · ROFR</div>
+    </div>
+    <div class="system-card">
+      <div class="system-num">03</div>
+      <div class="system-title">Sistema de Desarrollo de Propietarios</div>
+      <div class="system-body">El mecanismo que desarrolla la capacidad de los accionistas para ejercer su rol de propietarios con inteligencia, con criterio y con la visión de largo plazo que la empresa necesita de sus dueños. Formación en gobierno, cultura de accountability, narrativa compartida del proyecto familiar. Este sistema sostiene la calidad del gobierno en el tiempo.</div>
+      <div class="system-examples">Formación en gobierno · Narrativa familiar · Preparación generacional</div>
+    </div>
+  </div>
+
+  <div class="body-copy">
+    <p>La razón por la que estos tres sistemas deben construirse en paralelo es que cada uno produce condiciones que los demás necesitan para funcionar. El sistema de gobierno empresarial sin el sistema de gobierno familiar produce una empresa bien gobernada y una familia fracturada. El sistema de gobierno familiar sin el empresarial produce cohesión familiar sobre una empresa mal gobernada. Y ambos sin el sistema de desarrollo de propietarios producen estructuras que funcionan mientras las personas que las diseñaron están presentes — y que se deterioran en cuanto esas personas dejan sus roles.</p>
+  </div>
+</section>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — Las señales de fractura</div>
+  <h2 class="section-title">Cómo identificar cuándo el proceso de institucionalización está fracturando las relaciones</h2>
+  <div class="body-copy">
+    <p>Hay señales concretas que indican que un proceso de institucionalización está generando fractura relacional — no solo fricción normal, que es inevitable, sino fractura con consecuencias potencialmente irreversibles. Identificarlas a tiempo es la condición para poder intervenir antes de que el daño sea permanente.</p>
+  </div>
+
+  <div class="fracture-list">
+    <div class="fracture-item">
+      <div class="fracture-num">01</div>
+      <div class="fracture-content">
+        <div class="fracture-heading">Las conversaciones sobre la empresa desaparecen de la dinámica familiar</div>
+        <div class="fracture-body">Cuando los miembros de la familia dejan de hablar de la empresa en contextos informales — en las comidas, en los encuentros familiares — no es señal de que las cosas van bien. Es señal de que el tema se ha vuelto demasiado cargado para manejarlo sin la estructura formal de una reunión. <strong>El silencio sobre la empresa en el contexto familiar es con frecuencia el primer síntoma de una fractura que ya está en proceso.</strong></div>
+      </div>
+    </div>
+    <div class="fracture-item">
+      <div class="fracture-num">02</div>
+      <div class="fracture-content">
+        <div class="fracture-heading">Los acuerdos formales se alcanzan pero no se cumplen</div>
+        <div class="fracture-body">En procesos de institucionalización que están generando fractura, es común observar un patrón: en las sesiones formales — del Consejo, de la asamblea familiar — los acuerdos se alcanzan. Pero fuera de esas sesiones, algunos actores actúan de manera inconsistente con los acuerdos tomados. <strong>Este patrón indica que la adhesión a los acuerdos es performativa — se produce ante la presencia del proceso formal pero no refleja el compromiso real de todos los actores.</strong></div>
+      </div>
+    </div>
+    <div class="fracture-item">
+      <div class="fracture-num">03</div>
+      <div class="fracture-content">
+        <div class="fracture-heading">Aparecen coaliciones con lógica de contrapoder</div>
+        <div class="fracture-body">Cuando algunos accionistas comienzan a reunirse con regularidad antes de las sesiones formales para alinear posiciones, o cuando las conversaciones sobre la empresa ocurren en grupos parciales en lugar del conjunto, se está formando una dinámica de coaliciones. <strong>Las coaliciones en la empresa familiar no son estrategia política — son señal de que la confianza entre los actores se ha deteriorado hasta el punto en que ninguno está dispuesto a deliberar en un foro abierto sin saber de antemano que tiene los votos para ganar.</strong></div>
+      </div>
+    </div>
+    <div class="fracture-item">
+      <div class="fracture-num">04</div>
+      <div class="fracture-content">
+        <div class="fracture-heading">El proceso se convierte en litigio sobre el pasado</div>
+        <div class="fracture-body">Cuando las sesiones de trabajo sobre el diseño del gobierno corporativo o el protocolo familiar comienzan a derivar hacia la revisión de agravios históricos — "cuando tú tomaste aquella decisión en 2015", "desde que mi padre cedió su participación" — el proceso ha dejado de ser prospectivo. <strong>El litigio sobre el pasado en el contexto de la institucionalización es el síntoma más claro de que la conversación necesita un nivel de intervención que va más allá del diseño de estructuras.</strong></div>
+      </div>
+    </div>
+    <div class="fracture-item">
+      <div class="fracture-num">05</div>
+      <div class="fracture-content">
+        <div class="fracture-heading">Aparecen conversaciones sobre salida antes de que el proceso termine</div>
+        <div class="fracture-body">Cuando uno o más accionistas comienzan a explorar opciones de liquidez — de manera formal o informal — antes de que el proceso de institucionalización haya concluido, es señal de que han perdido la confianza en que el resultado del proceso será satisfactorio para ellos. <strong>La exploración prematura de salida no es una consecuencia de la institucionalización — es una respuesta al fracaso del proceso de institucionalización en proveer certeza y confianza.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- V -->
+<section class="section">
+  <div class="section-label">V — La secuencia correcta</div>
+  <h2 class="section-title">Cómo se hace — la secuencia que protege las relaciones mientras construye la estructura</h2>
+  <div class="body-copy">
+    <p>La institucionalización que preserva las relaciones familiares no es menos rigurosa que la que las fractura — es diferente en su secuencia, en sus prioridades y en su tratamiento del componente relacional. Tiene cuatro fases que deben ejecutarse en orden y que no pueden acelerarse sin comprometer el resultado.</p>
+  </div>
+
+  <div class="sequence">
+    <div class="sequence-title">Secuencia de institucionalización que preserva la cohesión familiar</div>
+
+    <div class="sequence-phase">
+      <div class="phase-marker">
+        <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+        <div class="phase-line"></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label">Fase I — Antes de cualquier diseño</div>
+        <div class="phase-title">Construcción del entendimiento compartido</div>
+        <div class="phase-body">Antes de diseñar ninguna estructura, todos los accionistas relevantes deben llegar a un entendimiento compartido sobre tres preguntas: ¿cuál es el propósito de la empresa para esta familia?, ¿qué queremos preservar y qué estamos dispuestos a cambiar?, y ¿qué tipo de relación queremos tener entre nosotros a través de la empresa en los próximos veinte años? <strong>Estas preguntas no tienen respuestas técnicas — tienen respuestas humanas que deben ser escuchadas antes de ser resueltas.</strong> El proceso de escucha es, en sí mismo, parte de la solución.</div>
+      </div>
+    </div>
+
+    <div class="sequence-phase">
+      <div class="phase-marker">
+        <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+        <div class="phase-line"></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label">Fase II — El sistema familiar primero</div>
+        <div class="phase-title">Gobierno familiar antes que gobierno empresarial</div>
+        <div class="phase-body">El error más frecuente es comenzar por el gobierno empresarial — el Consejo, los estatutos, las políticas — porque parece lo más urgente y lo más técnico. La secuencia correcta es la inversa: primero construir el sistema de gobierno familiar que establece cómo la familia delibera, decide y resuelve sus conflictos. <strong>El gobierno empresarial debe reposar sobre un sistema familiar que funcione — no al revés.</strong> Una familia que no tiene mecanismos para resolver sus propios conflictos no puede ser un accionista colectivo efectivo, independientemente de la calidad de sus estatutos.</div>
+      </div>
+    </div>
+
+    <div class="sequence-phase">
+      <div class="phase-marker">
+        <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+        <div class="phase-line"></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label">Fase III — Diseño participativo</div>
+        <div class="phase-title">Las estructuras que todos construyen juntos tienen mayor adhesión</div>
+        <div class="phase-body">Las estructuras de gobierno que son diseñadas por un asesor externo y presentadas a la familia para su aprobación tienen una tasa de adhesión sistémicamente menor que las que emergen de un proceso en el que todos los accionistas han participado activamente. <strong>El diseño participativo es más lento y más incómodo — pero produce estructuras que la familia reconoce como propias, no como impuestas.</strong> Y las estructuras que la familia reconoce como propias son las que sobreviven al primer conflicto serio que enfrentan.</div>
+      </div>
+    </div>
+
+    <div class="sequence-phase">
+      <div class="phase-marker">
+        <div class="phase-dot"><div class="phase-dot-inner"></div></div>
+      </div>
+      <div class="phase-content">
+        <div class="phase-label">Fase IV — Implementación progresiva</div>
+        <div class="phase-title">La institucionalización como proceso, no como evento</div>
+        <div class="phase-body">La institucionalización no termina cuando se firman los documentos. Termina cuando las estructuras se han ejercido lo suficiente como para haber producido decisiones reales, resuelto conflictos reales y demostrado su valor en situaciones de alta carga relacional. <strong>El primer año de funcionamiento del gobierno institucional es el más crítico — es cuando la familia descubre si lo que diseñó realmente funciona o si hay brechas que deben corregirse.</strong> La presencia de un actor que acompaña esa primera fase de funcionamiento real es con frecuencia la diferencia entre una institucionalización que arraiga y una que se abandona a la primera dificultad.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VI -->
+<section class="section">
+  <div class="section-label">VI — El rol del actor externo</div>
+  <h2 class="section-title">Por qué la institucionalización no puede liderarla nadie de adentro</h2>
+  <div class="body-copy">
+    <p>La pregunta que surge naturalmente en muchas familias empresarias es: ¿por qué necesitamos un actor externo? Los miembros de la familia se conocen. El fundador sabe lo que quiere. Los asesores legales pueden redactar los documentos. ¿Para qué un integrador estratégico externo?</p>
+    <p>La respuesta tiene tres componentes que se refuerzan mutuamente. El primero es la <strong>neutralidad imposible de adentro</strong>. Cualquier miembro de la familia que intente liderar el proceso de institucionalización lo hace desde una posición en la que tiene intereses propios en el resultado. Esa posición, independientemente de las mejores intenciones, lo convierte en sospechoso ante los demás actores cuando sus propuestas van en una dirección particular. La neutralidad no es solo una cuestión de intención — es una cuestión de posición estructural.</p>
+    <p>El segundo componente es la <strong>gestión de lo que no se puede decir adentro</strong>. En cualquier proceso de institucionalización familiar, hay verdades que nadie dentro de la familia puede decir sin activar reacciones defensivas o heridas relacionales. El actor externo puede nombrar esas verdades con una autoridad que nadie de adentro tiene — no porque sea más inteligente, sino porque no tiene nada que perder relacionalmente al decirlas.</p>
+    <p>El tercer componente es la <strong>continuidad del proceso cuando las emociones se elevan</strong>. La institucionalización familiar produce momentos de alta carga emocional — conversaciones que activan viejas heridas, decisiones que sienten como traiciones, acuerdos que algún participante vive como derrota. En esos momentos, el proceso necesita alguien que no esté emocionalmente involucrado para sostener el marco, mantener el ritmo y evitar que un momento de alta intensidad produzca daños permanentes en el tejido relacional.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">El mandato de Cretta en procesos de institucionalización familiar</div>
+    <p>Cretta aborda la institucionalización de la empresa familiar desde su modelo SLF: no como consultor que diseña documentos y entrega, sino como actor que acompaña el proceso completo con presencia ejecutiva real — desde la construcción del entendimiento compartido hasta la primera fase de funcionamiento del gobierno institucional.</p>
+    <p>Esto implica operar simultáneamente en el plano técnico —diseño de estructuras, redacción de documentos, coordinación de asesores legales y fiscales— y en el plano relacional —facilitación de conversaciones difíciles, gestión de momentos de alta carga emocional, construcción de confianza entre actores con intereses divergentes.</p>
+    <p><strong>La capacidad de operar en ambos planos al mismo tiempo, con mandato explícito de la dirección superior y alineación de incentivos con el resultado de largo plazo, es lo que distingue el acompañamiento SLF en este tipo de proceso.</strong> Y es lo que hace posible llegar al otro lado con una empresa mejor gobernada y una familia más cohesionada — no a pesar del proceso, sino gracias a cómo fue conducido.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">La empresa que gobierna y la familia que perdura</h2>
+  <div class="closing-body">
+    <p>Las familias empresarias que han completado procesos de institucionalización exitosos comparten una característica: no recuerdan el proceso como el momento en que formalizaron su gobierno corporativo. Lo recuerdan como el momento en que su familia tomó una decisión consciente sobre qué tipo de empresa y qué tipo de familia quería ser — y construyó la arquitectura para serlo.</p>
+    <p>Esa diferencia de perspectiva no es trivial. Significa que el proceso fue conducido de manera que el resultado técnico — los estatutos, el Consejo, el protocolo — fue la consecuencia de una decisión humana, no al revés. Y cuando la estructura es la consecuencia de la decisión humana, la familia se reconoce en ella y la defiende. Cuando la estructura es impuesta sobre la familia sin ese proceso de apropiación, se convierte en una fuente más de conflicto.</p>
+    <p><strong>La institucionalización que preserva las relaciones no es más blanda que la que las fractura. Es más inteligente.</strong> Reconoce que la empresa familiar no es solo una empresa — es el vehículo de un proyecto compartido entre personas que tienen mucho más en común que sus porcentajes accionarios. Y diseña el proceso en consecuencia.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+
+</body>
+</html>

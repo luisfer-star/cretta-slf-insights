@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El consejo que gobierna pero no dirige — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+.hero{background:var(--cream-dark);padding:96px 64px 84px;border-bottom:3px solid var(--navy);position:relative;overflow:hidden}
+.hero-watermark{position:absolute;font-family:'Playfair Display',serif;font-size:220px;font-weight:700;color:rgba(13,27,62,.04);right:-20px;bottom:-40px;line-height:1;pointer-events:none;user-select:none}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,50px);font-weight:700;line-height:1.12;color:var(--navy);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--navy-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:48px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.14)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);margin:48px 0}
+.col-card{background:var(--cream);padding:28px 26px}
+.col-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.col-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+.col-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.65;color:var(--text-mid)}
+.col-card.dark{background:var(--navy)}
+.col-card.dark .col-label{color:var(--gold)}
+.col-card.dark .col-title{color:var(--cream)}
+.col-card.dark .col-body{color:rgba(244,241,236,.65)}
+.principles-list{margin:48px 0}
+.principle-item{display:grid;grid-template-columns:64px 1fr;padding:28px 0;border-bottom:1px solid var(--rule-light)}
+.principle-item:first-child{border-top:1px solid var(--rule-light)}
+.principle-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:rgba(196,154,60,.2);line-height:1;padding-top:4px}
+.principle-heading{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.principle-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.68;color:var(--text-mid)}
+.principle-body strong{color:var(--navy);font-weight:600}
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">dirección</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Gobierno Corporativo</div>
+      <h1 class="hero-headline">El consejo de administración que gobierna pero no dirige: <em>el vacío más costoso del gobierno corporativo</em></h1>
+      <p class="hero-deck">Gobernar y dirigir no son sinónimos. Un Consejo puede cumplir impecablemente con su función de supervisión y aprobación, y aun así dejar vacío el espacio estratégico más importante de la organización. Ese vacío tiene un nombre, tiene un costo y tiene solución.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Gobierno Corporativo</span></div>
+        <div class="hero-meta-item">Lectura <span>~10 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="article-wrap">
+<div class="lead-block">
+  <p class="lead-text">La teoría del gobierno corporativo distingue con claridad entre las funciones del Consejo de Administración y las funciones del equipo directivo. El Consejo gobierna: supervisa, orienta, aprueba, protege los intereses de los accionistas. El equipo directivo dirige: opera, ejecuta, administra los recursos de la organización. La distinción es limpia en el papel y compleja en la práctica — porque entre ambas funciones existe un espacio que ninguno de los dos actores ocupa naturalmente, y cuya ausencia produce consecuencias que la mayoría de las organizaciones atribuye a otros problemas.</p>
+</div>
+
+<section class="section">
+  <div class="section-label">I — La distinción que importa</div>
+  <h2 class="section-title">Gobernar no es lo mismo que dirigir estratégicamente</h2>
+  <div class="body-copy">
+    <p>Un Consejo que gobierna bien cumple con sus obligaciones fiduciarias, supervisa el desempeño del CEO, aprueba los presupuestos y las inversiones mayores, gestiona los riesgos materiales de la organización y asegura que los intereses de los accionistas sean protegidos. Todo eso es gobierno. Es necesario. Es valioso. Y es insuficiente.</p>
+    <p>La dirección estratégica es otra cosa. No es supervisar que la estrategia exista — es asegurar que la estrategia sea la correcta, que esté siendo ejecutada coherentemente, que los recursos estén asignados a las prioridades que más importan y que la organización esté construyendo las capacidades que su posición futura requerirá. Esa función no vive en el Consejo ni en el equipo operativo. <strong>Vive en el espacio entre ambos — y ese espacio, en la mayoría de las empresas medianas, está vacío.</strong></p>
+    <p>El resultado es una organización donde el gobierno cumple su función formal y la operación cumple su función cotidiana, pero nadie está mirando el tablero completo con la frecuencia, la profundidad y la autoridad necesarias para asegurar que la empresa esté avanzando hacia donde quiere estar en cinco años.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-label">Lo que el Consejo hace</div>
+      <div class="col-title">Gobierno — función de supervisión</div>
+      <div class="col-body">Supervisa el desempeño del CEO. Aprueba presupuestos, inversiones y operaciones mayores. Gestiona riesgos materiales. Protege intereses de accionistas. Asegura cumplimiento regulatorio. Define la política de dividendos. Selecciona y remueve al CEO.</div>
+    </div>
+    <div class="col-card dark">
+      <div class="col-label">Lo que nadie hace</div>
+      <div class="col-title">Dirección estratégica — el vacío</div>
+      <div class="col-body">Asegurar que la estrategia es la correcta para el contexto actual. Mantener la coherencia entre las decisiones tácticas y la dirección estratégica. Construir las capacidades que el siguiente nivel de crecimiento requerirá. Integrar al ecosistema asesor hacia un resultado común. Liderar los mandatos críticos que la organización no puede gestionar sola.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">II — Por qué ocurre el vacío</div>
+  <h2 class="section-title">La lógica que produce el espacio sin dueño</h2>
+  <div class="body-copy">
+    <p>El vacío entre gobierno y operación no es el resultado de negligencia ni de malas intenciones. Es el resultado de una lógica estructural que produce el mismo patrón en organizaciones muy distintas entre sí.</p>
+    <p>El Consejo, por diseño institucional, opera en sesiones periódicas — cuatro, seis, ocho veces al año. Su acceso a la información de la empresa es el que la Dirección le proporciona. Su horizonte temporal es largo pero su presencia es intermitente. Esas características lo hacen apto para la supervisión y la aprobación, pero lo inhabilitan para la dirección estratégica continua que una organización en crecimiento requiere.</p>
+    <p>El CEO y el equipo directivo, por su parte, tienen acceso completo a la información y presencia continua en la organización — pero su foco natural es la operación. La urgencia del día a día compite permanentemente con la reflexión estratégica de largo plazo, y en esa competencia la operación gana todos los días. <strong>No porque el CEO sea miope, sino porque la arquitectura de su rol lo empuja inexorablemente hacia lo urgente y lo visible.</strong></p>
+    <p>El resultado es predecible: nadie está mirando el tablero completo con continuidad. El Consejo mira periódicamente desde afuera. El equipo directivo mira continuamente desde adentro pero con el foco en la operación. Y el espacio donde debería ocurrir la dirección estratégica — continua, integrada, con autoridad y con acceso completo — permanece vacío.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>Un Consejo que supervisa impecablemente pero no dirige estratégicamente es como un sistema inmunológico excelente para un cuerpo que no tiene sistema nervioso central. Funciona. Protege. Y no es suficiente.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">III — El costo del vacío</div>
+  <h2 class="section-title">Lo que la organización pierde cuando nadie dirige estratégicamente</h2>
+  <div class="body-copy">
+    <p>El costo del vacío entre gobierno y operación no aparece en ninguna línea del estado de resultados. Aparece en lo que no ocurre: las oportunidades que se perdieron porque nadie las vio a tiempo, las iniciativas estratégicas que murieron en la implementación porque nadie mantuvo la coherencia del conjunto, las decisiones que se tomaron tarde o mal porque el proceso de toma de decisiones estratégicas carecía de arquitectura.</p>
+  </div>
+
+  <div class="principles-list">
+    <div class="principle-item">
+      <div class="principle-num">01</div>
+      <div class="principle-content">
+        <div class="principle-heading">Las decisiones estratégicas se toman fuera de la ventana óptima</div>
+        <div class="principle-body">Cuando no hay un actor dedicado a monitorear el horizonte estratégico con continuidad, las decisiones importantes llegan al Consejo o al CEO cuando ya son urgentes — no cuando todavía son estratégicas. <strong>El margen para pensar, evaluar alternativas y diseñar la respuesta óptima se comprime hasta desaparecer.</strong></div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">02</div>
+      <div class="principle-content">
+        <div class="principle-heading">Las iniciativas estratégicas mueren en la implementación</div>
+        <div class="principle-body">La mayoría de las iniciativas estratégicas no fallan en su diseño — fallan en la transición entre el diseño y la ejecución, cuando el entusiasmo inicial choca con la resistencia organizacional, la competencia de recursos y la complejidad de coordinar múltiples funciones simultáneamente. Sin un actor que mantenga la coherencia del conjunto y la presión necesaria, las iniciativas se diluyen hasta desaparecer sin que nadie haya tomado formalmente la decisión de abandonarlas.</div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">03</div>
+      <div class="principle-content">
+        <div class="principle-heading">El ecosistema asesor opera sin integración</div>
+        <div class="principle-body">Las empresas medianas operan con múltiples asesores especializados — abogados, contadores, asesores financieros, consultores sectoriales. En ausencia de un actor de integración estratégica, cada asesor trabaja en su propio carril y produce recomendaciones que son sólidas dentro de su disciplina pero incoherentes entre sí. El CEO absorbe la función de integración por defecto — consumiendo tiempo y energía que debería dedicar a otras funciones.</div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">04</div>
+      <div class="principle-content">
+        <div class="principle-heading">Los mandatos críticos se gestionan por debajo de su potencial</div>
+        <div class="principle-body">Las transacciones, reestructuraciones, expansiones y capitalizaciones que definen el valor de una empresa en el largo plazo requieren un nivel de liderazgo estratégico que la mayoría de las organizaciones no tiene instalado de manera permanente. <strong>Cuando esos mandatos llegan, la empresa los gestiona con los recursos que tiene — que casi nunca son los que el mandato requiere.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">IV — La solución estructural</div>
+  <h2 class="section-title">Cómo se llena el vacío entre gobierno y operación</h2>
+  <div class="body-copy">
+    <p>El vacío entre el Consejo y el equipo directivo no se llena con más reuniones del Consejo, ni con una planeación estratégica anual más elaborada, ni con la contratación de un director de estrategia funcional. Se llena con un actor que ocupe estructuralmente ese espacio — con continuidad, con acceso completo a ambos lados de la interfaz, con autoridad ejecutiva dentro de su mandato y con incentivos alineados con los resultados de la organización.</p>
+    <p>Ese actor es el Strategic Leadership Layer™. No es un nivel jerárquico adicional — es una función que puede ser ejercida por un individuo externo, por una firma especializada o por una combinación de ambos, dependiendo de la complejidad y el contexto de la organización. Lo que la define no es su forma institucional sino su posición funcional: entre el gobierno y la operación, con visibilidad completa de ambos y con el mandato de mantener la coherencia estratégica del conjunto.</p>
+    <p>La diferencia entre una organización que tiene este actor y una que no lo tiene no es visible en el organigrama. Es visible en la calidad de las decisiones estratégicas, en la tasa de éxito de las iniciativas de transformación, en la velocidad a la que la organización responde a los cambios del entorno y en el valor que crea en el largo plazo.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">La pregunta que revela el vacío</div>
+    <p>Para diagnosticar si su organización tiene este vacío, haga una pregunta simple a tres actores distintos: al presidente del Consejo, al CEO y al director de finanzas. Pregúnteles: <strong>¿quién en esta organización es responsable de asegurar que estamos construyendo las capacidades que necesitaremos en tres años?</strong></p>
+    <p>Si las tres respuestas son diferentes — o si ninguna de las tres identifica a una persona o función específica con ese mandato explícito — el vacío existe. Y si el vacío existe, su costo está acumulándose silenciosamente en forma de oportunidades perdidas, iniciativas frustradas y decisiones tardías.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El gobierno que la empresa merece — y la dirección que necesita</h2>
+  <div class="closing-body">
+    <p>Un Consejo que gobierna bien es un activo extraordinario para cualquier organización. Lo que ningún Consejo puede hacer, por diseño, es dirigir estratégicamente de manera continua — porque la continuidad, el acceso operativo y la presencia ejecutiva que esa función requiere son incompatibles con la naturaleza del gobierno corporativo.</p>
+    <p>El reconocimiento de esa limitación no es una crítica al Consejo — es la comprensión correcta de lo que el Consejo es y lo que no puede ser. Y esa comprensión es el primer paso para diseñar la arquitectura organizacional que llena el vacío entre gobierno y operación con el actor correcto, en el momento correcto, con el mandato correcto.</p>
+    <p><strong>El vacío más costoso del gobierno corporativo no es el que ocurre cuando el Consejo falla en su función. Es el que ocurre cuando el Consejo cumple impecablemente su función y nadie cumple la que nadie tiene.</strong></p>
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+</body>
+</html>

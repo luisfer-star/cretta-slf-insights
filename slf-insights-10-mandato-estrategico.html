@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué significa asumir un mandato estratégico — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — minimal, typographic, cream-dark */
+.hero{background:var(--cream-dark);padding:96px 64px 84px;position:relative;overflow:hidden;border-bottom:3px solid var(--navy)}
+.hero-num{position:absolute;font-family:'Playfair Display',serif;font-size:320px;font-weight:700;color:rgba(13,27,62,.035);right:-30px;bottom:-60px;line-height:1;pointer-events:none;user-select:none}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.12;color:var(--navy);max-width:840px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--navy-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.14)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* CONTRAST — side by side deep comparison */
+.contrast-block{margin:52px 0;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule)}
+.contrast-col{padding:0}
+.contrast-col-header{padding:20px 32px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;border-bottom:1px solid var(--rule)}
+.contrast-col.proyecto .contrast-col-header{background:var(--cream-dark);color:var(--text-light);border-right:1px solid var(--rule)}
+.contrast-col.mandato .contrast-col-header{background:var(--navy);color:var(--gold)}
+.contrast-dimension{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule-light)}
+.contrast-dimension:last-child{border-bottom:none}
+.contrast-dim-label{grid-column:1/-1;padding:10px 32px 4px;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);background:rgba(196,154,60,.04);border-bottom:1px solid var(--rule-light)}
+.contrast-cell{padding:14px 32px 18px;font-family:'EB Garamond',serif;font-size:16px;line-height:1.58}
+.contrast-cell.proyecto-val{color:var(--text-light);background:var(--cream);border-right:1px solid var(--rule-light)}
+.contrast-cell.mandato-val{color:var(--text-mid);background:rgba(13,27,62,.03)}
+.contrast-cell.mandato-val strong{color:var(--navy);font-weight:600}
+
+/* ANATOMY — what a mandate contains */
+.anatomy-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.anatomy-card{background:var(--cream);padding:30px 28px;transition:background .2s}
+.anatomy-card:hover{background:var(--cream-dark)}
+.anatomy-card-full{grid-column:1/-1;background:var(--navy);padding:30px 32px}
+.anatomy-num{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.anatomy-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.28}
+.anatomy-card-full .anatomy-title{color:var(--cream)}
+.anatomy-card-full .anatomy-num{color:var(--gold-light)}
+.anatomy-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.62;color:var(--text-mid)}
+.anatomy-card-full .anatomy-body{color:rgba(244,241,236,.68)}
+
+/* CONDITIONS — what makes a mandate work */
+.conditions-list{margin:48px 0}
+.condition-item{display:grid;grid-template-columns:64px 1fr;padding:28px 0;border-bottom:1px solid var(--rule-light)}
+.condition-item:first-child{border-top:1px solid var(--rule-light)}
+.condition-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:rgba(196,154,60,.2);line-height:1;padding-top:4px}
+.condition-heading{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.condition-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.68;color:var(--text-mid)}
+.condition-body strong{color:var(--navy);font-weight:600}
+
+/* LIFECYCLE — mandate phases */
+.lifecycle{margin:52px 0}
+.lifecycle-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.lifecycle-phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.lifecycle-phase{position:relative}
+.lifecycle-phase:not(:last-child)::after{content:'→';position:absolute;right:-12px;top:28px;font-size:18px;color:var(--gold);z-index:2;font-weight:700}
+.lifecycle-phase-inner{padding:24px 20px;border:1px solid var(--rule-light);margin-right:1px;background:var(--cream);min-height:160px}
+.lifecycle-phase-num{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lifecycle-phase-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.25}
+.lifecycle-phase-body{font-family:'EB Garamond',serif;font-size:14px;line-height:1.55;color:var(--text-light)}
+.lifecycle-phase.active .lifecycle-phase-inner{background:var(--navy);border-color:var(--gold)}
+.lifecycle-phase.active .lifecycle-phase-title{color:var(--cream)}
+.lifecycle-phase.active .lifecycle-phase-body{color:rgba(244,241,236,.6)}
+.lifecycle-phase.active .lifecycle-phase-num{color:var(--gold)}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.contrast-block,.anatomy-grid,.lifecycle-phases{grid-template-columns:1fr}.contrast-col.proyecto .contrast-col-header{border-right:none}.anatomy-card-full{grid-column:auto}.lifecycle-phase::after{display:none}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+
+<section class="hero">
+  <div class="hero-num" aria-hidden="true">10</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Mandato Estratégico</div>
+      <h1 class="hero-headline">
+        Qué significa asumir un mandato estratégico —<br>
+        <em>y por qué no es lo mismo<br>que un proyecto de consultoría</em>
+      </h1>
+      <p class="hero-deck">
+        Un proyecto de consultoría produce un entregable. Un mandato estratégico produce un resultado. La diferencia no es semántica ni de precio — es una diferencia de naturaleza que determina qué puede resolver cada uno y qué no puede.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Modelo SLF · Mandato</span></div>
+        <div class="hero-meta-item">Lectura <span>~11 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">El vocabulario del asesoramiento empresarial ha producido una confusión persistente entre dos cosas que son fundamentalmente distintas: el proyecto y el mandato. Ambos implican la participación de un actor externo en los asuntos de una empresa. Ambos tienen un inicio, un alcance y una compensación. Pero ahí terminan las similitudes. Lo que cada uno puede producir, los compromisos que cada uno exige y el tipo de relación que cada uno establece son tan diferentes que intercambiarlos — usar un proyecto cuando se necesita un mandato, o viceversa — tiene consecuencias directas sobre el resultado que el cliente puede esperar obtener.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — La distinción fundamental</div>
+  <h2 class="section-title">Proyecto vs. mandato: una diferencia de naturaleza</h2>
+  <div class="body-copy">
+    <p>Un <strong>proyecto de consultoría</strong> es un encargo con alcance definido, entregable específico y responsabilidad limitada al proceso de análisis y recomendación. El consultor estudia el problema, produce una síntesis, entrega un documento o una presentación, y su responsabilidad profesional termina ahí. Lo que el cliente hace con el entregable — si lo implementa, cómo lo implementa, qué resultados produce — queda fuera del ámbito de responsabilidad del proyecto.</p>
+    <p>Un <strong>mandato estratégico</strong> es algo cualitativamente diferente. Es un encargo de liderazgo con responsabilidad sobre el resultado — no sobre el proceso de análisis ni sobre la calidad del entregable, sino sobre lo que ocurre en el mundo real como consecuencia de la intervención. El actor que asume un mandato no entrega un análisis para que el cliente lo ejecute: ejecuta junto al cliente, con el mandato explícito de producir el resultado acordado.</p>
+    <p>Esta distinción tiene implicaciones que van mucho más allá del vocabulario. Define la postura del actor externo en el proceso, la estructura de su compensación, el alcance de su acceso a información y a los actores relevantes, y el tipo de accountability que es razonable exigirle. Un consultor que opera bajo un modelo de proyecto no puede rendir cuentas de los resultados — porque su responsabilidad termina en el entregable. Un actor que opera bajo un mandato debe hacerlo — porque su compromiso es con el resultado.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>La pregunta que distingue un proyecto de un mandato es simple: ¿quién responde si los resultados no llegan? En un proyecto, la respuesta es "el cliente, que debería haber implementado mejor la recomendación". En un mandato, la respuesta involucra al actor externo — porque su compromiso fue con el resultado, no con la recomendación.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+
+  <!-- CONTRAST TABLE -->
+  <div class="contrast-block">
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Orientación central</div>
+      <div class="contrast-cell proyecto-val">Producir un entregable de calidad dentro del alcance y tiempo definidos</div>
+      <div class="contrast-cell mandato-val"><strong>Producir el resultado acordado</strong> — independientemente de los ajustes que requiera el camino</div>
+    </div>
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Posición del actor externo</div>
+      <div class="contrast-cell proyecto-val">Observador informado que analiza y recomienda desde fuera del proceso de decisión</div>
+      <div class="contrast-cell mandato-val"><strong>Actor con mandato ejecutivo</strong> que participa en el proceso de decisión y responde por el conjunto</div>
+    </div>
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Accountability</div>
+      <div class="contrast-cell proyecto-val">Sobre la calidad técnica del análisis y la robustez de las recomendaciones</div>
+      <div class="contrast-cell mandato-val"><strong>Sobre los resultados del proceso</strong> — no solo sobre la calidad de las recomendaciones</div>
+    </div>
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Estructura de compensación</div>
+      <div class="contrast-cell proyecto-val">Fija o por tiempo invertido — independiente del resultado que produce el cliente</div>
+      <div class="contrast-cell mandato-val"><strong>Variable alineada con el resultado</strong> — el actor tiene piel en el juego</div>
+    </div>
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Relación con el tiempo</div>
+      <div class="contrast-cell proyecto-val">Acotada al proyecto; termina con la entrega del informe o la presentación final</div>
+      <div class="contrast-cell mandato-val"><strong>Continúa mientras el mandato esté activo</strong> — incluye la fase de implementación y ajuste</div>
+    </div>
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Manejo de lo imprevisto</div>
+      <div class="contrast-cell proyecto-val">Lo imprevisto que excede el alcance original justifica una extensión o un nuevo proyecto</div>
+      <div class="contrast-cell mandato-val"><strong>Lo imprevisto se gestiona dentro del mandato</strong> — el resultado no se renegocia por la complejidad del camino</div>
+    </div>
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Acceso a información</div>
+      <div class="contrast-cell proyecto-val">Limitado al alcance del proyecto; el cliente filtra qué comparte con el consultor</div>
+      <div class="contrast-cell mandato-val"><strong>Pleno y continuo</strong> — el actor con mandato necesita el mismo mapa que la dirección superior</div>
+    </div>
+    <div class="contrast-dimension">
+      <div class="contrast-dim-label">Valentía estratégica</div>
+      <div class="contrast-cell proyecto-val">Limitada por el riesgo reputacional de contradecir la hipótesis inicial del cliente</div>
+      <div class="contrast-cell mandato-val"><strong>Estructuralmente obligada</strong> — decir lo que el cliente necesita escuchar es parte del mandato</div>
+    </div>
+  </div>
+</section>
+
+<!-- II -->
+<section class="section">
+  <div class="section-label">II — La anatomía del mandato</div>
+  <h2 class="section-title">Qué contiene un mandato estratégico — sus elementos constitutivos</h2>
+  <div class="body-copy">
+    <p>Un mandato estratégico no es simplemente un proyecto con más alcance o más duración. Tiene elementos constitutivos específicos que lo definen como categoría distinta — y cuya ausencia convierte lo que parece un mandato en un proyecto con nombre diferente.</p>
+  </div>
+
+  <div class="anatomy-grid">
+    <div class="anatomy-card">
+      <div class="anatomy-num">Elemento 01</div>
+      <div class="anatomy-title">El encargo de resultado</div>
+      <div class="anatomy-body">El mandato comienza con un encargo de resultado — no de proceso. "Cierre la transacción en las mejores condiciones posibles para el vendedor" es un mandato. "Analice las opciones de venta y recomiende la estructura más adecuada" es un proyecto. La diferencia en el enunciado revela una diferencia en la naturaleza del compromiso.</div>
+    </div>
+    <div class="anatomy-card">
+      <div class="anatomy-num">Elemento 02</div>
+      <div class="anatomy-title">La autoridad ejecutiva delegada</div>
+      <div class="anatomy-body">El actor con mandato tiene autoridad delegada para actuar en nombre del cliente en el ámbito del mandato — representar, negociar, coordinar, decidir dentro de parámetros acordados. Sin esa delegación, lo que existe es una relación de asesoramiento que no puede producir resultados con la velocidad ni la contundencia que el mandato exige.</div>
+    </div>
+    <div class="anatomy-card">
+      <div class="anatomy-num">Elemento 03</div>
+      <div class="anatomy-title">El acceso completo a información</div>
+      <div class="anatomy-body">El actor con mandato necesita el mismo nivel de información que la dirección superior para tomar decisiones ejecutivas de calidad. El mandato que opera con información filtrada o parcial produce resultados que reflejan esa limitación — no porque el actor sea insuficiente, sino porque ningún actor puede tomar buenas decisiones con información incompleta.</div>
+    </div>
+    <div class="anatomy-card">
+      <div class="anatomy-num">Elemento 04</div>
+      <div class="anatomy-title">La alineación de incentivos</div>
+      <div class="anatomy-body">La compensación del actor con mandato debe estar estructuralmente vinculada al resultado — al menos en una proporción significativa. Esta alineación no es un requisito comercial sino un requisito de integridad del mandato: garantiza que los consejos del actor reflejen lo que genuinamente cree que maximiza el resultado, no lo que maximiza su facturación o protege su relación con el cliente.</div>
+    </div>
+    <div class="anatomy-card">
+      <div class="anatomy-num">Elemento 05</div>
+      <div class="anatomy-title">La continuidad a través de la complejidad</div>
+      <div class="anatomy-body">Un mandato estratégico no termina cuando el camino se complica — termina cuando el resultado está producido o cuando las circunstancias hacen el resultado inalcanzable por razones fuera del control del actor. La continuidad a través de los momentos difíciles, cuando sería más cómodo redefinir el alcance o declarar que "la recomendación era correcta pero la ejecución falló", es lo que distingue al actor con mandato del asesor con proyecto.</div>
+    </div>
+    <div class="anatomy-card-full">
+      <div class="anatomy-num">El elemento integrador</div>
+      <div class="anatomy-title">La postura de liderazgo — no de asesoramiento</div>
+      <div class="anatomy-body">Todos los elementos anteriores confluyen en una postura que es cualitativamente diferente a la del asesor: el actor con mandato lidera. No recomienda al cliente cómo liderar — lidera él mismo, con el cliente, en el ámbito del mandato. Esa postura requiere un tipo de coraje que el modelo de proyecto no exige y que el modelo de mandato hace estructuralmente inevitable: tomar posiciones claras, sostenerlas bajo presión, decir lo inconveniente cuando es necesario y asumir la responsabilidad de las consecuencias.</div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III -->
+<section class="section">
+  <div class="section-label">III — El ciclo de vida</div>
+  <h2 class="section-title">Las fases de un mandato estratégico bien ejecutado</h2>
+  <div class="body-copy">
+    <p>Un mandato estratégico tiene un ciclo de vida propio — diferente al de un proyecto — con fases que tienen propósitos distintos y que deben ejecutarse en secuencia para producir el resultado esperado.</p>
+  </div>
+
+  <div class="lifecycle">
+    <div class="lifecycle-title">El ciclo de vida del mandato estratégico</div>
+    <div class="lifecycle-phases">
+      <div class="lifecycle-phase">
+        <div class="lifecycle-phase-inner">
+          <div class="lifecycle-phase-num">Fase I</div>
+          <div class="lifecycle-phase-title">Arquitectura del mandato</div>
+          <div class="lifecycle-phase-body">Definición del resultado esperado, los actores, los recursos, el gobierno del proceso y los parámetros de decisión delegados. Sin esta fase, el mandato opera sin mapa.</div>
+        </div>
+      </div>
+      <div class="lifecycle-phase active">
+        <div class="lifecycle-phase-inner">
+          <div class="lifecycle-phase-num">Fase II — Núcleo</div>
+          <div class="lifecycle-phase-title">Liderazgo ejecutivo del proceso</div>
+          <div class="lifecycle-phase-body">El actor con mandato dirige activamente el proceso hacia el resultado: gestiona actores, mantiene la coherencia estratégica, toma decisiones dentro del ámbito delegado y ajusta el rumbo ante lo imprevisto.</div>
+        </div>
+      </div>
+      <div class="lifecycle-phase">
+        <div class="lifecycle-phase-inner">
+          <div class="lifecycle-phase-num">Fase III</div>
+          <div class="lifecycle-phase-title">Cierre y transferencia</div>
+          <div class="lifecycle-phase-body">Producción del resultado acordado, documentación del proceso, transferencia del conocimiento acumulado y verificación de que el resultado está consolidado — no solo anunciado.</div>
+        </div>
+      </div>
+      <div class="lifecycle-phase">
+        <div class="lifecycle-phase-inner">
+          <div class="lifecycle-phase-num">Fase IV</div>
+          <div class="lifecycle-phase-title">Accountability post-cierre</div>
+          <div class="lifecycle-phase-body">Verificación de que los acuerdos alcanzados se implementan correctamente. En mandatos de alta complejidad, la responsabilidad no termina en el cierre formal — termina cuando el resultado es irreversible.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-copy" style="margin-top:28px">
+    <p>La diferencia entre el ciclo de vida del mandato y el del proyecto es más pronunciada en las fases II y IV. En el proyecto, la fase equivalente a la II es la de análisis y producción del entregable — sin acción ejecutiva directa. La fase IV simplemente no existe: el proyecto termina con la entrega. En el mandato, ambas fases son donde el valor real se produce o se destruye.</p>
+  </div>
+</section>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — Las condiciones del mandato</div>
+  <h2 class="section-title">Qué debe ser verdad para que un mandato funcione</h2>
+  <div class="body-copy">
+    <p>El mandato estratégico es una construcción relacional de alta exigencia. Sus condiciones de funcionamiento no son las mismas que las de un proyecto — y cuando esas condiciones no están presentes, el mandato produce frustración en lugar de resultados. Hay cinco condiciones que deben estar presentes en ambos lados de la relación.</p>
+  </div>
+
+  <div class="conditions-list">
+    <div class="condition-item">
+      <div class="condition-num">01</div>
+      <div class="condition-content">
+        <div class="condition-heading">Confianza bilateral profunda — antes de que el mandato comience</div>
+        <div class="condition-body">El mandato requiere que el cliente confíe en el actor con un nivel que va mucho más allá del que se exige en un proyecto de consultoría. Confiar en su criterio cuando el criterio incomoda. Darle acceso a información que el cliente no compartiría con un asesor convencional. Sostener la relación cuando el proceso genera tensión. <strong>Esta confianza no se construye durante el mandato — debe existir, en una forma suficiente, antes de que comience.</strong> Un mandato que empieza sin la confianza correcta termina degradándose hacia un proyecto con honorarios más altos.</div>
+      </div>
+    </div>
+    <div class="condition-item">
+      <div class="condition-num">02</div>
+      <div class="condition-content">
+        <div class="condition-heading">Claridad sobre el resultado — no sobre el proceso</div>
+        <div class="condition-body">El mandato bien estructurado define con precisión qué resultado se espera producir — y deja al actor con mandato la libertad de diseñar el proceso para llegar ahí. Un mandato que define el proceso en lugar del resultado no es un mandato — es un proyecto con lenguaje diferente. <strong>La libertad de proceso es la condición que permite al actor con mandato adaptar el camino cuando la realidad lo exige, sin tener que renegociar el alcance a cada paso.</strong></div>
+      </div>
+    </div>
+    <div class="condition-item">
+      <div class="condition-num">03</div>
+      <div class="condition-content">
+        <div class="condition-heading">Acceso real a los actores relevantes</div>
+        <div class="condition-body">El actor con mandato no puede producir resultados que dependen de actores a los que no tiene acceso. En transacciones, esto significa acceso directo a las contrapartes. En procesos de gobierno, acceso real al Consejo. En expansiones, acceso a los tomadores de decisión del nuevo mercado. <strong>El cliente que da mandato sin dar acceso está pidiendo resultados sin proveer las condiciones que los hacen posibles — y esa contradicción siempre cobra un costo.</strong></div>
+      </div>
+    </div>
+    <div class="condition-item">
+      <div class="condition-num">04</div>
+      <div class="condition-content">
+        <div class="condition-heading">Tolerancia al proceso — incluyendo sus momentos incómodos</div>
+        <div class="condition-body">Los mandatos estratégicos de alta complejidad pasan por momentos difíciles: negociaciones que se tensan, decisiones que generan incertidumbre, periodos donde el resultado aún no es visible y la presión para cambiar el rumbo es alta. <strong>El cliente que exige certeza prematura o que reacciona a la incertidumbre cambiando el mandato a mitad del proceso destruye las condiciones que hacen posible el resultado.</strong> La tolerancia al proceso es tan crítica como la calidad del actor que lo lidera.</div>
+      </div>
+    </div>
+    <div class="condition-item">
+      <div class="condition-num">05</div>
+      <div class="condition-content">
+        <div class="condition-heading">Alineación de incentivos estructurada desde el inicio</div>
+        <div class="condition-body">La alineación de incentivos debe estar en el acuerdo desde el principio — no como un elemento secundario que se negocia a conveniencia del cliente, sino como el mecanismo central que garantiza que el actor con mandato tiene exactamente los mismos intereses que el cliente. <strong>Un mandato con compensación completamente fija se degrada hacia un proyecto: sin piel en el juego, los incentivos del actor y los del cliente divergen en el primer momento de dificultad.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- V -->
+<section class="section">
+  <div class="section-label">V — Cuándo se necesita un mandato</div>
+  <h2 class="section-title">Las situaciones que requieren mandato — y las que no</h2>
+  <div class="body-copy">
+    <p>No toda situación requiere un mandato. Muchas se resuelven perfectamente con un buen proyecto de consultoría, un due diligence bien ejecutado o un análisis estratégico de calidad. El mandato es el instrumento correcto en situaciones específicas que comparten un conjunto de características.</p>
+    <p>Son situaciones donde <strong>el resultado no puede predefinirse completamente</strong> porque depende de la negociación con actores externos, de la evolución de circunstancias fuera del control del cliente, o de decisiones que deben tomarse en tiempo real en respuesta a lo que el proceso va revelando. En estas situaciones, el proyecto — que necesita un entregable predefinible — produce un análisis excelente de una situación que ya cambió para cuando se entrega.</p>
+    <p>Son situaciones donde <strong>la velocidad es un factor de valor</strong>: donde cada semana de demora en cerrar una transacción, en resolver un conflicto de gobierno o en completar una reestructuración tiene un costo medible. En estas situaciones, el ciclo análisis-recomendación-deliberación-implementación del proyecto es demasiado lento para la naturaleza del problema.</p>
+    <p>Son situaciones donde <strong>la resistencia interna es parte del problema</strong>: donde el desafío no es saber qué hacer sino tener la posición, la legitimidad y la fuerza para hacerlo frente a actores que se resisten. En estas situaciones, el asesor externo que produce una recomendación brillante que el cliente no puede implementar por la resistencia que encuentra ha producido valor intelectual sin valor práctico.</p>
+    <p>Y son situaciones donde <strong>el costo del error es asimétrico</strong>: donde equivocarse tiene consecuencias que son difíciles o imposibles de revertir. En estas situaciones, el nivel de compromiso del actor externo con el resultado — su piel en el juego — es el mecanismo que mejor garantiza que sus consejos son honestos, valientes y orientados al mejor interés del cliente.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">El mandato en la práctica de Cretta SLF</div>
+    <p>Todos los compromisos que Cretta asume son mandatos — no proyectos. Esto no es una distinción de marketing: es la expresión de cómo Cretta está estructurada y de los compromisos que está dispuesta a asumir con sus clientes.</p>
+    <p>En términos concretos, significa que la compensación de Cretta en cada mandato tiene un componente variable atado al resultado. Que Cretta actúa con autoridad ejecutiva delegada — no produce análisis para que el cliente actúe. Que Cretta tiene acceso completo a la información y a los actores relevantes. Y que el mandato continúa hasta que el resultado está producido — no hasta que se entregó el último documento.</p>
+    <p><strong>Esta estructura no es cómoda para todos los clientes — y Cretta no pretende que lo sea.</strong> Requiere el nivel de confianza, de acceso y de tolerancia al proceso que describimos en la sección anterior. Pero para los clientes que pueden proveer esas condiciones, produce resultados que ningún modelo de proyecto puede igualar — porque alinea completamente los intereses de ambas partes hacia el único lugar donde el valor verdadero se produce: el resultado.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El compromiso que cambia la naturaleza de la relación</h2>
+  <div class="closing-body">
+    <p>La distinción entre proyecto y mandato no es teórica. Se manifiesta de manera concreta en cada conversación difícil que un asesor decide no tener para proteger la relación con el cliente, en cada recomendación que se suaviza para no comprometer la siguiente fase de facturación, en cada momento de incertidumbre donde el consultor se refugia en la calidad de su análisis en lugar de asumir la responsabilidad del resultado.</p>
+    <p>El actor con mandato no tiene esos refugios. Su compromiso es con el resultado — y esa limitación lo obliga a una honestidad radical, a una valentía estratégica y a una continuidad a través de la dificultad que el modelo de proyecto, estructuralmente, no puede exigir ni proveer.</p>
+    <p><strong>Elegir entre un proyecto y un mandato no es elegir entre dos proveedores de servicios similares. Es elegir entre dos tipos de relación con compromisos y posibilidades radicalmente distintas.</strong> Entender esa diferencia es el primer paso para asegurarse de que el instrumento que se contrata es el correcto para el resultado que se necesita producir.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+
+</body>
+</html>

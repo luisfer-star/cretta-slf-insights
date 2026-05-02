@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Strategic Leadership Layer™ — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO */
+.hero{background:var(--navy);padding:96px 64px 84px;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
+.hero-lines{position:absolute;inset:0;pointer-events:none}
+.hero-lines::before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:rgba(196,154,60,.05)}
+.hero-lines::after{content:'';position:absolute;top:50%;left:0;width:100%;height:1px;background:rgba(196,154,60,.05)}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;color:var(--cream);max-width:800px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-headline .tm{font-size:.55em;vertical-align:super;color:var(--gold);font-weight:400;font-style:normal}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.68);max-width:660px;line-height:1.62;margin-bottom:50px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.22)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.45)}
+.hero-meta-item span{color:var(--gold-light)}
+
+/* LEAD */
+.lead-block{padding:64px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* STACK DIAGRAM */
+.stack-diagram{margin:52px 0;max-width:660px}
+.stack-diagram-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.stack-layer{display:flex;align-items:stretch;margin-bottom:3px;position:relative}
+.stack-side{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);color:var(--text-light);padding:0 10px;display:flex;align-items:center;min-width:38px}
+.stack-block{flex:1;padding:20px 28px;display:flex;flex-direction:column;justify-content:center}
+.stack-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.stack-desc{font-family:'EB Garamond',serif;font-size:15px;line-height:1.5}
+.layer-gov .stack-block{background:var(--navy)}
+.layer-gov .stack-title{color:var(--gold)}
+.layer-gov .stack-desc{color:rgba(244,241,236,.6)}
+.layer-sll .stack-block{background:linear-gradient(90deg,#1E3560 0%,#1F4080 100%);border:1px solid var(--gold)}
+.layer-sll .stack-title{color:var(--gold-light);font-size:16px}
+.layer-sll .stack-desc{color:rgba(244,241,236,.82)}
+.layer-sll .stack-side{color:var(--gold);font-weight:600}
+.layer-sll-badge{position:absolute;right:-130px;top:50%;transform:translateY(-50%);font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.2em;color:var(--gold);white-space:nowrap}
+.layer-mgmt .stack-block{background:var(--cream-dark)}
+.layer-mgmt .stack-title{color:var(--navy-mid)}
+.layer-mgmt .stack-desc{color:var(--text-light)}
+.layer-ops .stack-block{background:var(--cream);border:1px solid var(--rule-light)}
+.layer-ops .stack-title{color:var(--text-mid)}
+.layer-ops .stack-desc{color:var(--text-light)}
+.stack-caption{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);text-align:center;margin-top:16px}
+
+/* SYMPTOMS GRID */
+.symptoms-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.symptom-card{background:var(--cream);padding:28px 26px;transition:background .2s}
+.symptom-card:hover{background:var(--cream-dark)}
+.symptom-num{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.symptom-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.28}
+.symptom-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.62;color:var(--text-mid)}
+
+/* THREE FUNCTIONS */
+.functions-list{margin:48px 0}
+.function-item{display:grid;grid-template-columns:72px 1fr;padding:32px 0;border-bottom:1px solid var(--rule-light)}
+.function-item:first-child{border-top:1px solid var(--rule-light)}
+.function-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:rgba(196,154,60,.18);line-height:1;padding-top:2px}
+.function-heading{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.function-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.7;color:var(--text-mid)}
+.function-body strong{color:var(--navy);font-weight:600}
+
+/* DIAGNOSTIC BOX */
+.diagnostic-box{background:var(--navy);padding:44px 48px;margin:48px 0;border-left:4px solid var(--gold)}
+.diagnostic-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.diagnostic-question{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:var(--cream);line-height:1.55;margin-bottom:20px}
+.diagnostic-note{font-family:'EB Garamond',serif;font-size:16px;line-height:1.65;color:rgba(244,241,236,.6)}
+.diagnostic-note strong{color:var(--gold-light)}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.symptoms-grid{grid-template-columns:1fr}.layer-sll-badge{display:none}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Strategic Thinking at the Highest Level</div>
+</header>
+
+<section class="hero">
+  <div class="hero-lines" aria-hidden="true"></div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Organizational Architecture</div>
+      <h1 class="hero-headline">
+        The Strategic Leadership Layer<span class="tm">™</span>:<br>
+        <em>The Organizational Tier<br>No One Had Named Until Now</em>
+      </h1>
+      <p class="hero-deck">
+        Every company has a Board and a management team. Few have what sits between them. That absence is not an organizational design detail — it is the root cause of most strategic failures in growing mid-market companies.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">By <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Category <span>Organizational Architecture</span></div>
+        <div class="hero-meta-item">Read <span>~11 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">There is a space in the architecture of almost every mid-market company that has never been named with precision. It sits between the Board of Directors — which supervises, guides, and approves — and the CEO and management team — which operate, execute, and administer. That space is not an accidental void. It is a structural void. And its absence has measurable, costly, and in many cases decisive consequences for the strategic development of the organization.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — The Diagnosis</div>
+  <h2 class="section-title">The incomplete organizational stack</h2>
+  <div class="body-copy">
+    <p>The conventional theory of corporate governance describes three major tiers in the architecture of a well-structured company: the governance tier (the Board), the management tier (the CEO and executive team), and the operational tier (functions, teams, processes). This model is correct in what it describes — but incomplete in what it omits.</p>
+    <p>What it omits is the function that converts the Board's strategic orientation into something the management team can actually execute. The function that translates vision into structure — that designs the alignment mechanisms between governance and operations, that maintains the strategic coherence of the whole when the company grows, diversifies, or faces a critical transition. That function does not exist in standard corporate governance textbooks. It has no universally recognized name. And in practice, in the vast majority of mid-market and growth-stage companies, it simply does not exist.</p>
+    <p>The consequence is an incomplete organizational stack: three tiers where there should be four. And when the fourth tier is missing, the other three attempt to compensate — with systematically poor results.</p>
+  </div>
+
+  <!-- STACK DIAGRAM -->
+  <div class="stack-diagram" style="position:relative">
+    <div class="stack-diagram-title">The complete organizational stack — where the SLL™ belongs</div>
+    <div class="stack-layer layer-gov">
+      <div class="stack-side">Governance</div>
+      <div class="stack-block">
+        <div class="stack-title">Board of Directors</div>
+        <div class="stack-desc">Oversight, strategic orientation, major decision approval, shareholder protection</div>
+      </div>
+    </div>
+    <div class="stack-layer layer-sll" style="position:relative">
+      <div class="stack-side">SLL™</div>
+      <div class="stack-block">
+        <div class="stack-title">Strategic Leadership Layer™</div>
+        <div class="stack-desc">Strategic architecture, governance-to-execution integration, critical mandate leadership, coherence of the whole</div>
+      </div>
+      <div class="layer-sll-badge">← THE MISSING TIER</div>
+    </div>
+    <div class="stack-layer layer-mgmt">
+      <div class="stack-side">Direction</div>
+      <div class="stack-block">
+        <div class="stack-title">CEO & Executive Team</div>
+        <div class="stack-desc">Operational execution, resource management, team leadership, business administration</div>
+      </div>
+    </div>
+    <div class="stack-layer layer-ops">
+      <div class="stack-side">Operations</div>
+      <div class="stack-block">
+        <div class="stack-title">Functions, Teams & Processes</div>
+        <div class="stack-desc">Sales, operations, finance, HR, logistics — the daily execution of the business</div>
+      </div>
+    </div>
+    <div class="stack-caption">The SLL™ is the strategic integration tier — not a role, a function</div>
+  </div>
+</section>
+
+<!-- II -->
+<section class="section">
+  <div class="section-label">II — Definition</div>
+  <h2 class="section-title">What the <em>Strategic Leadership Layer™</em> actually is</h2>
+  <div class="body-copy">
+    <p>The Strategic Leadership Layer™ is the organizational tier — internal or external — responsible for three functions that no other tier can perform without compromising its own primary function: <strong>strategic architecture</strong>, <strong>executive integration</strong>, and <strong>leadership of critical mandates</strong>.</p>
+    <p><strong>Strategic architecture</strong> is the capacity to design the company's structure — its decision-making processes, governance mechanisms, growth model, financial architecture — so that the whole is coherent, scalable, and oriented toward long-term objectives. This is not strategic planning in the traditional sense — an annual exercise that produces a document. It is the continuous design of the system's architecture.</p>
+    <p><strong>Executive integration</strong> is the function that keeps the Board, the management team, and the external specialists (legal, financial, technical) — who typically work in independent silos — aligned with one another. Without an integration actor in the SLL™, each specialist optimizes their own function without considering its impact on the others. The result is a collection of sound local decisions that produce suboptimal results at the system level.</p>
+    <p><strong>Leadership of critical mandates</strong> is the capacity to assume executive direction of situations that exceed the CEO's operational bandwidth without compromising their primary role. M&A transactions, restructurings, international expansions, private capital raises, succession processes — these mandates demand a quality of leadership that the CEO cannot provide alone while simultaneously running the business.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>The CEO who attempts to simultaneously lead the daily operation and the strategic transformation of the company ends up doing both poorly. Not for lack of capability — for lack of a tier that holds the strategic weight he cannot carry alone.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III -->
+<section class="section">
+  <div class="section-label">III — The Cost of the Gap</div>
+  <h2 class="section-title">What happens when the <em>Strategic Leadership Layer™</em> is absent</h2>
+  <div class="body-copy">
+    <p>The absence of the SLL™ does not produce silent emptiness. It produces a set of symptoms that most organizations misattribute — interpreting them as execution problems, talent shortfalls, or market headwinds, when they are in fact the direct consequences of a structural gap in the organizational architecture.</p>
+  </div>
+
+  <div class="symptoms-grid">
+    <div class="symptom-card">
+      <div class="symptom-num">Symptom 01</div>
+      <div class="symptom-title">The CEO operates rather than leads</div>
+      <div class="symptom-body">The CEO spends most of their time resolving urgent operational problems. The strategic agenda — the one that defines the company's future — gets addressed in the margins of time, when energy remains. It rarely does.</div>
+    </div>
+    <div class="symptom-card">
+      <div class="symptom-num">Symptom 02</div>
+      <div class="symptom-title">The Board supervises instead of governing</div>
+      <div class="symptom-body">Without a tier that translates strategy into an executable architecture, the Board ends up reviewing operational reports rather than making strategic decisions. It becomes a validation body — not a genuine governance organ.</div>
+    </div>
+    <div class="symptom-card">
+      <div class="symptom-num">Symptom 03</div>
+      <div class="symptom-title">Specialists work in silos</div>
+      <div class="symptom-body">The attorney, the accountant, the financial advisor, and the HR consultant each produce excellent recommendations within their lane — recommendations that contradict or ignore one another. No one integrates the whole toward a coherent result.</div>
+    </div>
+    <div class="symptom-card">
+      <div class="symptom-num">Symptom 04</div>
+      <div class="symptom-title">Strategic initiatives die in implementation</div>
+      <div class="symptom-body">The company produces strategic plans that are not implemented, or are partially implemented, or are implemented too late. Not because the planning is poor — but because no one has the mandate and capacity to sustain strategic implementation over time.</div>
+    </div>
+    <div class="symptom-card">
+      <div class="symptom-num">Symptom 05</div>
+      <div class="symptom-title">Critical mandates are managed below their potential</div>
+      <div class="symptom-body">When an M&A transaction arrives, a capital raise, or a major restructuring, the company lacks the installed capacity to manage that mandate without compromising the operation. It reacts rather than leads.</div>
+    </div>
+    <div class="symptom-card">
+      <div class="symptom-num">Symptom 06</div>
+      <div class="symptom-title">Growth fragments instead of strengthening</div>
+      <div class="symptom-body">When the company grows — new markets, new lines, new geographies — the organizational architecture does not scale with it. What worked at one level breaks at the next. No one is designing the architecture that sustains the next stage.</div>
+    </div>
+  </div>
+
+  <div class="body-copy">
+    <p>These six symptoms appear consistently across mid-market companies — and in many large ones that have not resolved this structural gap. What makes them dangerous is not their intensity at any given moment — it is their silent accumulation. Each one, in isolation, looks like a solvable management problem. Together, they are the portrait of an organization whose architecture cannot support the complexity it faces.</p>
+  </div>
+</section>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — The Three Functions</div>
+  <h2 class="section-title">What the SLL™ does that no other tier can do from its position</h2>
+  <div class="body-copy">
+    <p>Understanding what the SLL™ does — specifically — requires understanding what makes its three core functions impossible to fulfill from any other tier in the organizational stack.</p>
+  </div>
+
+  <div class="functions-list">
+    <div class="function-item">
+      <div class="function-num">01</div>
+      <div class="function-content">
+        <div class="function-heading">Strategic Architecture — Continuous Design of the System</div>
+        <div class="function-body">The Board cannot do this: it operates in periodic sessions on information prepared by management, and its institutional distance from daily operations — which is precisely the source of its governance value — prevents it from engaging continuously with the architecture of the system. The CEO cannot do this: the daily pressure of running the business consumes the bandwidth that strategic system design requires. The consultancy cannot do this: it produces deliverables on demand, not continuous architectural presence. <strong>Only an entity with a permanent mandate, real institutional access, and aligned incentives can maintain strategic architecture as a live function — not a periodic exercise.</strong></div>
+      </div>
+    </div>
+    <div class="function-item">
+      <div class="function-num">02</div>
+      <div class="function-content">
+        <div class="function-heading">Executive Integration — Coherence Across the Whole</div>
+        <div class="function-body">In any organization of meaningful complexity, there are multiple actors producing specialized work simultaneously: attorneys structuring agreements, financial advisors modeling options, strategy consultants analyzing markets, HR advisors redesigning structures. Each is excellent in their lane. Each produces recommendations that are locally sound and globally incoherent unless someone holds the map of the whole. <strong>The SLL™ is the entity that holds that map — and uses it to produce coherence across disciplines, across time horizons, and across the divergent interests of the different actors involved.</strong></div>
+      </div>
+    </div>
+    <div class="function-item">
+      <div class="function-num">03</div>
+      <div class="function-content">
+        <div class="function-heading">Critical Mandate Leadership — Executive Presence When It Matters Most</div>
+        <div class="function-body">The most consequential moments in a company's life — transactions, restructurings, capital raises, geographic expansions, succession transitions — require a quality of executive leadership that the CEO cannot provide without abandoning the operational function, and that a Board member cannot provide without abandoning the governance function. <strong>The SLL™ is designed for exactly this: to step into those mandates with the full executive authority, the depth of institutional knowledge, and the alignment of interests that the situation demands — without compromising any other tier of the organization.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- V -->
+<section class="section">
+  <div class="section-label">V — Why It Had No Name</div>
+  <h2 class="section-title">The structural reasons the market took so long to recognize this tier</h2>
+  <div class="body-copy">
+    <p>The fact that the Strategic Leadership Layer™ is a category without an established name is not an accident. There are structural reasons why the market has been slow to name and resolve this gap.</p>
+    <p>The first is that <strong>the gap does not produce acute pain</strong>. Its consequences are gradual and diffuse: the company loses strategic velocity, not overnight. Critical mandates are managed with difficulty, not necessarily with disaster. Strategic initiatives dilute rather than fail outright. This kind of slow deterioration does not generate the urgency that drives action. Without urgency, there is no disposition to invest in a function whose value is difficult to measure directly.</p>
+    <p>The second is that <strong>the existing solutions appear sufficient</strong>. Companies have consultancies for strategic projects, attorneys for legal matters, bankers for transactions. The illusion of coverage — that the collection of specialized advisors resolves the strategic integration problem — is powerful and widely shared. It only breaks when a critical situation demonstrates, painfully, that none of those actors has either the mandate or the capacity to integrate the work of the others.</p>
+    <p>The third is that <strong>there was no conceptual category for naming it</strong>. Without a name, there is no conversation. Without a conversation, there is no market. And without a market, there are no providers who systematically develop the capability. The Strategic Leadership Layer™ as a named and defined concept is a deliberate contribution that Cretta makes to the ecosystem — not only as a positioning tool, but as a conceptual framework that allows companies to diagnose with precision a gap they could previously only sense without articulating.</p>
+  </div>
+
+  <div class="diagnostic-box">
+    <div class="diagnostic-box-title">The Diagnostic Question</div>
+    <div class="diagnostic-question">Who in this organization is responsible — with real mandate, dedicated time, and clear metrics — for maintaining the strategic coherence of the whole?</div>
+    <div class="diagnostic-note">If the answer is <strong>"the CEO"</strong>, the gap exists: the CEO has a full-time job running the business and cannot simultaneously architect the system. If the answer is <strong>"the Board"</strong>, the gap exists: the Board has a governance role, not an executive architecture role. If the answer is <strong>"the consultancy we hired for the strategic plan"</strong>, the gap exists: a consultancy produces deliverables, not continuous presence. If the honest answer is <strong>no one</strong> — which is the most frequent answer when the question is asked with sufficient honesty — the gap not only exists; it has probably been producing its consequences for some time without the organization identifying the root cause.</div>
+  </div>
+</section>
+
+<!-- VI -->
+<section class="section">
+  <div class="section-label">VI — The Cretta Implementation</div>
+  <h2 class="section-title">How Cretta activates the Strategic Leadership Layer™</h2>
+  <div class="body-copy">
+    <p>Cretta's model of Continuous Strategic Direction is the practical implementation of the SLL™ for companies that have reached the complexity threshold where the structural gap can no longer be ignored. It is not a periodic advisory service — it is a continuous executive presence that occupies the missing tier with the mandate, leadership, and incentive alignment that the function requires.</p>
+    <p>This presence has invariable elements regardless of context. First, an <strong>explicit mandate</strong>: Cretta does not operate in recommendation mode — it operates with delegated executive authority, backed by the organization's top leadership. This means Cretta can speak on behalf of the company in critical negotiations, convene and coordinate the advisor ecosystem, and take positions in critical processes without needing to consult every step. That mandate enables the speed of response that complexity demands.</p>
+    <p>Second, <strong>incentive alignment</strong>: Cretta's compensation in the SLL™ model always includes a variable component tied to the outcomes of the critical mandates it manages. This is not a commercial gesture — it is the mechanism that ensures Cretta's interests and the client's interests are identical when it matters. When the mandate produces results, both benefit proportionally. When it does not, both bear the consequences.</p>
+    <p>Third, <strong>integration as a central function</strong>: Cretta is not one more actor in the client's advisor ecosystem — it is the actor that organizes all the others. This position requires respect for each specialist's expertise and the leadership capacity to drive coherence across the whole.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">The tier that determines whether the next stage is reachable</div>
+    <p>For mid-market companies operating in high-complexity contexts — in LATAM, in industrial sectors, in family transitions, or in capitalization processes — the SLL™ is frequently the piece that determines whether the next stage of development is achievable or not. Not because the other pieces do not function. But because without strategic integration, the other pieces cannot function together in the right way.</p>
+    <p><strong>Cretta exists to occupy that space.</strong> Not as a consultancy that recommends how to fill it, but as the entity that fills it with real executive presence, a clear mandate, and incentive alignment with the results the client needs to produce. That is the Strategic Leadership Layer™ in action. And it is what no other professional services model can provide in its place.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">The tier that defines whether a company can grow into what it should be</h2>
+  <div class="closing-body">
+    <p>The Strategic Leadership Layer™ is not a theoretical innovation. It is the name for something that has always existed in companies that have succeeded in growing without losing strategic coherence, scaling without fragmenting, and executing critical mandates without compromising their operations. What was missing was the name — and with it, the capacity to seek it, design it, and activate it deliberately.</p>
+    <p>For mid-market companies operating in contexts of high complexity, the SLL™ is frequently the piece that determines whether the next level of development is reachable. Not because the other pieces fail. But because without strategic integration, the other pieces cannot work together in the right way.</p>
+    <p><strong>Naming the gap is the first step toward closing it.</strong> Companies that lack the language to describe what they are missing cannot search for it, contract it, or build it. The Strategic Leadership Layer™ is first a concept — and then a solution.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Thinking for decisions that matter</div>
+</footer>
+
+</body>
+</html>

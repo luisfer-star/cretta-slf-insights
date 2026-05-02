@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuándo una empresa mediana ya necesita un Strategic Leadership Layer — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — navy, centered, with six-star motif */
+.hero{background:var(--navy);padding:96px 64px 84px;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
+.hero-dots{position:absolute;top:40px;right:60px;display:grid;grid-template-columns:repeat(6,1fr);gap:20px;pointer-events:none;opacity:.12}
+.hero-dot{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.12;color:var(--cream);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.65);max-width:640px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.2)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.42)}
+.hero-meta-item span{color:var(--gold-light)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* THE SIX SIGNALS — the core of this article */
+.signals-wrap{margin:48px 0}
+.signal-block{margin-bottom:4px;position:relative}
+.signal-header{display:grid;grid-template-columns:88px 1fr;align-items:stretch;cursor:default}
+.signal-counter{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 12px;position:relative}
+.signal-counter-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:rgba(196,154,60,.35);line-height:1}
+.signal-counter-word{font-family:'Barlow Condensed',sans-serif;font-size:8px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.signal-header-content{background:var(--navy);padding:24px 28px;display:flex;align-items:center;border-left:1px solid rgba(196,154,60,.15)}
+.signal-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--cream);line-height:1.25}
+.signal-body-wrap{background:rgba(13,27,62,.04);border-left:3px solid var(--gold);padding:28px 32px}
+.signal-body-wrap p{font-family:'EB Garamond',serif;font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px;max-width:none}
+.signal-body-wrap p:last-child{margin-bottom:0}
+.signal-body-wrap p strong{color:var(--navy);font-weight:600}
+.signal-diagnostic{display:flex;align-items:flex-start;gap:12px;margin-top:16px;padding:16px 18px;background:rgba(196,154,60,.07);border:1px solid rgba(196,154,60,.2)}
+.signal-diagnostic-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-top:2px;flex-shrink:0}
+.signal-diagnostic-text{font-family:'EB Garamond',serif;font-size:16px;font-style:italic;color:var(--text-mid);line-height:1.55}
+
+/* THRESHOLD SCORE — self-assessment */
+.threshold-score{margin:52px 0;padding:36px 40px;background:var(--navy);border:1px solid rgba(196,154,60,.25)}
+.threshold-score-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.score-bands{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:20px;background:rgba(196,154,60,.1)}
+.score-band{padding:18px 20px}
+.score-band-range{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1;margin-bottom:8px}
+.score-band-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+.score-band-desc{font-family:'EB Garamond',serif;font-size:14px;line-height:1.5}
+.band-watch{background:rgba(196,154,60,.08)}
+.band-watch .score-band-range{color:rgba(196,154,60,.6)}
+.band-watch .score-band-label{color:rgba(196,154,60,.7)}
+.band-watch .score-band-desc{color:rgba(244,241,236,.5)}
+.band-needed{background:rgba(196,154,60,.18)}
+.band-needed .score-band-range{color:var(--gold-light)}
+.band-needed .score-band-label{color:var(--gold)}
+.band-needed .score-band-desc{color:rgba(244,241,236,.7)}
+.band-urgent{background:rgba(196,154,60,.3)}
+.band-urgent .score-band-range{color:var(--gold)}
+.band-urgent .score-band-label{color:var(--cream)}
+.band-urgent .score-band-desc{color:rgba(244,241,236,.8)}
+.threshold-note{font-family:'EB Garamond',serif;font-size:15px;font-style:italic;color:rgba(244,241,236,.5);line-height:1.6}
+
+/* WHAT SLL DOES IN EACH SIGNAL */
+.response-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.response-card{background:var(--cream);padding:26px 22px;transition:background .2s}
+.response-card:hover{background:var(--cream-dark)}
+.response-signal{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.response-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.28}
+.response-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.58;color:var(--text-mid)}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.signal-header{grid-template-columns:64px 1fr}.score-bands,.response-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+
+<section class="hero">
+  <div class="hero-dots" aria-hidden="true">
+    <div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div>
+    <div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div>
+    <div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div>
+    <div class="hero-dot"></div><div class="hero-dot"></div><div class="hero-dot"></div>
+  </div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Strategic Leadership Layer™</div>
+      <h1 class="hero-headline">
+        Cuándo una empresa mediana<br>ya necesita un<br>
+        <em>Strategic Leadership Layer —</em><br>seis señales verificables
+      </h1>
+      <p class="hero-deck">
+        La necesidad del Strategic Leadership Layer™ no se anuncia. Se acumula. Y cuando la empresa finalmente la reconoce, generalmente ya lleva meses —o años— pagando el costo de su ausencia sin haberlo atribuido a su causa real.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Diagnóstico Organizacional</span></div>
+        <div class="hero-meta-item">Lectura <span>~12 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">El Strategic Leadership Layer™ no es un servicio que se compra cuando surge una necesidad específica y bien definida. Es la respuesta a una condición estructural — la brecha entre la complejidad que enfrenta la empresa y su capacidad estratégica instalada — que se desarrolla gradualmente y que produce síntomas dispersos que la mayoría de las organizaciones atribuye a causas equivocadas. Este artículo describe seis señales concretas, verificables y frecuentemente coexistentes que indican que esa condición ya existe. Son señales, no diagnósticos — pero su presencia, especialmente en combinación, es el argumento más directo para actuar.</p>
+</div>
+
+<!-- I — CONTEXT -->
+<section class="section">
+  <div class="section-label">I — El umbral que importa</div>
+  <h2 class="section-title">Qué significa haber alcanzado el umbral del SLL™</h2>
+  <div class="body-copy">
+    <p>Toda empresa tiene cierto nivel de capacidad estratégica instalada: la combinación de pensamiento estratégico, liderazgo ejecutivo e integración que le permite gestionar su complejidad actual. En las etapas tempranas, esa capacidad suele estar concentrada en el fundador o en un equipo fundador pequeño y altamente alineado. A medida que la empresa crece, la complejidad que debe gestionar —más actores, más mercados, más procesos, más relaciones— supera gradualmente la capacidad estratégica que tiene instalada.</p>
+    <p>El umbral del SLL™ es el punto donde esa brecha —entre complejidad real y capacidad estratégica instalada— se vuelve lo suficientemente grande como para que sus consecuencias sean medibles. No es un punto preciso que se cruza en un momento específico. Es un rango que la empresa entra gradualmente, y cuya entrada se manifiesta en un conjunto de síntomas reconocibles que las seis señales de este artículo describen.</p>
+    <p>La clave para entender este umbral es que no lo define el tamaño de la empresa — lo define la relación entre su complejidad y su capacidad. Una empresa de $15 millones de facturación que opera en tres mercados con una transacción de capital en proceso puede estar más adentro del umbral que una de $60 millones que opera en un mercado maduro con un modelo establecido. <strong>El umbral es relacional, no absoluto.</strong></p>
+  </div>
+
+  <div class="pull-quote">
+    <p>La pregunta no es si la empresa es lo suficientemente grande para necesitar un Strategic Leadership Layer. La pregunta es si su complejidad ha superado su capacidad estratégica instalada. Esa es una pregunta que tiene respuesta verificable — y las seis señales que siguen proveen esa verificación.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II — THE SIX SIGNALS -->
+<section class="section">
+  <div class="section-label">II — Las seis señales</div>
+  <h2 class="section-title">Las señales verificables — descripción, mecanismo y diagnóstico</h2>
+  <div class="body-copy">
+    <p>Cada señal incluye su descripción concreta, el mecanismo por el que indica la necesidad del SLL™ y una pregunta de diagnóstico que permite verificar su presencia en la organización. La verificación no requiere análisis sofisticado — requiere honestidad.</p>
+  </div>
+
+  <div class="signals-wrap">
+
+    <!-- SIGNAL 1 -->
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-counter">
+          <div class="signal-counter-num">1</div>
+          <div class="signal-counter-word">Señal</div>
+        </div>
+        <div class="signal-header-content">
+          <div class="signal-title">El CEO está operando consistentemente por encima de su banda de atención</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>Esta es la señal más frecuente y la que con mayor claridad indica la ausencia del SLL™. El CEO que opera por encima de su banda de atención no es un CEO que trabaja demasiado — es un CEO cuya organización le exige simultáneamente gestionar la operación cotidiana, liderar la dirección estratégica, coordinar al ecosistema asesor, preparar la información para el Consejo y gestionar los mandatos críticos en curso. Ese conjunto de funciones es estructuralmente incompatible con una sola persona.</p>
+        <p>El mecanismo es predecible: las funciones de mayor urgencia —la operación, las crisis, las demandas de los clientes— consumen el tiempo disponible. Las funciones de mayor importancia estratégica —la arquitectura del futuro, la integración del ecosistema, la preparación de mandatos críticos— se hacen en los márgenes o no se hacen. <strong>La empresa paga ese déficit de atención estratégica con velocidad de crecimiento, con calidad de decisión y con la capacidad de aprovechar oportunidades que requieren tiempo para prepararse.</strong></p>
+        <div class="signal-diagnostic">
+          <div class="signal-diagnostic-label">Diagnóstico</div>
+          <div class="signal-diagnostic-text">¿El CEO puede identificar, con honestidad, al menos 6 horas semanales de pensamiento estratégico real —sin reuniones, sin operación— en sus últimas cuatro semanas? Si no puede, esta señal está presente.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAL 2 -->
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-counter">
+          <div class="signal-counter-num">2</div>
+          <div class="signal-counter-word">Señal</div>
+        </div>
+        <div class="signal-header-content">
+          <div class="signal-title">La empresa tiene un mandato crítico activo o inminente que supera su capacidad instalada</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>Hay categorías de mandatos que producen un requerimiento de capacidad estratégica y ejecutiva que excede lo que la organización tiene disponible sin comprometer su operación cotidiana. Una transacción de M&A —sea como comprador o como vendedor—, una captación de capital privado, una reestructuración financiera, una expansión a un nuevo mercado con modelo de entrada complejo, un proceso de sucesión generacional en empresa familiar: todos comparten una característica común.</p>
+        <p>Requieren liderazgo ejecutivo dedicado, conocimiento profundo de múltiples disciplinas y la capacidad de mantener el proceso activo con la velocidad y la coherencia que la transacción exige — mientras la operación sigue funcionando. <strong>La empresa que intenta gestionar un mandato de esta naturaleza con los mismos recursos que gestiona su operación cotidiana termina haciendo mal ambas cosas.</strong> La operación sufre porque el CEO está mirando hacia el mandato; el mandato sufre porque el CEO no puede dedicarle la atención que requiere.</p>
+        <div class="signal-diagnostic">
+          <div class="signal-diagnostic-label">Diagnóstico</div>
+          <div class="signal-diagnostic-text">¿Hay en el horizonte de los próximos 18 meses un proceso —transacción, captación, expansión, reestructuración— que requeriría más del 30% del tiempo estratégico del CEO para ejecutarse correctamente?</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAL 3 -->
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-counter">
+          <div class="signal-counter-num">3</div>
+          <div class="signal-counter-word">Señal</div>
+        </div>
+        <div class="signal-header-content">
+          <div class="signal-title">El ecosistema asesor no integra su trabajo y el CEO absorbe el costo de esa fragmentación</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>La empresa que trabaja con múltiples asesores especializados —abogados, asesores financieros, consultores de estrategia, despachos fiscales— sin un actor de integración en el centro produce un patrón invariable: cada asesor produce trabajo excelente dentro de su carril que no es coherente con el trabajo de los demás. El CEO actúa como integrador de facto: recibe las recomendaciones de cada uno, identifica las inconsistencias, coordina las conversaciones necesarias y toma las decisiones que el sistema no resuelve solo.</p>
+        <p>Este rol de integración no está en la descripción de puesto del CEO. Pero en ausencia del SLL™, nadie más puede asumirlo. <strong>El costo de esta situación no es solo de tiempo — es de calidad de decisión. Las decisiones que se toman sin integración estratégica real son sistemáticamente peores que las que se toman con ella.</strong> Y ese deterioro de calidad, multiplicado por todas las decisiones importantes que la empresa toma en un año, produce un impacto medible en el valor que la empresa crea o deja de crear.</p>
+        <div class="signal-diagnostic">
+          <div class="signal-diagnostic-label">Diagnóstico</div>
+          <div class="signal-diagnostic-text">En el último trimestre, ¿recibió el CEO recomendaciones de dos o más asesores que eran incompatibles entre sí y tuvo que resolver esa incompatibilidad él mismo? Si la respuesta es sí más de una vez, esta señal está presente.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAL 4 -->
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-counter">
+          <div class="signal-counter-num">4</div>
+          <div class="signal-counter-word">Señal</div>
+        </div>
+        <div class="signal-header-content">
+          <div class="signal-title">La estrategia de la empresa existe como documento pero no como función viva de dirección</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>Una de las manifestaciones más claras de la ausencia del SLL™ es la estrategia como artefacto estático. La empresa tiene un plan estratégico — producido en un retiro de tres días hace doce o dieciocho meses — que vive en una presentación que nadie revisa con regularidad, cuyos objetivos no están vinculados de manera explícita a las decisiones que se toman semana a semana, y cuya vigencia nadie ha evaluado de manera formal desde que se produjo.</p>
+        <p>Esto no es un problema de planeación estratégica — es un problema de ausencia de la función que convierte la planeación en dirección continua. La estrategia como función viva requiere alguien que la mantenga actualizada, que verifique la coherencia de las decisiones operativas con ella, que identifique cuándo las circunstancias la hacen obsoleta y que proponga los ajustes necesarios con la rapidez que el entorno exige. <strong>Sin esa función, la estrategia es una foto del pasado, no un mapa del futuro.</strong></p>
+        <div class="signal-diagnostic">
+          <div class="signal-diagnostic-label">Diagnóstico</div>
+          <div class="signal-diagnostic-text">¿Puede el equipo directivo describir, con precisión y coherencia entre sí, cuáles son las tres prioridades estratégicas de la empresa para los próximos 12 meses y por qué? Si las respuestas divergen significativamente, esta señal está presente.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAL 5 -->
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-counter">
+          <div class="signal-counter-num">5</div>
+          <div class="signal-counter-word">Señal</div>
+        </div>
+        <div class="signal-header-content">
+          <div class="signal-title">El Consejo de Administración sesiona pero no ejerce gobierno estratégico real</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>Cuando el Consejo de Administración opera como órgano revisor —que aprueba lo que la Dirección propone sin producir deliberación estratégica genuina— no es porque los consejeros sean incompetentes o desinteresados. Con frecuencia es porque no existe la capa de integración estratégica que debería preparar la información, estructurar la agenda y garantizar que el Consejo tiene lo que necesita para gobernar con profundidad en lugar de revisar con superficialidad.</p>
+        <p>El SLL™ es el actor que hace posible que el Consejo funcione como lo que debe ser: un órgano de gobierno que delibera sobre las decisiones estratégicas más importantes, que supervisa el desempeño con criterio estratégico —no solo financiero— y que puede intervenir cuando la dirección de la empresa requiere corrección. <strong>Sin esa capa de preparación e integración, el Consejo recibe lo que la Dirección quiere que reciba — y gobierna sobre esa realidad filtrada, no sobre la realidad real.</strong></p>
+        <div class="signal-diagnostic">
+          <div class="signal-diagnostic-label">Diagnóstico</div>
+          <div class="signal-diagnostic-text">En las últimas cuatro sesiones del Consejo, ¿hubo alguna decisión que el Consejo modificó sustancialmente respecto a lo que la Dirección propuso, o alguna iniciativa que el Consejo detuvo? Si la respuesta es no, esta señal está presente.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAL 6 -->
+    <div class="signal-block">
+      <div class="signal-header">
+        <div class="signal-counter">
+          <div class="signal-counter-num">6</div>
+          <div class="signal-counter-word">Señal</div>
+        </div>
+        <div class="signal-header-content">
+          <div class="signal-title">La empresa enfrenta una decisión de alta complejidad y alta consecuencia sin la capacidad instalada para tomarla bien</div>
+        </div>
+      </div>
+      <div class="signal-body-wrap">
+        <p>Esta señal es la más urgente de las seis. Hay momentos en la vida de una empresa donde se enfrenta una decisión cuyas consecuencias son difíciles o imposibles de revertir, y donde la calidad del análisis, del proceso de decisión y del liderazgo ejecutivo que lo acompaña determina el resultado de manera directa. Vender la empresa o parte de ella. Elegir entre dos socios estratégicos con implicaciones de largo plazo radicalmente distintas. Decidir si reestructurar o liquidar una línea de negocio. Comprometer capital significativo en una expansión o en una adquisición.</p>
+        <p>En estas decisiones, la diferencia entre tener el SLL™ activo y no tenerlo no es de eficiencia —es de resultado. La empresa que enfrenta una decisión de este tipo sin la capacidad estratégica necesaria para tomarla bien no solo corre el riesgo de tomar la decisión equivocada —corre el riesgo de tomar la decisión correcta de la manera equivocada, en el momento equivocado o con los términos equivocados. <strong>Cada una de esas variantes tiene un costo medible que, en decisiones de alta consecuencia, frecuentemente excede por órdenes de magnitud el costo de haber tenido el SLL™ activo.</strong></p>
+        <div class="signal-diagnostic">
+          <div class="signal-diagnostic-label">Diagnóstico</div>
+          <div class="signal-diagnostic-text">¿Hay en el horizonte de los próximos 24 meses una decisión cuyo resultado correcto o incorrecto podría cambiar el valor de la empresa en más de un 20%? Si la respuesta es sí, esta señal está presente — y es la más urgente de actuar.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III — SCORE -->
+<section class="section">
+  <div class="section-label">III — La interpretación</div>
+  <h2 class="section-title">Cómo interpretar la presencia de estas señales en su organización</h2>
+  <div class="body-copy">
+    <p>Las seis señales raramente se presentan de manera aislada. Su patrón de coexistencia es diagnósticamente más relevante que cualquiera de ellas por separado. La siguiente escala de interpretación permite ubicar el nivel de urgencia con que la empresa debería evaluar la activación del SLL™.</p>
+  </div>
+
+  <div class="threshold-score">
+    <div class="threshold-score-title">Escala de urgencia — Señales del SLL™ presentes</div>
+    <div class="score-bands">
+      <div class="score-band band-watch">
+        <div class="score-band-range">1–2</div>
+        <div class="score-band-label">Monitoreo activo</div>
+        <div class="score-band-desc">Las señales presentes indican tensión emergente. El SLL™ no es urgente hoy, pero debe estar en el radar estratégico del próximo año. Evaluar la trayectoria de crecimiento.</div>
+      </div>
+      <div class="score-band band-needed">
+        <div class="score-band-range">3–4</div>
+        <div class="score-band-label">Necesario en el corto plazo</div>
+        <div class="score-band-desc">La combinación de señales indica que la brecha entre complejidad y capacidad ya tiene consecuencias medibles. La activación del SLL™ debería ocurrir en los próximos 6 meses.</div>
+      </div>
+      <div class="score-band band-urgent">
+        <div class="score-band-range">5–6</div>
+        <div class="score-band-label">Urgente — ya tiene costo</div>
+        <div class="score-band-desc">La empresa ya está pagando el costo de la ausencia del SLL™. Cada mes adicional sin activarlo incrementa ese costo. La intervención debería iniciar de inmediato.</div>
+      </div>
+    </div>
+    <div class="threshold-note">Nota: la presencia de la Señal 6 —decisión de alta consecuencia en el horizonte— eleva la urgencia en al menos una categoría, independientemente del número total de señales presentes. Una decisión irreversible que se toma mal no se corrige con el tiempo.</div>
+  </div>
+</section>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — La respuesta del SLL™ a cada señal</div>
+  <h2 class="section-title">Cómo el Strategic Leadership Layer™ responde a cada una de las seis señales</h2>
+  <div class="body-copy">
+    <p>El SLL™ no es una respuesta genérica a una condición genérica. Su intervención es específica a cada señal — y el valor que produce en cada caso es distinto y medible.</p>
+  </div>
+
+  <div class="response-grid">
+    <div class="response-card">
+      <div class="response-signal">Señal 1 — CEO sobrecargado</div>
+      <div class="response-title">Redistribuye el peso estratégico</div>
+      <div class="response-body">Asume la arquitectura estratégica continua, la integración del ecosistema asesor y el liderazgo de mandatos críticos — liberando al CEO para operar en su Zona A de función genuinamente irreemplazable.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-signal">Señal 2 — Mandato crítico</div>
+      <div class="response-title">Lidera el mandato con piel en el juego</div>
+      <div class="response-body">Asume el liderazgo ejecutivo del proceso crítico — transacción, captación, expansión — con el mandato, el acceso y la alineación de incentivos que la situación requiere, sin comprometer la operación del negocio base.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-signal">Señal 3 — Ecosistema fragmentado</div>
+      <div class="response-title">Integra el conjunto hacia un resultado coherente</div>
+      <div class="response-body">Actúa como actor de integración del ecosistema asesor: coordina, traduce entre disciplinas, resuelve incompatibilidades con criterio de sistema y mantiene la coherencia del conjunto orientada al resultado estratégico.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-signal">Señal 4 — Estrategia estática</div>
+      <div class="response-title">Convierte la estrategia en función viva</div>
+      <div class="response-body">Mantiene la coherencia estratégica activa de manera continua: verifica el alineamiento de las decisiones operativas con la dirección acordada, identifica cuándo ajustar el rumbo y asegura que el Consejo y el CEO operan sobre el mismo mapa.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-signal">Señal 5 — Consejo que no gobierna</div>
+      <div class="response-title">Provee la capa que hace posible el gobierno genuino</div>
+      <div class="response-body">Prepara la información estratégica que el Consejo necesita para deliberar con profundidad, estructura la agenda del gobierno y asegura que la interfaz entre Consejo y Dirección funcione con la calidad que ambos requieren.</div>
+    </div>
+    <div class="response-card">
+      <div class="response-signal">Señal 6 — Decisión de alta consecuencia</div>
+      <div class="response-title">Eleva la calidad de la decisión más importante</div>
+      <div class="response-body">Aporta el análisis estratégico, el liderazgo del proceso de decisión y la valentía estratégica necesaria para tomar la decisión correcta de la manera correcta — con todos los criterios relevantes integrados y con accountability real sobre el resultado.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">El momento correcto para activar el SLL™</div>
+    <p>La conversación sobre la activación del SLL™ debe ocurrir antes de que la urgencia la fuerce. La empresa que activa el Strategic Leadership Layer cuando ya está en crisis —cuando el mandato crítico está en proceso, cuando la decisión de alta consecuencia ya debe tomarse, cuando el costo de la fragmentación ya es visible— está activando una capacidad que necesitaba con meses o años de anticipación.</p>
+    <p>El valor del SLL™ es máximo cuando se activa con suficiente anticipación para que el actor de integración construya el conocimiento institucional, establezca las relaciones y diseñe la arquitectura antes de que la presión de las situaciones críticas los haga urgentes. <strong>La empresa que diseña su capacidad estratégica con anticipación no elimina la complejidad — la enfrenta en condiciones radicalmente mejores.</strong></p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">Las señales que merecen una respuesta honesta</h2>
+  <div class="closing-body">
+    <p>Las seis señales de este artículo no son un instrumento de venta — son un instrumento de diagnóstico. Su valor depende de la honestidad con que se aplican. Una empresa que minimiza la presencia de estas señales para evitar la incomodidad del diagnóstico no está protegiéndose — está postergando el costo de una brecha que el tiempo no resuelve.</p>
+    <p>El patrón más frecuente que observamos es el siguiente: las señales estaban presentes hace 12 o 18 meses. Fueron identificadas de manera parcial. La respuesta fue "lo estamos manejando". Y cuando la situación crítica llegó —la transacción que se estructuró mal, el mandato que se gestionó por debajo de su potencial, la decisión que se tomó sin la información y el liderazgo que requería— el costo fue significativamente mayor que lo que habría costado activar el SLL™ cuando las señales eran tempranas.</p>
+    <p><strong>Las señales de este artículo son verificables. La pregunta que viene después de verificarlas es simple: ¿qué decisión toma la empresa con esa información?</strong></p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+
+</body>
+</html>

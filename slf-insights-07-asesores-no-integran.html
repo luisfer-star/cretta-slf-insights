@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por qué los asesores externos no integran su trabajo — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+.hero{background:var(--navy);padding:92px 64px 88px;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;border:1px solid rgba(196,154,60,.07)}
+.hero-orb-1{width:560px;height:560px;top:-200px;right:-160px}
+.hero-orb-2{width:280px;height:280px;bottom:20px;left:-80px}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,50px);font-weight:700;line-height:1.13;color:var(--cream);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.65);max-width:640px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.2)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.42)}
+.hero-meta-item span{color:var(--gold-light)}
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* SILO DIAGRAM */
+.silo-diagram{margin:52px 0}
+.silo-diagram-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.silo-row{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-bottom:3px}
+.silo-block{padding:22px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.silo-name{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.silo-role{font-family:'EB Garamond',serif;font-size:13px;line-height:1.4}
+.silo-legal{background:rgba(13,27,62,.92)}.silo-fiscal{background:rgba(13,27,62,.76)}.silo-finance{background:rgba(13,27,62,.62)}.silo-strategy{background:rgba(13,27,62,.48)}.silo-hr{background:rgba(13,27,62,.35)}
+.silo-legal .silo-name,.silo-fiscal .silo-name{color:var(--gold)}
+.silo-finance .silo-name,.silo-strategy .silo-name,.silo-hr .silo-name{color:var(--gold-light)}
+.silo-legal .silo-role,.silo-fiscal .silo-role{color:rgba(244,241,236,.55)}
+.silo-finance .silo-role,.silo-strategy .silo-role,.silo-hr .silo-role{color:rgba(244,241,236,.5)}
+.silo-gap-row{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-bottom:3px}
+.silo-gap-cell{height:40px;background:repeating-linear-gradient(-45deg,rgba(196,154,60,.06) 0,rgba(196,154,60,.06) 2px,transparent 2px,transparent 10px);border-top:2px dashed rgba(196,154,60,.25);border-bottom:2px dashed rgba(196,154,60,.25);display:flex;align-items:center;justify-content:center}
+.silo-gap-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.silo-ceo{background:var(--cream-dark);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;border:1px solid var(--rule)}
+.silo-ceo-label{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.silo-ceo-note{font-family:'EB Garamond',serif;font-size:15px;font-style:italic;color:var(--text-light)}
+.silo-diagram-caption{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light);text-align:center;margin-top:14px}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* REASONS */
+.reasons-list{margin:48px 0}
+.reason-item{display:grid;grid-template-columns:80px 1fr;gap:0;padding:36px 0;border-bottom:1px solid var(--rule-light)}
+.reason-item:first-child{border-top:1px solid var(--rule-light)}
+.reason-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:rgba(196,154,60,.18);line-height:1;padding-top:2px}
+.reason-heading{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.reason-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.7;color:var(--text-mid)}
+.reason-body strong{color:var(--navy);font-weight:600}
+
+/* COST TABLE */
+.cost-table{width:100%;border-collapse:collapse;margin:48px 0;font-family:'EB Garamond',serif;font-size:16px}
+.cost-table thead tr{background:var(--navy)}
+.cost-table thead th{padding:14px 22px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.cost-table thead th:first-child{color:rgba(244,241,236,.45)}
+.cost-table tbody tr{border-bottom:1px solid var(--rule-light)}
+.cost-table tbody tr:nth-child(even){background:rgba(244,241,236,.5)}
+.cost-table tbody td{padding:14px 22px;vertical-align:top;line-height:1.55;color:var(--text-mid)}
+.cost-table tbody td:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.05em;color:var(--text-light);text-transform:uppercase;white-space:nowrap}
+.cost-table tbody td:last-child{color:var(--navy);font-weight:500}
+
+/* SOLUTION STEPS */
+.solution-steps{margin:48px 0}
+.solution-step{display:flex;gap:28px;margin-bottom:2px}
+.solution-step-num{width:44px;height:44px;flex-shrink:0;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--gold)}
+.solution-step-body{padding:10px 0 32px;border-bottom:1px solid var(--rule-light);flex:1}
+.solution-step:last-child .solution-step-body{border-bottom:none}
+.solution-step-heading{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.solution-step-text{font-family:'EB Garamond',serif;font-size:17px;line-height:1.68;color:var(--text-mid)}
+.solution-step-text strong{color:var(--navy);font-weight:600}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.silo-row,.silo-gap-row{grid-template-columns:1fr 1fr}.silo-ceo{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+
+<section class="hero">
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Ecosistema Asesor</div>
+      <h1 class="hero-headline">Por qué los asesores externos <em>no integran su trabajo</em> — y cómo corregirlo estructuralmente</h1>
+      <p class="hero-deck">Cada asesor es brillante en su carril. El abogado, el contador, el banquero, el consultor de RRHH. El problema no está en ninguno de ellos. Está en la arquitectura que los rodea: diseñada para la especialización, incapaz de producir coherencia.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Ecosistema Asesor</span></div>
+        <div class="hero-meta-item">Lectura <span>~11 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">Hay un momento que la mayoría de los directivos de empresas medianas han vivido, aunque pocos lo han nombrado con precisión. Es el momento en que el abogado recomienda una estructura que el contador dice que tiene consecuencias fiscales no contempladas, que el asesor financiero dice que no es financiable en los términos en que está planteada, y que el consultor de estrategia dice que no está alineada con la dirección que acordaron seis meses atrás. Cada uno tiene razón dentro de su carril. En conjunto, el cliente no sabe qué hacer — y generalmente termina tomando una decisión de compromiso que no satisface a ninguno de los cuatro criterios que importan.</p>
+</div>
+
+<section class="section">
+  <div class="section-label">I — El diagnóstico del ecosistema</div>
+  <h2 class="section-title">Cómo funciona realmente el ecosistema asesor de una empresa mediana</h2>
+  <div class="body-copy">
+    <p>La empresa mediana promedio trabaja simultáneamente con un conjunto de asesores especializados: un despacho de abogados corporativos, un despacho fiscal, un banco o boutique de inversión, un consultor de estrategia y frecuentemente un despacho de recursos humanos. En transacciones o momentos críticos, se suman auditores externos, consultores técnicos y asesores regulatorios.</p>
+    <p>Cada uno de estos actores es, en su carril, altamente competente. Han sido seleccionados por esa competencia. Su propósito declarado es servir al mejor interés del cliente. Y, sin embargo, en la práctica, el conjunto de sus trabajos produce con frecuencia resultados que ninguno de ellos, individualmente, habría recomendado. Estructuras legalmente sólidas pero fiscalmente costosas. Financiamientos posibles pero estratégicamente inconvenientes. Restructuraciones que mejoran la eficiencia pero deterioran la cultura.</p>
+    <p>La respuesta es una sola: <strong>porque nadie en ese ecosistema tiene el mandato, el incentivo ni la posición para integrar el trabajo de los demás hacia un resultado coherente para el cliente</strong>. Cada asesor optimiza su función. Nadie optimiza el conjunto.</p>
+  </div>
+
+  <div class="silo-diagram">
+    <div class="silo-diagram-title">El ecosistema asesor sin integración — estructura real de operación</div>
+    <div class="silo-row">
+      <div class="silo-block silo-legal"><div class="silo-name">Legal</div><div class="silo-role">Estructura jurídica, contratos, cumplimiento</div></div>
+      <div class="silo-block silo-fiscal"><div class="silo-name">Fiscal</div><div class="silo-role">Planeación tributaria, cumplimiento fiscal</div></div>
+      <div class="silo-block silo-finance"><div class="silo-name">Financiero</div><div class="silo-role">Capital, deuda, valuación, M&amp;A</div></div>
+      <div class="silo-block silo-strategy"><div class="silo-name">Estrategia</div><div class="silo-role">Planeación, transformación, mercados</div></div>
+      <div class="silo-block silo-hr"><div class="silo-name">Capital Hum.</div><div class="silo-role">Estructura org., compensación, cultura</div></div>
+    </div>
+    <div class="silo-gap-row">
+      <div class="silo-gap-cell"><div class="silo-gap-label">sin puentes</div></div>
+      <div class="silo-gap-cell"><div class="silo-gap-label">sin puentes</div></div>
+      <div class="silo-gap-cell"><div class="silo-gap-label">sin puentes</div></div>
+      <div class="silo-gap-cell"><div class="silo-gap-label">sin puentes</div></div>
+      <div class="silo-gap-cell"><div class="silo-gap-label">sin puentes</div></div>
+    </div>
+    <div class="silo-ceo">
+      <div class="silo-ceo-label">CEO — Integrador de facto no diseñado para esa función</div>
+      <div class="silo-ceo-note">Recibe cinco visiones independientes y debe sintetizarlas mientras administra el negocio</div>
+    </div>
+    <div class="silo-diagram-caption">Cada columna optimiza su función. Nadie optimiza el conjunto.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">II — Las causas estructurales</div>
+  <h2 class="section-title">Por qué la no-integración no es un fallo personal sino un diseño inevitable</h2>
+  <div class="body-copy">
+    <p>La no-integración del ecosistema asesor no es una consecuencia de negligencia ni de mala fe. Es el resultado predecible de cinco incentivos estructurales que operan sobre cada asesor de manera independiente y que, en conjunto, producen sistemáticamente la misma disfunción.</p>
+  </div>
+
+  <div class="reasons-list">
+    <div class="reason-item">
+      <div class="reason-num">01</div>
+      <div class="reason-content">
+        <div class="reason-heading">El modelo de facturación premia la profundidad, no la coherencia</div>
+        <div class="reason-body">Los asesores especializados facturan por hora, por proyecto o por retainer dentro de su carril. Su compensación no depende de que el conjunto de sus recomendaciones sea coherente con el de los demás asesores. <strong>No hay un mecanismo de mercado que recompense la coherencia del conjunto, porque nadie compra el conjunto como unidad.</strong></div>
+      </div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">02</div>
+      <div class="reason-content">
+        <div class="reason-heading">La especialización profunda produce ceguera periférica por diseño</div>
+        <div class="reason-body">El valor de un asesor especializado reside en su profundidad de conocimiento dentro de su dominio. Esa misma especialización que produce profundidad produce inevitablemente una perspectiva que dificulta ver las implicaciones de las propias recomendaciones sobre los carriles adyacentes. <strong>El abogado excelente piensa en términos jurídicos porque su experticia es jurídica. No es negligencia — es el costo inherente de la especialización.</strong></div>
+      </div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">03</div>
+      <div class="reason-content">
+        <div class="reason-heading">La relación directa con el cliente crea lealtad vertical, no horizontal</div>
+        <div class="reason-body">Cada asesor tiene una relación directa y exclusiva con el cliente. Cuando los asesores tienen visiones distintas sobre un mismo problema, cada uno defiende la suya ante el cliente sin que haya un foro neutral para resolver la divergencia. <strong>El cliente termina siendo el árbitro de debates técnicos para los que no está equipado — y generalmente decide con el criterio del asesor que habló de último o con más confianza.</strong></div>
+      </div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">04</div>
+      <div class="reason-content">
+        <div class="reason-heading">La información no fluye entre asesores sin un mecanismo explícito</div>
+        <div class="reason-body">En la mayoría de los ecosistemas asesores, cada especialista trabaja con la información que el cliente le ha compartido directamente — rara vez la información completa de lo que otros asesores están analizando simultáneamente. El abogado no sabe qué estructura está considerando el asesor financiero. <strong>Sin un mecanismo explícito de flujo de información entre asesores, cada uno trabaja sobre un mapa incompleto del territorio.</strong></div>
+      </div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">05</div>
+      <div class="reason-content">
+        <div class="reason-heading">Nadie tiene el mandato institucional de integrar — ni puede tenerlo desde dentro de un carril</div>
+        <div class="reason-body">Integrar el trabajo de múltiples especialistas requiere una posición que esté por encima de los carriles individuales — con visión del conjunto, con acceso a la información de todos, con el mandato de producir coherencia y con la independencia para decirle a cada especialista cuando su recomendación, aunque técnicamente correcta, es incompatible con el objetivo del sistema. <strong>Ningún especialista puede ocupar esa posición sin dejar de ser especialista.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>La no-integración no es un fallo de los asesores. Es el fallo de una arquitectura de asesoramiento diseñada para la especialización y no para la coherencia. Cambiarla no requiere mejores asesores — requiere un actor diferente que no existía en el diseño original.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">III — El costo real</div>
+  <h2 class="section-title">Lo que la no-integración cuesta en términos concretos</h2>
+  <div class="body-copy">
+    <p>El costo de la no-integración del ecosistema asesor rara vez se calcula de manera explícita. Se distribuye en múltiples rubros que parecen independientes y que pocas veces se atribuyen a su causa común.</p>
+  </div>
+
+  <table class="cost-table">
+    <thead>
+      <tr>
+        <th>Costo</th>
+        <th>Manifestación concreta</th>
+        <th>Impacto real</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Tiempo del CEO</td><td>El CEO actúa como integrador de facto: coordina, traduce, arbitra entre asesores</td><td>Horas semanales sustraídas de la agenda estratégica para hacer trabajo de integración</td></tr>
+      <tr><td>Decisiones subóptimas</td><td>Estructuras correctas en un carril que producen problemas en otro no anticipado</td><td>Costo de corrección posterior frecuentemente mayor al costo de la decisión original</td></tr>
+      <tr><td>Velocidad perdida</td><td>Rondas de iteración entre asesores con visiones no alineadas que alargan procesos críticos</td><td>En transacciones con ventana temporal, la demora tiene costo directo en valor capturado</td></tr>
+      <tr><td>Duplicación de trabajo</td><td>Dos o más asesores analizan el mismo problema desde sus perspectivas sin saberlo</td><td>Honorarios pagados dos veces por análisis parcialmente superpuestos</td></tr>
+      <tr><td>Gaps de cobertura</td><td>Nadie analiza la intersección entre carriles porque cada uno asume que el otro lo hizo</td><td>Riesgos que materializan en zonas de frontera entre disciplinas — las más costosas</td></tr>
+      <tr><td>Pérdida de contexto</td><td>Cada asesor trabaja con información parcial; el contexto completo solo lo tiene el CEO</td><td>Recomendaciones técnicamente correctas pero estratégicamente descontextualizadas</td></tr>
+      <tr><td>Fricción relacional</td><td>Asesores que defienden posiciones sin mecanismo de resolución neutral ante el cliente</td><td>El cliente pierde confianza en alguno o en todos — relaciones de largo valor deterioradas</td></tr>
+    </tbody>
+  </table>
+
+  <div class="body-copy">
+    <p>Lo que hace particularmente costosa la no-integración es que estos costos son invisibles en el momento en que se incurren. El CEO que dedica tres horas a coordinar entre el abogado y el asesor financiero no lo registra como costo de la falta de integración — lo registra como "trabajo". La suma invisible de estos costos, año tras año, excede con frecuencia lo que costaría resolverlos estructuralmente.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">IV — La corrección estructural</div>
+  <h2 class="section-title">Cómo se corrige el problema — y por qué las soluciones parciales no funcionan</h2>
+  <div class="body-copy">
+    <p>Hay soluciones que parecen razonables pero que no tocan la causa raíz. Contratar un asesor adicional que "coordine" a los demás solo añade un actor más al ecosistema sin resolver la ausencia de mandato real de integración. Pedir a cada asesor que copie a los demás en sus comunicaciones produce volumen de información sin síntesis. Crear reuniones periódicas entre todos los asesores produce conversaciones sin accountability.</p>
+    <p>La corrección estructural requiere algo cualitativamente diferente: instalar un actor de integración con tres características que ninguna de las soluciones parciales provee simultáneamente — <strong>posición sobre los carriles</strong>, <strong>mandato real sobre el resultado del conjunto</strong> y <strong>alineación de incentivos con el cliente</strong>.</p>
+  </div>
+
+  <div class="solution-steps">
+    <div class="solution-step">
+      <div class="solution-step-num">01</div>
+      <div class="solution-step-body">
+        <div class="solution-step-heading">Nombrar al actor de integración y darle mandato explícito</div>
+        <div class="solution-step-text">El primer paso es reconocer que la función de integración existe y asignarla de manera explícita a un actor con el mandato de hacerla bien. Ese mandato debe incluir acceso a la información de todos los asesores, capacidad de convocarlos conjuntamente, y autoridad para pronunciarse sobre la coherencia del conjunto. <strong>Un mandato implícito no funciona: la integración debe ser una función declarada con accountability clara.</strong></div>
+      </div>
+    </div>
+    <div class="solution-step">
+      <div class="solution-step-num">02</div>
+      <div class="solution-step-body">
+        <div class="solution-step-heading">Diseñar el flujo de información entre asesores, no solo hacia el cliente</div>
+        <div class="solution-step-text">La información que cada asesor necesita para producir recomendaciones coherentes con el trabajo de los demás debe fluir de manera estructurada — no de manera ad hoc. Esto requiere diseñar el protocolo de información del ecosistema: qué información comparte cada asesor con quién, en qué formato y con qué periodicidad. <strong>Sin flujo de información diseñado, la integración es imposible independientemente de cuánta coordinación intente el cliente.</strong></div>
+      </div>
+    </div>
+    <div class="solution-step">
+      <div class="solution-step-num">03</div>
+      <div class="solution-step-body">
+        <div class="solution-step-heading">Crear el foro de integración donde los conflictos entre disciplinas se resuelven</div>
+        <div class="solution-step-text">Cuando el abogado y el asesor financiero tienen visiones incompatibles, alguien debe resolver el conflicto con criterio de sistema — no solo con criterio jurídico ni solo con criterio financiero. Ese foro debe ser regular, con agenda propia, y debe producir decisiones, no solo conversaciones. <strong>El foro de integración es donde el ecosistema se convierte en sistema.</strong></div>
+      </div>
+    </div>
+    <div class="solution-step">
+      <div class="solution-step-num">04</div>
+      <div class="solution-step-body">
+        <div class="solution-step-heading">Alinear los incentivos del integrador con el resultado del cliente</div>
+        <div class="solution-step-text">El actor de integración cuya compensación depende de la coherencia y los resultados del conjunto tiene incentivos radicalmente diferentes al asesor cuya compensación depende solo de su carril. Esta alineación de incentivos es el mecanismo que garantiza que quien integra tiene los mismos intereses que quien encarga la integración. <strong>Sin alineación de incentivos, el integrador es un asesor más — con el mismo problema que los demás, solo un nivel más arriba.</strong></div>
+      </div>
+    </div>
+    <div class="solution-step">
+      <div class="solution-step-num">05</div>
+      <div class="solution-step-body">
+        <div class="solution-step-heading">Liberar al CEO de la función de integración</div>
+        <div class="solution-step-text">El objetivo final de la corrección estructural es devolver al CEO su agenda estratégica. Cuando el actor de integración funciona correctamente, el CEO recibe síntesis, no volumen; recibe decisiones preparadas, no debates sin resolver. <strong>La integración del ecosistema asesor es, en última instancia, una inversión en la calidad estratégica del CEO.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">Cómo Cretta ejerce la integración del ecosistema asesor</div>
+    <p>Una de las funciones centrales de la Dirección Estratégica Continua de Cretta es precisamente la integración del ecosistema asesor. No como coordinador logístico — como actor estratégico que mantiene la coherencia del conjunto orientada hacia el resultado que el cliente necesita producir.</p>
+    <p>Cretta habla el lenguaje de cada carril con suficiente profundidad para dialogar como par con cada especialista — no solo para entender sus recomendaciones, sino para cuestionar sus supuestos cuando el sistema exige una perspectiva diferente. Y mantiene el mapa del conjunto actualizado en tiempo real: qué está haciendo cada asesor, cómo se relaciona con el trabajo de los demás, y dónde están los riesgos de incoherencia que ningún especialista ve desde dentro de su carril.</p>
+    <p>El resultado para el cliente no es solo más coherencia — es velocidad, claridad y la certeza de que las decisiones que toma están informadas por el conjunto de la inteligencia disponible, no solo por la parte que el último asesor que habló con él pudo proveer.</p>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">V — El autodiagnóstico</div>
+  <h2 class="section-title">Cinco preguntas para saber si su ecosistema asesor tiene un problema de integración</h2>
+  <div class="body-copy">
+    <p>El problema de integración es fácil de identificar una vez que se sabe qué buscar. Hay cinco preguntas de diagnóstico que revelan el estado real del ecosistema asesor de una empresa con rapidez y precisión.</p>
+    <p><strong>Primera: ¿Sus asesores se conocen entre sí y tienen canales directos de comunicación?</strong> Si la respuesta es no — si cada asesor solo se comunica con el cliente y no entre ellos — el ecosistema opera en silos por diseño, no por accidente.</p>
+    <p><strong>Segunda: ¿Ha recibido alguna vez recomendaciones de dos asesores diferentes que eran incompatibles entre sí?</strong> Si la respuesta es sí — y es casi siempre sí — la pregunta siguiente es cómo se resolvió esa incompatibilidad. Si la respuesta es "el CEO lo resolvió", la función de integración está en el lugar equivocado.</p>
+    <p><strong>Tercera: ¿Existe algún mecanismo formal donde todos sus asesores revisan conjuntamente el estado de los mandatos activos y coordinan su trabajo?</strong> Si no existe, la coordinación ocurre de manera reactiva y fragmentada — solo cuando un problema ya surgido lo hace inevitable.</p>
+    <p><strong>Cuarta: ¿Puede describir en términos concretos qué está haciendo cada uno de sus asesores en este momento y cómo su trabajo se relaciona con el de los demás?</strong> Si la respuesta requiere hacer algunas llamadas para saberlo, el mapa del conjunto solo existe en la cabeza del CEO — y eso es exactamente el problema.</p>
+    <p><strong>Quinta: ¿Cuánto tiempo dedica usted cada semana a coordinar entre sus asesores — explicando a uno lo que el otro recomendó, o resolviendo conflictos entre sus visiones?</strong> Si la respuesta es más de una hora semanal, está pagando el costo de la no-integración en el recurso más valioso de la empresa: el tiempo estratégico del CEO.</p>
+    <p>Si alguna de estas preguntas revela un problema — y es estadísticamente probable que más de una lo haga — el ecosistema asesor tiene una brecha de integración que ya está costando valor. No en teoría: en decisiones tomadas sin la información completa, en tiempo del CEO invertido en el lugar equivocado, y en riesgos que operan sin que nadie los vea desde la perspectiva del conjunto.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El ecosistema que trabaja como sistema — y el que solo parece serlo</h2>
+  <div class="closing-body">
+    <p>La diferencia entre un ecosistema asesor que produce coherencia y uno que produce silos no está en la calidad de los asesores individuales. Está en la arquitectura que los rodea: si hay un actor de integración con mandato real, con acceso a la información completa y con incentivos alineados con el resultado del conjunto.</p>
+    <p>Sin esa arquitectura, la empresa tiene asesores excelentes trabajando en paralelo hacia objetivos que nadie ha verificado que sean coherentes entre sí. Con esa arquitectura, tiene un sistema que produce más que la suma de sus partes — que identifica las incoherencias antes de que se conviertan en decisiones, que resuelve los conflictos entre disciplinas con criterio de sistema y que libera al CEO para hacer lo que solo él puede hacer.</p>
+    <p><strong>La integración no es una función que se añade al ecosistema. Es la función que convierte al ecosistema en sistema.</strong> Y en empresas de alta complejidad, en momentos de alta complejidad, esa diferencia determina la calidad de las decisiones más importantes que la empresa tomará.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+
+</body>
+</html>

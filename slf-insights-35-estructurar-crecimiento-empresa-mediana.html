@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo estructurar el crecimiento de una empresa mediana sin perder el control — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+.hero{background:var(--navy);padding:96px 64px 84px;border-bottom:4px solid var(--gold);position:relative;overflow:hidden}
+.hero-geo{position:absolute;inset:0;pointer-events:none}
+.hero-geo span{position:absolute;border-radius:50%;border:1px solid rgba(196,154,60,.07)}
+.hero-geo span:nth-child(1){width:480px;height:480px;top:-160px;right:-80px}
+.hero-geo span:nth-child(2){width:240px;height:240px;bottom:-60px;left:-50px}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,50px);font-weight:700;line-height:1.12;color:var(--cream);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.65);max-width:660px;line-height:1.62;margin-bottom:48px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.22)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.45)}
+.hero-meta-item span{color:var(--gold-light)}
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+.stages-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule-light);margin:52px 0}
+.stage{background:var(--cream);padding:24px 20px}
+.stage-num{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.stage-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.25}
+.stage-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.62;color:var(--text-mid)}
+.stage.active{background:var(--navy)}
+.stage.active .stage-num{color:var(--gold)}
+.stage.active .stage-title{color:var(--cream)}
+.stage.active .stage-body{color:rgba(244,241,236,.65)}
+.rules-table{width:100%;border-collapse:collapse;margin:48px 0;font-family:'EB Garamond',serif;font-size:15px}
+.rules-table thead tr{background:var(--navy)}
+.rules-table thead th{padding:13px 20px;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.rules-table tbody tr{border-bottom:1px solid var(--rule-light)}
+.rules-table tbody tr:nth-child(even){background:rgba(244,241,236,.5)}
+.rules-table tbody td{padding:13px 20px;vertical-align:top;line-height:1.55;color:var(--text-mid)}
+.rules-table tbody td:first-child{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--navy);text-transform:uppercase}
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.stages-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+<section class="hero">
+  <div class="hero-geo" aria-hidden="true"><span></span><span></span></div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Arquitectura del Crecimiento</div>
+      <h1 class="hero-headline">Cómo estructurar el crecimiento de una empresa mediana <em>sin perder el control</em></h1>
+      <p class="hero-deck">El crecimiento sin arquitectura no es crecimiento — es expansión de la complejidad. La diferencia entre las empresas que escalan con control y las que crecen hasta volverse ingobernables es una sola: las primeras diseñaron el sistema antes de necesitarlo.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Arquitectura del Crecimiento</span></div>
+        <div class="hero-meta-item">Lectura <span>~11 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="article-wrap">
+<div class="lead-block">
+  <p class="lead-text">Hay un patrón que se repite en empresas medianas que han logrado crecer con éxito durante varios años: en algún punto del camino, el crecimiento empieza a sentirse diferente. No más liviano ni más fluido — más pesado, más difícil de coordinar, más dependiente del CEO como punto de convergencia de cada decisión importante. Lo que antes ocurría naturalmente ahora requiere esfuerzo. Lo que antes se resolvía con una conversación ahora necesita un proceso. El problema no es el crecimiento — es que la arquitectura organizacional no creció con la empresa.</p>
+</div>
+
+<section class="section">
+  <div class="section-label">I — El problema del crecimiento no arquitectado</div>
+  <h2 class="section-title">Por qué el crecimiento produce pérdida de control — y cuándo empieza</h2>
+  <div class="body-copy">
+    <p>El crecimiento de una empresa mediana produce, de manera natural e inevitable, un aumento en la complejidad organizacional. Más clientes, más productos, más geografías, más personas, más procesos — cada una de estas dimensiones añade complejidad que el sistema organizacional debe absorber. Mientras la empresa es pequeña, esa complejidad es manejable mediante coordinación informal: el CEO habla con todos, conoce todos los proyectos, toma todas las decisiones importantes. Es ineficiente, pero funciona.</p>
+    <p>El problema comienza cuando la empresa crece hasta el punto en que la coordinación informal ya no escala. El CEO ya no puede hablar con todos ni conocer todos los proyectos. Las decisiones comienzan a retrasarse porque el proceso de tomarlas no está diseñado para la escala actual. Los directivos funcionales empiezan a operar en silos porque no hay mecanismos formales de integración. <strong>La empresa no perdió el control de manera repentina — lo fue perdiendo gradualmente, un proyecto retrasado y una decisión tardía a la vez.</strong></p>
+    <p>La pérdida de control en el crecimiento tiene un diagnóstico preciso: la arquitectura organizacional — los sistemas de toma de decisiones, los mecanismos de integración, los procesos de asignación de recursos — no fue rediseñada cuando la complejidad de la empresa lo requería. Creció la empresa. No creció el sistema que la gobierna.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>La empresa que crece sin rediseñar su arquitectura organizacional no está escalando — está acumulando complejidad no gestionada. En algún punto, esa complejidad se convierte en la restricción principal del crecimiento.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">II — Las cuatro etapas del crecimiento estructurado</div>
+  <h2 class="section-title">Cómo se ve el crecimiento con arquitectura</h2>
+  <div class="body-copy">
+    <p>Las empresas que crecen manteniendo el control no lo hacen por accidente. Lo hacen porque en cada etapa de crecimiento rediseñaron deliberadamente los sistemas que gobiernan la organización — antes de que la presión de la complejidad los forzara a hacerlo de manera reactiva.</p>
+  </div>
+
+  <div class="stages-grid">
+    <div class="stage">
+      <div class="stage-num">Etapa I</div>
+      <div class="stage-title">Claridad estratégica antes de la expansión</div>
+      <div class="stage-body">Antes de crecer, la empresa tiene claridad sobre adónde va y por qué. El crecimiento tiene una dirección explícita, no es simplemente "más". Los recursos se asignan contra una arquitectura de prioridades, no contra las oportunidades que aparecen.</div>
+    </div>
+    <div class="stage active">
+      <div class="stage-num">Etapa II</div>
+      <div class="stage-title">Arquitectura de decisiones antes de la delegación</div>
+      <div class="stage-body">Antes de delegar, la empresa diseña quién decide qué, con qué información y con qué criterios. La delegación sin arquitectura de decisiones produce caos — cada directivo toma decisiones con su propio marco de referencia.</div>
+    </div>
+    <div class="stage">
+      <div class="stage-num">Etapa III</div>
+      <div class="stage-title">Sistemas de integración antes de la escala</div>
+      <div class="stage-body">Antes de escalar, la empresa instala los mecanismos que permiten que las funciones operen de manera coherente: reuniones de integración cross-funcional, sistemas de información compartidos, procesos de coordinación formalizados.</div>
+    </div>
+    <div class="stage">
+      <div class="stage-num">Etapa IV</div>
+      <div class="stage-title">Gobierno estratégico antes del siguiente nivel</div>
+      <div class="stage-body">Antes de dar el siguiente salto de escala, la empresa instala el nivel de gobierno estratégico que ese salto requerirá — no cuando ya lo necesita con urgencia, sino cuando todavía hay tiempo para hacerlo bien.</div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<section class="section">
+  <div class="section-label">III — Las reglas del crecimiento con control</div>
+  <h2 class="section-title">Los principios que distinguen el crecimiento escalable del crecimiento que se desborda</h2>
+
+  <table class="rules-table">
+    <thead><tr><th>Principio</th><th>Lo que significa en la práctica</th><th>El error opuesto</th></tr></thead>
+    <tbody>
+      <tr><td>La arquitectura precede al crecimiento</td><td>El diseño organizacional se actualiza antes de que la complejidad lo requiera — no en respuesta a la crisis que produce su ausencia</td><td>Crecer primero, organizar después — cuando reorganizar ya es doloroso y costoso</td></tr>
+      <tr><td>El CEO delega sistemas, no decisiones</td><td>El CEO transfiere al equipo directivo la autoridad para tomar tipos de decisiones, con los criterios y la información necesarios — no casos individuales</td><td>Micromanejar individualmente mientras la organización espera la aprobación del CEO para avanzar</td></tr>
+      <tr><td>El crecimiento tiene secuencia</td><td>Se prioriza qué dimensión del crecimiento se activa primero (profundidad en mercado actual, nuevos segmentos, nuevas geografías) y no se activan múltiples simultáneamente sin la capacidad de gestionarlas en paralelo</td><td>Perseguir todos los vectores de crecimiento simultáneamente y no ejecutar ninguno bien</td></tr>
+      <tr><td>La capacidad precede al compromiso</td><td>La empresa construye la capacidad operativa, de talento y financiera para sostener el crecimiento antes de comprometerse públicamente con él</td><td>Comprometerse con el crecimiento y construir la capacidad al mismo tiempo — produciendo retrasos, errores y erosión de credibilidad</td></tr>
+      <tr><td>El gobierno escala con la empresa</td><td>Los sistemas de gobierno corporativo — Consejo, información estratégica, mecanismos de accountability — se rediseñan en cada salto de escala significativo</td><td>Usar el mismo gobierno que funcionaba con 50 personas para gestionar una empresa de 500</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <div class="section-label">IV — El rol del liderazgo estratégico en el crecimiento</div>
+  <h2 class="section-title">Quién mantiene la coherencia cuando todo crece simultáneamente</h2>
+  <div class="body-copy">
+    <p>La razón más frecuente por la que las empresas medianas pierden el control durante el crecimiento no es la falta de talento directivo ni la falta de capital. Es la ausencia de un actor que mantenga la coherencia estratégica del conjunto mientras cada función avanza en su propia dimensión.</p>
+    <p>Cuando una empresa crece, el CEO está gestionando el presente operativo. El equipo directivo está ejecutando sus funciones respectivas. El Consejo está supervisando el conjunto desde afuera con información periódica. Y nadie está haciendo una cosa específica: asegurar que todas las decisiones y movimientos simultáneos del crecimiento sean mutuamente coherentes y estén orientados hacia el mismo destino estratégico.</p>
+    <p>Esa función — la integración estratégica del crecimiento — es exactamente lo que el Strategic Leadership Layer™ provee. No gestiona el crecimiento operativo. Gestiona la coherencia del crecimiento estratégico: asegura que la expansión geográfica, la inversión en capacidades, el desarrollo del equipo directivo y la evolución del gobierno corporativo ocurran en el orden correcto, con la velocidad correcta y con la alineación correcta entre sí.</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">El síntoma más revelador</div>
+    <p>El síntoma que más claramente indica que una empresa está creciendo sin arquitectura no es el caos — es la <strong>fragmentación silenciosa</strong>: cada función está avanzando en su propia dirección, cada iniciativa está compitiendo por los mismos recursos limitados, y el CEO está pasando más tiempo resolviendo conflictos entre funciones que liderando la empresa hacia su siguiente etapa.</p>
+    <p>Cuando ese síntoma aparece, el problema ya lleva meses acumulándose. La solución no es más reuniones ni más procesos — es una revisión de la arquitectura organizacional que identifique dónde se perdió la coherencia y qué actor con qué mandato puede restaurarla.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El crecimiento que fortalece — y el que desgasta</h2>
+  <div class="closing-body">
+    <p>El crecimiento que fortalece una organización es el que añade valor sin añadir desorden — el que expande la capacidad de la empresa de crear y capturar valor sin aumentar proporcionalmente la complejidad de gestionarla. Ese tipo de crecimiento no ocurre solo. Requiere diseño, secuencia y un actor que mantenga la coherencia del conjunto mientras todo se mueve simultáneamente.</p>
+    <p>El crecimiento que desgasta es el que añade escala antes de que la arquitectura pueda sostenerla. Es el que produce organizaciones más grandes y más complicadas de las que eran más pequeñas — donde el CEO trabaja más, el equipo directivo está más ocupado y los resultados son decepcionantes comparados con el esfuerzo invertido.</p>
+    <p><strong>La diferencia entre ambos tipos de crecimiento no está en la ambición ni en los recursos. Está en si alguien, antes de crecer, diseñó el sistema que lo hace posible.</strong></p>
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+</body>
+</html>

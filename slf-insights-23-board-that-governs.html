@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build a Board That Actually Governs — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11);--green:rgba(42,92,63,.75);--red:rgba(122,31,31,.65)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — navy with grid pattern */
+.hero{background:var(--navy);padding:96px 64px 84px;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
+.hero-grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(196,154,60,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,154,60,.04) 1px,transparent 1px);background-size:56px 56px}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(30px,4.2vw,54px);font-weight:700;line-height:1.12;color:var(--cream);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.68);max-width:660px;line-height:1.62;margin-bottom:50px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.22)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.45)}
+.hero-meta-item span{color:var(--gold-light)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* GOVERNANCE TEST */
+.gov-test{margin:52px 0;border:1px solid var(--rule)}
+.gov-test-title{background:var(--navy);padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
+.gov-test-q{padding:18px 28px;border-bottom:1px solid var(--rule-light);display:flex;align-items:flex-start;gap:16px}
+.gov-test-q:last-child{border-bottom:none}
+.gov-test-q-num{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;padding-top:2px;min-width:28px}
+.gov-test-q-text{font-family:'EB Garamond',serif;font-size:17px;line-height:1.6;color:var(--text-mid)}
+.gov-test-q-text strong{color:var(--navy);font-weight:600}
+.gov-test-note{padding:14px 28px;background:rgba(13,27,62,.04);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.08em;color:var(--text-light)}
+
+/* BOARD COMPONENTS */
+.components-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.component-card{background:var(--cream);padding:30px 26px;transition:background .2s}
+.component-card:hover{background:var(--cream-dark)}
+.component-card.featured{background:var(--navy)}
+.component-num{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.component-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:10px;line-height:1.28}
+.component-card:not(.featured) .component-title{color:var(--navy)}
+.component-card.featured .component-title{color:var(--cream)}
+.component-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.62}
+.component-card:not(.featured) .component-body{color:var(--text-mid)}
+.component-card.featured .component-body{color:rgba(244,241,236,.65)}
+.component-signal{margin-top:12px;padding-top:10px;border-top:1px solid;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.component-card:not(.featured) .component-signal{border-color:var(--rule-light);color:var(--gold)}
+.component-card.featured .component-signal{border-color:rgba(196,154,60,.2);color:var(--gold-light)}
+.component-signal::before{content:'Test: '}
+
+/* BUILD SEQUENCE */
+.build-sequence{margin:48px 0}
+.build-phase{display:flex;gap:0;margin-bottom:3px}
+.build-phase-marker{width:48px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.build-phase-dot{width:18px;height:18px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:20px}
+.build-phase-dot-inner{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.build-phase-line{flex:1;width:2px;background:rgba(13,27,62,.12);margin-bottom:0}
+.build-phase:last-child .build-phase-line{display:none}
+.build-phase-content{flex:1;background:var(--cream);border:1px solid var(--rule-light);padding:20px 28px;margin-bottom:0}
+.build-phase-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.build-phase-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.25}
+.build-phase-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.65;color:var(--text-mid)}
+.build-phase-body strong{color:var(--navy);font-weight:600}
+
+/* COMPOSITION MATRIX */
+.composition-matrix{margin:52px 0;border:1px solid var(--rule)}
+.cm-title{background:var(--navy);padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
+.cm-row{display:grid;grid-template-columns:1fr 100px 240px;border-bottom:1px solid var(--rule-light)}
+.cm-row:last-child{border-bottom:none}
+.cm-row.header-row{background:rgba(13,27,62,.06)}
+.cm-cell{padding:14px 20px;font-family:'EB Garamond',serif;font-size:15px;line-height:1.5;color:var(--text-mid);vertical-align:middle}
+.cm-cell.header{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);border-left:1px solid var(--rule-light)}
+.cm-cell.header:first-child{border-left:none;color:var(--navy)}
+.cm-cell.profile{border-left:1px solid var(--rule-light)}
+.cm-cell.contribution{border-left:1px solid var(--rule-light);font-size:14px;color:var(--text-light)}
+.cm-cell.profile-name{color:var(--navy);font-weight:500}
+
+/* WHAT NOT */
+.what-not{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.what-not-card{background:var(--cream);padding:26px 26px;transition:background .2s}
+.what-not-card:hover{background:var(--cream-dark)}
+.what-not-icon{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.what-not-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.28}
+.what-not-body{font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:var(--text-mid)}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.components-grid,.what-not{grid-template-columns:1fr}.cm-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Strategic Thinking at the Highest Level</div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Corporate Governance</div>
+      <h1 class="hero-headline">
+        How to Build a Board of Directors<br>
+        That <em>Actually Governs</em><br>
+        (Not Just Supervises)
+      </h1>
+      <p class="hero-deck">
+        Most companies with a Board think they have governance. What they have is a meeting — with the right attendees, the right frequency, and the right formality. Governance is something that requires deliberate design — and most Boards were never designed.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">By <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Category <span>Corporate Governance</span></div>
+        <div class="hero-meta-item">Read <span>~12 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">There is a distinction that separates companies with governance from companies with governance theater — and it has nothing to do with the credentials of the Board members, the frequency of sessions, or the thickness of the Board packages. It has to do with whether the Board has ever changed a decision that management would have made without it. If the honest answer is no — or if it requires going back more than two or three sessions to find an example — the Board is not governing. It is supervising. And supervision, however well-intentioned, is not a substitute for governance.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — The Governing Test</div>
+  <h2 class="section-title">How to know whether your Board actually governs</h2>
+  <div class="body-copy">
+    <p>Before building a Board that governs, it is necessary to assess with honesty whether the current Board does. This assessment does not require a formal evaluation process. It requires honest answers to six specific questions — questions that directly probe the quality of governance, not its form.</p>
+  </div>
+
+  <div class="gov-test">
+    <div class="gov-test-title">The Governance Quality Assessment — Six Questions</div>
+    <div class="gov-test-q">
+      <div class="gov-test-q-num">01</div>
+      <div class="gov-test-q-text">In the last four Board sessions, did the Board modify any management proposal in a substantive way — not in a detail, but in its core structure or direction? <strong>If no, the Board is not deliberating.</strong></div>
+    </div>
+    <div class="gov-test-q">
+      <div class="gov-test-q-num">02</div>
+      <div class="gov-test-q-text">Has the Board ever stopped a management initiative that it considered misaligned with the company's strategic direction or risk profile? <strong>If never, the Board is not governing — it is approving.</strong></div>
+    </div>
+    <div class="gov-test-q">
+      <div class="gov-test-q-num">03</div>
+      <div class="gov-test-q-text">Does the Board have its own strategic agenda — topics it wants to examine over the next 12 months — independent of what management chooses to present? <strong>If no, management controls the governance agenda.</strong></div>
+    </div>
+    <div class="gov-test-q">
+      <div class="gov-test-q-num">04</div>
+      <div class="gov-test-q-text">Do Board members receive the information package at least seven days before the session, with sufficient time for substantive preparation? <strong>If no, the Board cannot deliberate — it can only react.</strong></div>
+    </div>
+    <div class="gov-test-q">
+      <div class="gov-test-q-num">05</div>
+      <div class="gov-test-q-text">Does the Board have regular private sessions — without management present — to develop its independent perspective? <strong>If no, the Board's independence is formal, not functional.</strong></div>
+    </div>
+    <div class="gov-test-q">
+      <div class="gov-test-q-num">06</div>
+      <div class="gov-test-q-text">Has the Board held management accountable for a commitment that was not met — with a genuine consequence, not a reframing? <strong>If no, the accountability system is decorative.</strong></div>
+    </div>
+    <div class="gov-test-note">If four or more of these questions produce a "no" or a qualified "yes," the Board requires structural redesign — not a communication workshop.</div>
+  </div>
+
+  <div class="pull-quote">
+    <p>The Board that has never stopped anything is not a Board that agrees with management on everything. It is a Board that was never given the architecture it needs to disagree effectively — and that has learned, over time, to approve.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II -->
+<section class="section">
+  <div class="section-label">II — The Six Components</div>
+  <h2 class="section-title">What a Board that governs is actually built from</h2>
+  <div class="body-copy">
+    <p>A governing Board is not a collection of experienced people who meet regularly. It is an architecture — a set of six interlocking components that must be designed, not assumed. Each component is necessary; none is sufficient alone.</p>
+  </div>
+
+  <div class="components-grid">
+    <div class="component-card">
+      <div class="component-num">Component 01</div>
+      <div class="component-title">The right composition for this company, at this stage</div>
+      <div class="component-body">Board composition must be evaluated against the strategic needs of the company in its current stage — not against the preferences of the majority shareholder or the credentials that sound impressive in a bio. A Board built for the company of five years ago is not built for the company of today.</div>
+      <div class="component-signal">Could each director articulate the company's three most important strategic risks right now?</div>
+    </div>
+    <div class="component-card">
+      <div class="component-num">Component 02</div>
+      <div class="component-title">A decision-rights architecture that is explicit and enforced</div>
+      <div class="component-body">A governing Board knows precisely which decisions require its approval and which belong to the CEO. Without an explicit decision-rights matrix, the Board either approves everything (rubber-stamping) or intervenes in everything (micro-management). Both destroy governance quality.</div>
+      <div class="component-signal">Does every Board member know what they can approve without a session and what requires one?</div>
+    </div>
+    <div class="component-card featured">
+      <div class="component-num">Central element</div>
+      <div class="component-title">Strategic information designed by the Board, not management</div>
+      <div class="component-body">The Board's information architecture must be defined by the Board itself — what it needs to govern, not what management wants it to see. This is the most frequently missing element in non-governing Boards, and the one with the highest leverage on governance quality.</div>
+      <div class="component-signal">Did the Board design its own information package — or does it receive what management sends?</div>
+    </div>
+    <div class="component-card">
+      <div class="component-num">Component 04</div>
+      <div class="component-title">An agenda that is controlled by governance, not management</div>
+      <div class="component-body">The Board's session agenda must be set by the Board Chair in dialogue with the CEO — but with the Board's own governance calendar as the primary driver. A Board whose agenda is set by the CEO is reviewing what management wants reviewed, not governing what governance requires.</div>
+      <div class="component-signal">Does the Board have a 12-month strategic governance calendar it owns independently?</div>
+    </div>
+    <div class="component-card">
+      <div class="component-num">Component 05</div>
+      <div class="component-title">A culture of genuine deliberation — where dissent is expected</div>
+      <div class="component-body">The most important cultural norm in a governing Board is that disagreement is not disruptive — it is the mechanism of governance. A Board where directors express reservations privately and validate publicly does not deliberate. It performs deliberation. Building a culture where dissent is structurally safe requires the active leadership of the Board Chair.</div>
+      <div class="component-signal">Has any director publicly challenged a management proposal in a session this year?</div>
+    </div>
+    <div class="component-card">
+      <div class="component-num">Component 06</div>
+      <div class="component-title">A real accountability system with real consequences</div>
+      <div class="component-body">Governance without accountability is governance theater. The Board must track commitments made by management across sessions, evaluate their fulfillment against agreed criteria, and have the willingness to act when those commitments are consistently unmet. The accountability system is the most politically difficult component — and the most important.</div>
+      <div class="component-signal">What was the last commitment the Board held management to that had a real consequence?</div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III — COMPOSITION -->
+<section class="section">
+  <div class="section-label">III — Board Composition</div>
+  <h2 class="section-title">How to build the right composition — and the profiles that are consistently missing</h2>
+  <div class="body-copy">
+    <p>Board composition is the most consequential design decision in building a governing Board — and the one most frequently made on the wrong criteria. The common approach is to seek directors with impressive credentials and institutional relationships. The correct approach is to identify the specific strategic questions the company will face over the next three to five years and recruit directors who can engage with those questions at the required depth.</p>
+    <p>The following matrix describes the profiles that have the highest leverage on governance quality in mid-market companies — not the most frequently recruited profiles, which are often senior executives from larger organizations who bring prestige but not necessarily the right depth for the company's specific governance needs.</p>
+  </div>
+
+  <div class="composition-matrix">
+    <div class="cm-title">High-leverage Board profiles for mid-market governance</div>
+    <div class="cm-row header-row">
+      <div class="cm-cell" style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy)">Director profile</div>
+      <div class="cm-cell header">Frequency</div>
+      <div class="cm-cell header">Primary governance contribution</div>
+    </div>
+    <div class="cm-row">
+      <div class="cm-cell profile-name">Sector operator with P&L accountability</div>
+      <div class="cm-cell profile">Common</div>
+      <div class="cm-cell contribution">Operational credibility — can challenge management on execution realism, not just strategy</div>
+    </div>
+    <div class="cm-row">
+      <div class="cm-cell profile-name">Capital markets and M&A practitioner</div>
+      <div class="cm-cell profile">Moderate</div>
+      <div class="cm-cell contribution">Transaction literacy — essential for companies considering capital events, acquisitions, or exits</div>
+    </div>
+    <div class="cm-row">
+      <div class="cm-cell profile-name">Governance specialist with board experience across multiple companies</div>
+      <div class="cm-cell profile">Rare</div>
+      <div class="cm-cell contribution">Process rigor — maintains the quality of the governance function itself, not just the content of decisions</div>
+    </div>
+    <div class="cm-row">
+      <div class="cm-cell profile-name">Customer or market-side perspective holder</div>
+      <div class="cm-cell profile">Very rare</div>
+      <div class="cm-cell contribution">External reality check — the voice that asks "but what does the customer actually experience?" when strategy risks becoming internally-referential</div>
+    </div>
+    <div class="cm-row">
+      <div class="cm-cell profile-name">Risk and regulatory expert in the company's sector</div>
+      <div class="cm-cell profile">Moderate</div>
+      <div class="cm-cell contribution">Risk intelligence — identifies regulatory, compliance, and reputational risks that operational directors may normalize</div>
+    </div>
+    <div class="cm-row">
+      <div class="cm-cell profile-name">Strategic integration actor (SLL™ function)</div>
+      <div class="cm-cell profile">Absent</div>
+      <div class="cm-cell contribution">The translation and integration layer — connects governance orientation to execution architecture; the most frequently absent and most consequential gap</div>
+    </div>
+  </div>
+
+  <div class="body-copy">
+    <p>The profile most consistently absent from mid-market Boards is not a specific sector expert or functional specialist — it is the strategic integration actor who can translate between the Board's governance orientation and the CEO's execution reality, who can prepare the Board's information architecture, and who can maintain the coherence of the governance system as the company evolves. That is precisely the function the Strategic Leadership Layer™ performs at the intersection of Board and management.</p>
+  </div>
+</section>
+
+<!-- IV — BUILDING SEQUENCE -->
+<section class="section">
+  <div class="section-label">IV — The Build Sequence</div>
+  <h2 class="section-title">How to build or rebuild a governing Board — in the right order</h2>
+  <div class="body-copy">
+    <p>Building a governing Board is not a one-time event — it is a phased process that requires sequencing decisions in the right order. Getting the sequence wrong is one of the most common reasons governance redesign efforts fail: the right decisions made in the wrong order produce the wrong outcome.</p>
+  </div>
+
+  <div class="build-sequence">
+    <div class="build-phase">
+      <div class="build-phase-marker">
+        <div class="build-phase-dot"><div class="build-phase-dot-inner"></div></div>
+        <div class="build-phase-line"></div>
+      </div>
+      <div class="build-phase-content">
+        <div class="build-phase-label">Phase I — Before any structural decisions</div>
+        <div class="build-phase-title">Define what the Board is governing toward</div>
+        <div class="build-phase-body">The first question in building a governing Board is not "who should be on the Board?" — it is "what does this Board need to govern, over what horizon, with what accountability structure?" The answer to that question determines the composition, the decision-rights architecture, and the information system. Starting with composition before answering this question produces a Board assembled around credentials rather than governance requirements. <strong>The composition follows the mandate — the mandate does not follow the composition.</strong></div>
+      </div>
+    </div>
+    <div class="build-phase">
+      <div class="build-phase-marker">
+        <div class="build-phase-dot"><div class="build-phase-dot-inner"></div></div>
+        <div class="build-phase-line"></div>
+      </div>
+      <div class="build-phase-content">
+        <div class="build-phase-label">Phase II — Structural design</div>
+        <div class="build-phase-title">Design the decision-rights architecture and information system</div>
+        <div class="build-phase-body">Before recruiting directors, design the governance architecture they will inhabit: the decision-rights matrix that defines Board versus CEO authority, the information system that gives the Board what it needs to govern (not what management wants it to see), and the accountability mechanisms that will track management commitments across sessions. <strong>Directors recruited into a well-designed governance architecture govern well. Directors recruited into a poorly designed architecture govern poorly — regardless of their individual capability.</strong></div>
+      </div>
+    </div>
+    <div class="build-phase">
+      <div class="build-phase-marker">
+        <div class="build-phase-dot"><div class="build-phase-dot-inner"></div></div>
+        <div class="build-phase-line"></div>
+      </div>
+      <div class="build-phase-content">
+        <div class="build-phase-label">Phase III — Composition</div>
+        <div class="build-phase-title">Recruit for the gaps the governance mandate requires</div>
+        <div class="build-phase-body">With the governance mandate and architecture defined, the composition question becomes specific: which profiles does the Board need to fulfill this governance mandate, at this company, in this stage? Audit the current composition against those requirements. Identify the gaps. Recruit specifically to close them — not to add prestige or relationships that do not directly strengthen the governance function. <strong>Every seat on a governing Board has a specific governance purpose. If you cannot articulate the purpose of a seat, the seat is probably decorative.</strong></div>
+      </div>
+    </div>
+    <div class="build-phase">
+      <div class="build-phase-marker">
+        <div class="build-phase-dot"><div class="build-phase-dot-inner"></div></div>
+        <div class="build-phase-line"></div>
+      </div>
+      <div class="build-phase-content">
+        <div class="build-phase-label">Phase IV — Culture and practice</div>
+        <div class="build-phase-title">Build the deliberation culture through practice, not declaration</div>
+        <div class="build-phase-body">Governance culture is not built through a governance charter or a code of conduct — it is built through repeated practice in the session room. The Board Chair who models genuine deliberation — who encourages dissent, who asks the uncomfortable question, who holds management accountable in real time — builds the culture over sessions, not over declarations. <strong>The first time the Board exercises genuine governance authority — stops something, modifies something significantly, demands accountability with real consequences — is the moment the culture begins to consolidate.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- V — WHAT NOT TO DO -->
+<section class="section">
+  <div class="section-label">V — The Common Mistakes</div>
+  <h2 class="section-title">What not to do when building a governing Board</h2>
+  <div class="body-copy">
+    <p>The path toward a governing Board is as much about what to avoid as what to build. The following six patterns appear consistently in governance redesign efforts that produce form without function — Boards that look governing but do not govern.</p>
+  </div>
+
+  <div class="what-not">
+    <div class="what-not-card">
+      <div class="what-not-icon">Mistake 01</div>
+      <div class="what-not-title">Recruiting for prestige instead of purpose</div>
+      <div class="what-not-body">Directors recruited because of their name recognition, their institutional affiliations, or their network value — rather than their specific governance contribution to this company at this stage — almost always underdeliver on governance quality. Prestige and governance effectiveness are frequently uncorrelated.</div>
+    </div>
+    <div class="what-not-card">
+      <div class="what-not-icon">Mistake 02</div>
+      <div class="what-not-title">Letting management design the Board's information</div>
+      <div class="what-not-body">When the CEO or CFO designs the Board package — deciding what to present, at what level of detail, in what framing — the Board's information is filtered through the very perspective it is supposed to be supervising independently. The Board must own its information architecture.</div>
+    </div>
+    <div class="what-not-card">
+      <div class="what-not-icon">Mistake 03</div>
+      <div class="what-not-title">Filling the session with reporting instead of deliberation</div>
+      <div class="what-not-body">A session where 80% of the time is spent reviewing what management has done is a reporting session — not a governance session. Governance requires time for deliberation about what should be done next. The reporting function should be pre-read material, not the primary content of the session itself.</div>
+    </div>
+    <div class="what-not-card">
+      <div class="what-not-icon">Mistake 04</div>
+      <div class="what-not-title">Treating the governance redesign as a one-time project</div>
+      <div class="what-not-body">Building a governing Board is not a project with a completion date — it is an ongoing function that requires continuous attention. The Board's governance needs evolve as the company evolves. A governance architecture designed for the company of today will need redesign as the company grows, enters new markets, or faces new categories of strategic challenge.</div>
+    </div>
+    <div class="what-not-card">
+      <div class="what-not-icon">Mistake 05</div>
+      <div class="what-not-title">Confusing independence with capability</div>
+      <div class="what-not-body">Independent directors — directors with no management role or significant shareholder stake — are a structural requirement for governance integrity. But independence is not a substitute for competence. An independent director who does not understand the business well enough to challenge management intelligently provides independence without governance value.</div>
+    </div>
+    <div class="what-not-card">
+      <div class="what-not-icon">Mistake 06</div>
+      <div class="what-not-title">Expecting the Board to self-govern its governance quality</div>
+      <div class="what-not-body">Boards rarely improve their own governance quality through self-reflection alone. The same cultural dynamics that prevent genuine deliberation in sessions also prevent genuine self-assessment in Board evaluations. An external perspective — held by an actor with the mandate and the institutional independence to be honest about what the Board is and is not doing — is almost always necessary for meaningful governance improvement.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">The SLL™ in Board development — Cretta's role</div>
+    <p>Building a governing Board is one of the mandates Cretta undertakes most frequently — and one where the SLL™ model has a specific structural advantage over conventional Board consulting. A firm brought in to "assess Board effectiveness" and produce a report operates in the same advisory mode as the one that produces governance theater: it diagnoses without accountability for the result.</p>
+    <p>Cretta's engagement in Board development is a mandate: with explicit accountability for producing a Board that governs, not one that looks like it governs. This means Cretta works simultaneously on composition, information architecture, decision-rights design, and culture — in the sequence that produces sustainable governance, not the sequence that produces the fastest deliverable.</p>
+    <p><strong>The measure of success is not the governance charter produced at the end of the engagement. It is whether, eighteen months later, the Board has changed decisions that management would have made without it.</strong> That is what governing Boards do. And that is what the engagement is designed to produce.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">The Board the company deserves — built with intention</h2>
+  <div class="closing-body">
+    <p>Every company with a Board thinks it has governance. The discipline of asking — honestly, with evidence — whether the Board has actually changed anything that management would have done without it, is the discipline that separates companies with governance from companies with governance theater. And that discipline is uncomfortable, because the honest answer is frequently "no."</p>
+    <p>The companies that build governing Boards are not the ones that hire the most impressive directors or produce the most elaborate governance documents. They are the ones that treat governance as an architecture to be designed — with the same intentionality they bring to their business model, their capital structure, and their talent strategy. They design the composition for the mandate, the information system for the Board's needs, the decision-rights matrix for the company's specific context, and the culture for genuine deliberation.</p>
+    <p><strong>That design does not happen by accident. It requires an actor who understands what governing Boards look like from the inside — and who has the mandate to produce one, not just describe one.</strong></p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Thinking for decisions that matter</div>
+</footer>
+
+</body>
+</html>

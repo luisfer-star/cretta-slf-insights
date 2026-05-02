@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Consejo que solo revisa y no decide — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — navy with strong grid pattern */
+.hero{background:var(--navy);padding:96px 64px 84px;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(196,154,60,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,154,60,.04) 1px,transparent 1px);background-size:64px 64px}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.12;color:var(--cream);max-width:800px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:rgba(244,241,236,.65);max-width:640px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(196,154,60,.2)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,236,.42)}
+.hero-meta-item span{color:var(--gold-light)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* DIAGNOSTIC METER — session audit visual */
+.session-audit{margin:52px 0}
+.session-audit-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.audit-row{margin-bottom:14px}
+.audit-row-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.audit-row-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mid)}
+.audit-row-pct{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--text-light)}
+.audit-track{height:11px;background:rgba(13,27,62,.08);position:relative}
+.audit-fill{height:100%;position:absolute;left:0;top:0}
+.fill-review{background:rgba(106,106,133,.4)}
+.fill-approval{background:rgba(21,40,72,.55)}
+.fill-decision{background:var(--gold)}
+.fill-strategic{background:var(--navy)}
+.audit-caption{font-family:'EB Garamond',serif;font-size:14px;font-style:italic;color:var(--text-light);margin-top:14px}
+
+/* CAUSES — horizontal cards full bleed section */
+.causes-strip{background:var(--navy);padding:56px 0;margin:52px 0}
+.causes-inner{max-width:1040px;margin:0 auto;padding:0 64px}
+.causes-strip-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:14px}
+.causes-strip-title::after{content:'';flex:1;max-width:56px;height:1px;background:rgba(196,154,60,.3)}
+.causes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cause-card{border-top:2px solid rgba(196,154,60,.3);padding-top:20px}
+.cause-num{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.cause-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--cream);margin-bottom:10px;line-height:1.28}
+.cause-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.62;color:rgba(244,241,236,.6)}
+
+/* SPECTRUM — governance spectrum visual */
+.spectrum{margin:52px 0}
+.spectrum-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.spectrum-track{position:relative;height:10px;background:linear-gradient(90deg,rgba(122,31,31,.35) 0%,rgba(196,154,60,.4) 50%,var(--navy) 100%);margin-bottom:8px}
+.spectrum-labels{display:flex;justify-content:space-between}
+.spectrum-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.spectrum-label.left{color:rgba(122,31,31,.7)}
+.spectrum-label.center{color:var(--gold);text-align:center}
+.spectrum-label.right{color:var(--navy)}
+.spectrum-positions{display:flex;justify-content:space-between;margin-top:20px;gap:2px;background:var(--rule-light)}
+.spectrum-pos{padding:18px 20px;flex:1;background:var(--cream)}
+.spectrum-pos-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.spectrum-pos.rubber-stamp .spectrum-pos-label{color:rgba(122,31,31,.7)}
+.spectrum-pos.advisory .spectrum-pos-label{color:var(--text-light)}
+.spectrum-pos.governing .spectrum-pos-label{color:var(--gold)}
+.spectrum-pos.directing .spectrum-pos-label{color:var(--navy)}
+.spectrum-pos-body{font-family:'EB Garamond',serif;font-size:14px;line-height:1.55;color:var(--text-light)}
+.spectrum-pos.governing{background:rgba(196,154,60,.06);border:1px solid var(--rule)}
+
+/* SOLUTION — numbered build */
+.solution-list{margin:48px 0}
+.solution-item{display:grid;grid-template-columns:80px 1fr;padding:32px 0;border-bottom:1px solid var(--rule-light)}
+.solution-item:first-child{border-top:1px solid var(--rule-light)}
+.solution-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:rgba(196,154,60,.18);line-height:1;padding-top:2px}
+.solution-heading{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.solution-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.7;color:var(--text-mid)}
+.solution-body strong{color:var(--navy);font-weight:600}
+
+/* SESSION REDESIGN — before/after */
+.session-compare{margin:48px 0;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light)}
+.session-col{padding:0}
+.session-col-header{padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+.session-col.before .session-col-header{background:var(--cream-dark);color:var(--text-light);border-right:1px solid var(--rule-light)}
+.session-col.after .session-col-header{background:var(--navy);color:var(--gold)}
+.session-block{padding:14px 28px;border-bottom:1px solid var(--rule-light);display:flex;gap:10px;align-items:flex-start}
+.session-block:last-child{border-bottom:none}
+.session-block-time{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--gold);white-space:nowrap;padding-top:2px;min-width:52px}
+.session-block.before-block .session-block-time{color:var(--text-light)}
+.session-block-content{}
+.session-block-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-mid);margin-bottom:2px}
+.session-col.after .session-block-title{color:var(--navy-mid)}
+.session-block-note{font-family:'EB Garamond',serif;font-size:14px;color:var(--text-light);line-height:1.45}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer,.causes-inner{padding-left:22px;padding-right:22px}.causes-grid,.spectrum-positions,.session-compare{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Gobierno Corporativo</div>
+      <h1 class="hero-headline">
+        El Consejo de Administración que<br>
+        <em>solo revisa y no decide:</em><br>
+        diagnóstico y solución estructural
+      </h1>
+      <p class="hero-deck">
+        Un Consejo que revisa sin decidir no es un Consejo débil — es un Consejo mal diseñado. La degradación de su función no ocurre de golpe ni por negligencia. Ocurre gradualmente, por acumulación de decisiones de diseño que nadie tomó de manera consciente.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Categoría <span>Gobierno Corporativo</span></div>
+        <div class="hero-meta-item">Lectura <span>~12 minutos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">Existe un Consejo de Administración en muchas más empresas de las que ejercen gobierno corporativo real. La diferencia entre ambas categorías no está en los documentos constitutivos, en el número de consejeros independientes ni en la frecuencia de las sesiones. Está en una pregunta que rara vez se formula con suficiente honestidad: ¿cuándo fue la última vez que este Consejo tomó una decisión que la Dirección no hubiera tomado sin él, o que la Dirección se oponía a tomar?</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — El diagnóstico de partida</div>
+  <h2 class="section-title">Cómo se ve un Consejo que solo revisa — y por qué es tan difícil reconocerlo desde adentro</h2>
+  <div class="body-copy">
+    <p>El Consejo que solo revisa tiene una apariencia completamente funcional. Sus sesiones ocurren con la periodicidad establecida. Los consejeros asisten, hacen preguntas, expresan opiniones. Se generan actas detalladas. Se aprueban reportes. Existe toda la parafernalia del gobierno corporativo en forma — pero no en función.</p>
+    <p>Lo que falta es precisamente lo que hace valioso al gobierno corporativo: la capacidad de alterar el curso de las decisiones estratégicas de la empresa. Un Consejo que aprueba sistemáticamente lo que la Dirección propone, que no produce deliberación real sobre las preguntas estratégicas más importantes, que no tiene los mecanismos ni la voluntad de frenar iniciativas que considera equivocadas, no está gobernando — está validando.</p>
+    <p>La razón por la que este patrón es difícil de reconocer desde adentro es que cada sesión parece productiva. Hay contenido, hay conversación, hay acuerdos. Lo que no hay — y lo que es difícil de ver porque su ausencia no produce ningún evento visible — es la influencia real del Consejo sobre el rumbo estratégico de la empresa. Esa influencia, cuando existe, se manifiesta en decisiones que el Consejo modificó, en iniciativas que el Consejo detuvo, en preguntas que el Consejo formuló y que cambiaron la perspectiva de la Dirección. Cuando esos momentos no ocurren nunca, o casi nunca, el Consejo no está gobernando.</p>
+  </div>
+
+  <!-- SESSION AUDIT -->
+  <div class="session-audit">
+    <div class="session-audit-title">Distribución típica del tiempo en una sesión de Consejo no gobernante</div>
+    <div class="audit-row">
+      <div class="audit-row-header">
+        <span class="audit-row-label">Revisión de reportes financieros y operativos</span>
+        <span class="audit-row-pct">42%</span>
+      </div>
+      <div class="audit-track"><div class="audit-fill fill-review" style="width:42%"></div></div>
+    </div>
+    <div class="audit-row">
+      <div class="audit-row-header">
+        <span class="audit-row-label">Presentaciones de la Dirección sobre iniciativas en curso</span>
+        <span class="audit-row-pct">28%</span>
+      </div>
+      <div class="audit-track"><div class="audit-fill fill-review" style="width:28%"></div></div>
+    </div>
+    <div class="audit-row">
+      <div class="audit-row-header">
+        <span class="audit-row-label">Aprobaciones formales de lo ya decidido operativamente</span>
+        <span class="audit-row-pct">18%</span>
+      </div>
+      <div class="audit-track"><div class="audit-fill fill-approval" style="width:18%"></div></div>
+    </div>
+    <div class="audit-row">
+      <div class="audit-row-header">
+        <span class="audit-row-label">Deliberación estratégica genuina sobre el futuro</span>
+        <span class="audit-row-pct">7%</span>
+      </div>
+      <div class="audit-track"><div class="audit-fill fill-decision" style="width:7%"></div></div>
+    </div>
+    <div class="audit-row">
+      <div class="audit-row-header">
+        <span class="audit-row-label">Supervisión activa de riesgos estratégicos</span>
+        <span class="audit-row-pct">5%</span>
+      </div>
+      <div class="audit-track"><div class="audit-fill fill-strategic" style="width:5%"></div></div>
+    </div>
+    <div class="audit-caption">Estimación basada en análisis de patrones de sesión en Consejos de empresas medianas sin arquitectura de gobierno diseñada. El tiempo de deliberación estratégica real suele ser menor al declarado por los propios consejeros.</div>
+  </div>
+
+  <div class="pull-quote">
+    <p>Un Consejo que nunca frena una iniciativa de la Dirección, que nunca modifica una propuesta de manera sustancial, que nunca produce una deliberación que cambia la postura inicial de alguno de sus miembros — ese Consejo no está gobernando. Está actuando en una obra de teatro cuyo guión ya escribió la Dirección.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II — FULL BLEED CAUSES -->
+</main>
+
+<div class="causes-strip">
+  <div class="causes-inner">
+    <div class="causes-strip-title">Las seis causas de la degradación — Por qué el Consejo pierde su función de gobierno</div>
+    <div class="causes-grid">
+      <div class="cause-card">
+        <div class="cause-num">Causa 01</div>
+        <div class="cause-title">La información que llega está precocinada por la Dirección</div>
+        <div class="cause-body">El Consejo decide sobre la base de la información que recibe — y esa información la prepara la Dirección. Cuando el sistema de información al Consejo es diseñado unilateralmente por quien es supervisado, el Consejo inevitablemente ve lo que la Dirección quiere que vea: las cifras favorables, las narrativas que justifican las decisiones ya tomadas, los riesgos minimizados. Gobernar con información precocinada no es gobernar.</div>
+      </div>
+      <div class="cause-card">
+        <div class="cause-num">Causa 02</div>
+        <div class="cause-title">La agenda la controla quien es supervisado</div>
+        <div class="cause-body">En la mayoría de los Consejos de empresas medianas, la agenda de cada sesión la define el CEO o la Dirección General. Esto invierte la lógica del gobierno: quien debe ser supervisado decide de qué hablará quien lo supervisa. Un Consejo sin control real sobre su agenda no puede ejercer supervisión independiente — puede solo reaccionar a lo que la Dirección decide poner sobre la mesa.</div>
+      </div>
+      <div class="cause-card">
+        <div class="cause-num">Causa 03</div>
+        <div class="cause-title">Los consejeros no tienen la información con suficiente anticipación</div>
+        <div class="cause-body">Deliberar con profundidad sobre decisiones estratégicas complejas requiere tiempo de preparación. Cuando los paquetes de información llegan 24 o 48 horas antes de la sesión — o durante la sesión misma — los consejeros no pueden ejercer su función con la profundidad que requiere. La deliberación se reduce a preguntas de superficie sobre material que nadie tuvo tiempo de analizar con rigor.</div>
+      </div>
+      <div class="cause-card">
+        <div class="cause-num">Causa 04</div>
+        <div class="cause-title">La composición del Consejo no es la correcta para las decisiones que debe tomar</div>
+        <div class="cause-body">Un Consejo cuya composición refleja la confianza del accionista mayoritario más que las capacidades necesarias para gobernar la empresa en su etapa actual tiene una brecha de competencia que ningún proceso formal puede compensar. Los consejeros que no entienden el sector, la etapa de desarrollo o los riesgos específicos de la empresa no pueden supervisar con rigor lo que no comprenden.</div>
+      </div>
+      <div class="cause-card">
+        <div class="cause-num">Causa 05</div>
+        <div class="cause-title">No existe una matriz de atribuciones que defina qué decide el Consejo</div>
+        <div class="cause-body">Cuando no hay claridad sobre qué categorías de decisiones requieren aprobación del Consejo versus cuáles corresponden a la Dirección, el Consejo tiende a aprobar todo lo que le presentan — porque no tiene el marco para distinguir lo que es suyo de lo que no. La ausencia de la matriz de atribuciones produce un Consejo que aprueba demasiado sin deliberar sobre nada.</div>
+      </div>
+      <div class="cause-card">
+        <div class="cause-num">Causa 06</div>
+        <div class="cause-title">La cultura de la sesión no tolera el desacuerdo real</div>
+        <div class="cause-body">En muchos Consejos de empresas medianas, especialmente familiares, existe una norma no escrita de que el disenso abierto es disruptivo o irrespetuoso. Esta cultura produce consejeros que expresan sus reservas en privado y validan en público — exactamente lo opuesto de lo que el gobierno corporativo requiere. El Consejo que no puede tolerar el desacuerdo no puede deliberar, y el que no delibera no puede gobernar.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+
+<!-- III -->
+<section class="section">
+  <div class="section-label">III — El espectro del gobierno</div>
+  <h2 class="section-title">Las cuatro posiciones en el espectro — dónde está su Consejo</h2>
+  <div class="body-copy">
+    <p>El gobierno ejercido por un Consejo no es binario — funciona o no funciona. Es un espectro de cuatro posiciones que describe con precisión creciente dónde se ubica un Consejo en términos de su función real de gobierno. Identificar la posición actual es el primer paso para diseñar la intervención correcta.</p>
+  </div>
+
+  <div class="spectrum">
+    <div class="spectrum-title">Espectro de función del Consejo de Administración</div>
+    <div class="spectrum-track"></div>
+    <div class="spectrum-labels">
+      <span class="spectrum-label left">Sello de goma</span>
+      <span class="spectrum-label center">⬡ Punto de equilibrio deseable ⬡</span>
+      <span class="spectrum-label right">Director operativo</span>
+    </div>
+    <div class="spectrum-positions">
+      <div class="spectrum-pos rubber-stamp">
+        <div class="spectrum-pos-label">Posición A — Sello de goma</div>
+        <div class="spectrum-pos-body">Aprueba sistemáticamente lo que propone la Dirección. No produce deliberación real. Su función es legitimadora, no gubernativa. Costo: ausencia total de supervisión independiente.</div>
+      </div>
+      <div class="spectrum-pos advisory">
+        <div class="spectrum-pos-label">Posición B — Consejero pasivo</div>
+        <div class="spectrum-pos-body">Hace preguntas, expresa opiniones, pero raramente altera las decisiones propuestas. Aporta perspectiva pero sin accountability sobre el resultado. Costo: supervisión de superficie sin influencia real.</div>
+      </div>
+      <div class="spectrum-pos governing">
+        <div class="spectrum-pos-label">Posición C — Gobierno activo ✓</div>
+        <div class="spectrum-pos-body">Delibera con profundidad, modifica propuestas cuando es necesario, frena iniciativas que no deberían avanzar, exige accountability real a la Dirección. Produce decisiones que el CEO solo no habría tomado.</div>
+      </div>
+      <div class="spectrum-pos directing">
+        <div class="spectrum-pos-label">Posición D — Micro-dirección</div>
+        <div class="spectrum-pos-body">Interviene en decisiones operativas que corresponden a la Dirección. Crea ambigüedad de mandato, paraliza la ejecución y sustituye a la Dirección sin tener su información ni su responsabilidad. Costo: empresa sin liderazgo ejecutivo claro.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-copy" style="margin-top:28px">
+    <p>La mayoría de los Consejos de empresas medianas en LATAM se encuentran en la Posición A o B. La minoría que ha trabajado conscientemente su modelo de gobierno está en C. La D es menos frecuente pero igualmente disfuncional — y tiene el efecto paradójico de destruir tanto la efectividad del gobierno como la de la dirección ejecutiva simultáneamente.</p>
+    <p>El objetivo del rediseño no es maximizar la intervención del Consejo — es posicionarlo con precisión en la Posición C: suficientemente activo para ejercer supervisión real y producir influencia estratégica genuina, suficientemente contenido para no invadir el espacio ejecutivo que le corresponde a la Dirección.</p>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — La solución estructural</div>
+  <h2 class="section-title">Cómo se transforma un Consejo revisor en un Consejo que gobierna</h2>
+  <div class="body-copy">
+    <p>La transformación del Consejo de revisor a gobernante no es un proceso de capacitación ni de cambio de actitud. Es un proceso de rediseño arquitectónico que actúa sobre las causas estructurales de la disfunción. Tiene seis intervenciones que deben implementarse de manera integrada — no de manera secuencial ni parcial.</p>
+  </div>
+
+  <div class="solution-list">
+    <div class="solution-item">
+      <div class="solution-num">01</div>
+      <div class="solution-content">
+        <div class="solution-heading">Rediseñar el sistema de información al Consejo</div>
+        <div class="solution-body">El sistema de información al Consejo debe ser diseñado por el propio Consejo — no por la Dirección que es supervisada. Esto implica que el Consejo defina qué información necesita, en qué formato, con qué periodicidad y con qué nivel de detalle para ejercer su función de gobierno. El paquete de sesión debe llegar con al menos siete días de anticipación. <strong>El Consejo que no controla su información no controla su capacidad de gobierno.</strong> Esta es la intervención de mayor impacto y la más frecuentemente omitida.</div>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">02</div>
+      <div class="solution-content">
+        <div class="solution-heading">Recuperar el control de la agenda</div>
+        <div class="solution-body">La agenda de las sesiones del Consejo debe ser construida por el Consejo — específicamente por su Presidente, en diálogo con el CEO pero con autoridad final en el órgano de gobierno. Esto implica que el Consejo tenga su propio calendario de temas estratégicos que desea deliberar a lo largo del año — no solo los temas que la Dirección quiere presentar. <strong>El Consejo que controla su agenda controla de qué trata el gobierno.</strong></div>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">03</div>
+      <div class="solution-content">
+        <div class="solution-heading">Definir y aplicar la matriz de atribuciones</div>
+        <div class="solution-body">Una matriz de atribuciones bien diseñada define con precisión qué categorías de decisiones son del Consejo, cuáles son del CEO y cuáles de otros directivos. Esto resuelve simultáneamente dos problemas: el Consejo deja de aprobar lo que no le corresponde (micro-gestión) y empieza a deliberar sobre lo que sí le corresponde con la profundidad adecuada. <strong>Sin la matriz, el Consejo aprueba todo o nada — con la matriz, aprueba lo correcto.</strong></div>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">04</div>
+      <div class="solution-content">
+        <div class="solution-heading">Revisar la composición con criterio de capacidad estratégica</div>
+        <div class="solution-body">La composición del Consejo debe ser evaluada contra las necesidades estratégicas de la empresa en su etapa actual. ¿Tiene el Consejo la experiencia en el sector que le permita cuestionar con rigor las decisiones de la Dirección? ¿Tiene perspectiva financiera, regulatoria, internacional o tecnológica suficiente para los mandatos que la empresa enfrenta? <strong>Los consejeros que no comprenden lo que supervisan no pueden supervisarlo con rigor — independientemente de su buena voluntad.</strong></div>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">05</div>
+      <div class="solution-content">
+        <div class="solution-heading">Rediseñar el formato y el ritmo de las sesiones</div>
+        <div class="solution-body">Una sesión de Consejo bien diseñada tiene un formato radicalmente diferente al de la mayoría de las sesiones que existen. Dedica la mayor parte del tiempo a deliberación estratégica genuina — no a presentaciones de la Dirección. Separa físicamente los temas de gobierno de los temas de reporte. Reserva tiempo estructurado para que los consejeros deliberen entre sí sin la presencia de la Dirección. <strong>El formato de la sesión es el mecanismo que convierte el tiempo del Consejo en gobierno real o en teatro.</strong></div>
+      </div>
+    </div>
+    <div class="solution-item">
+      <div class="solution-num">06</div>
+      <div class="solution-content">
+        <div class="solution-heading">Construir la cultura de deliberación genuina</div>
+        <div class="solution-body">Las cinco intervenciones anteriores son estructurales y producen cambios en el sistema. Pero el sistema solo funciona si los consejeros ejercen realmente su rol — si hacen las preguntas incómodas, si mantienen posiciones bajo presión, si están dispuestos a disentir cuando su juicio lo exige. <strong>Esta cultura no se decreta — se construye sesión por sesión, comenzando por el ejemplo del Presidente del Consejo.</strong> Un Presidente que ejerce su rol de gobierno con valentía y rigor produce, con el tiempo, un Consejo que hace lo mismo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V -->
+<section class="section">
+  <div class="section-label">V — El rediseño de la sesión</div>
+  <h2 class="section-title">Antes y después: cómo luce una sesión de Consejo que gobierna</h2>
+  <div class="body-copy">
+    <p>La diferencia entre una sesión de Consejo revisor y una de Consejo gobernante no es solo de contenido — es de estructura completa. El siguiente contraste ilustra cómo luce el rediseño en términos concretos de agenda y distribución de tiempo.</p>
+  </div>
+
+  <div class="session-compare">
+    <div class="session-col before">
+      <div class="session-col-header">Sesión típica — Consejo revisor (3 horas)</div>
+      <div class="session-block before-block">
+        <div class="session-block-time">0:00–0:10</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Apertura y aprobación del acta anterior</div>
+          <div class="session-block-note">Trámite formal sin deliberación</div>
+        </div>
+      </div>
+      <div class="session-block before-block">
+        <div class="session-block-time">0:10–1:00</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Reporte financiero del trimestre</div>
+          <div class="session-block-note">Presentación de la Dirección Financiera — el Consejo recibe y hace preguntas aclaratorias</div>
+        </div>
+      </div>
+      <div class="session-block before-block">
+        <div class="session-block-time">1:00–1:45</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Presentación de iniciativas operativas</div>
+          <div class="session-block-note">La Dirección presenta avances de proyectos. El Consejo escucha y aprueba.</div>
+        </div>
+      </div>
+      <div class="session-block before-block">
+        <div class="session-block-time">1:45–2:30</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Aprobación de transacciones y contratos relevantes</div>
+          <div class="session-block-note">Presentados el mismo día. Aprobados sin análisis previo.</div>
+        </div>
+      </div>
+      <div class="session-block before-block">
+        <div class="session-block-time">2:30–3:00</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Asuntos varios y cierre</div>
+          <div class="session-block-note">Comentarios dispersos. Sin agenda estratégica propia del Consejo.</div>
+        </div>
+      </div>
+    </div>
+    <div class="session-col after">
+      <div class="session-col-header">Sesión rediseñada — Consejo gobernante (3 horas)</div>
+      <div class="session-block">
+        <div class="session-block-time">0:00–0:20</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Sesión privada de consejeros</div>
+          <div class="session-block-note">Sin Dirección presente. El Consejo delibera sobre temas que requieren independencia.</div>
+        </div>
+      </div>
+      <div class="session-block">
+        <div class="session-block-time">0:20–0:50</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Revisión de indicadores estratégicos — solo excepciones</div>
+          <div class="session-block-note">El paquete llegó 7 días antes. El Consejo discute solo lo que se aleja del umbral.</div>
+        </div>
+      </div>
+      <div class="session-block">
+        <div class="session-block-time">0:50–1:50</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Deliberación estratégica sobre el tema central de la sesión</div>
+          <div class="session-block-note">Un tema estratégico profundo — expansión, estructura de capital, sucesión. El Consejo delibera y decide.</div>
+        </div>
+      </div>
+      <div class="session-block">
+        <div class="session-block-time">1:50–2:30</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Aprobaciones de la matriz de atribuciones</div>
+          <div class="session-block-note">Solo lo que requiere aprobación del Consejo según la matriz. Analizadas con anticipación.</div>
+        </div>
+      </div>
+      <div class="session-block">
+        <div class="session-block-time">2:30–3:00</div>
+        <div class="session-block-content">
+          <div class="session-block-title">Agenda del próximo trimestre y accountability del CEO</div>
+          <div class="session-block-note">El Consejo define su agenda futura. Revisa compromisos previos del CEO con criterio real.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">El papel del Strategic Leadership Layer en la transformación del Consejo</div>
+    <p>La transformación de un Consejo revisor en uno gobernante es exactamente el tipo de mandato para el que el modelo SLF está diseñado. No es un proyecto de capacitación de consejeros ni un ejercicio de redacción de políticas — es un proceso de rediseño arquitectónico que requiere presencia ejecutiva real, conocimiento profundo de la organización y la capacidad de gestionar la resistencia que el cambio de poder siempre produce.</p>
+    <p>Cretta actúa en este proceso como el actor de integración que mantiene la coherencia del rediseño: trabaja simultáneamente con el Presidente del Consejo, con el CEO y con los consejeros individuales para asegurar que el nuevo diseño produce las condiciones que el gobierno real requiere — sin crear conflictos de autoridad que paralicen la organización durante la transición.</p>
+    <p><strong>El resultado no es un Consejo con mejores documentos. Es un Consejo con función real — que ejerce gobierno genuino y que produce el valor que los accionistas esperan de él.</strong></p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">El Consejo que la empresa merece</h2>
+  <div class="closing-body">
+    <p>Las empresas que tienen Consejos que gobiernan genuinamente no son más lentas ni más conflictivas que las que tienen Consejos que solo revisan. Son más sólidas: tienen una segunda perspectiva independiente sobre sus decisiones estratégicas más importantes, tienen un mecanismo que puede frenar errores antes de que se vuelvan irreversibles, y tienen un órgano que protege los intereses de largo plazo de los accionistas incluso cuando la presión de corto plazo empuja en otra dirección.</p>
+    <p>La pregunta que toda empresa debería hacerse con honestidad es la que abre este artículo: ¿cuándo fue la última vez que este Consejo tomó una decisión que la Dirección no hubiera tomado sin él? Si la respuesta requiere remontarse más de dos o tres sesiones, el Consejo no está gobernando — y esa brecha ya tiene un costo, aunque sea invisible.</p>
+    <p><strong>Construir el Consejo que gobierna es una inversión en la calidad de las decisiones más importantes que la empresa tomará en los próximos años.</strong> Y es la inversión con mayor retorno en el universo del gobierno corporativo — porque un buen gobierno no evita los errores, pero sí evita los errores que no debían haberse cometido.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+
+</body>
+</html>

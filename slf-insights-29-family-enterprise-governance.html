@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Governance for Family-Owned Enterprises — SLF Insights | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#152848;--navy-light:#1E3560;--gold:#C49A3C;--gold-light:#D4AF6A;--cream:#F4F1EC;--cream-dark:#E8E3DA;--text-dark:#1A1A2E;--text-mid:#3A3A55;--text-light:#6A6A85;--rule:rgba(196,154,60,0.28);--rule-light:rgba(196,154,60,0.11)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-dark);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.78}
+.masthead{background:var(--navy);padding:18px 64px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+.masthead-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.masthead-series{font-family:'Barlow Condensed',sans-serif;font-weight:300;font-size:12px;letter-spacing:.28em;color:rgba(244,241,236,.42);text-transform:uppercase}
+
+/* HERO — warm cream, family enterprise feel */
+.hero{background:var(--cream-dark);padding:96px 64px 84px;border-bottom:3px solid var(--navy);position:relative;overflow:hidden}
+.hero-watermark{position:absolute;font-family:'Playfair Display',serif;font-size:200px;font-weight:700;color:rgba(13,27,62,.04);right:-10px;bottom:-30px;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em}
+.article-wrap{max-width:1040px;margin:0 auto;padding:0 64px}
+.hero-inner{position:relative;z-index:1}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:30px;display:flex;align-items:center;gap:14px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.12;color:var(--navy);max-width:820px;margin-bottom:24px}
+.hero-headline em{font-style:italic;color:var(--navy-light)}
+.hero-deck{font-family:'EB Garamond',serif;font-size:20px;font-style:italic;color:var(--text-mid);max-width:660px;line-height:1.62;margin-bottom:52px}
+.hero-meta{display:flex;align-items:center;gap:32px;padding-top:28px;border-top:1px solid rgba(13,27,62,.14)}
+.hero-meta-item{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
+.hero-meta-item span{color:var(--navy)}
+
+/* LEAD */
+.lead-block{padding:72px 0 56px;border-bottom:1px solid var(--rule);margin-bottom:64px}
+.lead-text{font-size:21px;font-weight:500;line-height:1.72;color:var(--text-dark);max-width:720px}
+.lead-text::first-letter{font-family:'Playfair Display',serif;font-size:76px;font-weight:700;float:left;line-height:.8;margin-right:10px;margin-top:12px;color:var(--navy)}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';height:1px;background:var(--rule);max-width:56px;display:block}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:600;line-height:1.22;color:var(--navy);margin-bottom:30px;max-width:660px}
+.section-title em{font-style:italic}
+.body-copy p{margin-bottom:24px;color:var(--text-mid);font-size:18px;line-height:1.78;max-width:700px}
+.body-copy p strong{color:var(--navy);font-weight:600}
+.body-copy p:last-child{margin-bottom:0}
+
+/* PULL QUOTE */
+.pull-quote{margin:56px 0;padding:40px 48px;background:var(--navy);border-left:4px solid var(--gold);position:relative}
+.pull-quote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:130px;color:rgba(196,154,60,.11);position:absolute;top:-12px;left:20px;line-height:1}
+.pull-quote p{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,24px);font-style:italic;color:var(--cream);line-height:1.55;position:relative;z-index:1;max-width:580px}
+.pull-quote cite{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+/* THREE CIRCLES MODEL */
+.three-circles{margin:52px 0}
+.three-circles-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.circles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule-light);border:1px solid var(--rule-light)}
+.circle-col{padding:32px 26px}
+.circle-col.ownership{background:var(--cream)}
+.circle-col.governance{background:rgba(13,27,62,.07);border-left:3px solid var(--gold)}
+.circle-col.management{background:var(--cream-dark)}
+.circle-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.42em;text-transform:uppercase;margin-bottom:12px}
+.circle-col.ownership .circle-label{color:var(--text-light)}
+.circle-col.governance .circle-label{color:var(--gold)}
+.circle-col.management .circle-label{color:var(--navy-mid)}
+.circle-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;margin-bottom:12px;line-height:1.25}
+.circle-col.ownership .circle-title{color:var(--navy)}
+.circle-col.governance .circle-title{color:var(--navy)}
+.circle-col.management .circle-title{color:var(--navy)}
+.circle-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.62;color:var(--text-mid)}
+.circle-conflict{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule-light);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.05em;color:rgba(122,31,31,.6);text-transform:uppercase}
+.circle-conflict::before{content:'Conflict risk: '}
+
+/* GENERATIONAL TRANSITION STAGES */
+.gen-stages{margin:52px 0;border:1px solid var(--rule)}
+.gen-stages-title{background:var(--navy);padding:16px 28px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
+.gen-stage{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid var(--rule-light)}
+.gen-stage:last-child{border-bottom:none}
+.gen-stage-label{padding:20px 22px;background:rgba(13,27,62,.04);border-right:1px solid var(--rule-light);display:flex;flex-direction:column;justify-content:center;gap:6px}
+.gen-stage-gen{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy)}
+.gen-stage-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.gen-stage-content{padding:20px 24px}
+.gen-stage-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.gen-stage-desc{font-family:'EB Garamond',serif;font-size:16px;line-height:1.6;color:var(--text-mid);margin-bottom:8px}
+.gen-stage-risk{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.05em;color:rgba(122,31,31,.6);text-transform:uppercase}
+.gen-stage-risk::before{content:'Primary risk: '}
+
+/* GOVERNANCE DESIGN ELEMENTS */
+.design-list{margin:48px 0}
+.design-item{display:grid;grid-template-columns:72px 1fr;padding:30px 0;border-bottom:1px solid var(--rule-light)}
+.design-item:first-child{border-top:1px solid var(--rule-light)}
+.design-num{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:rgba(196,154,60,.18);line-height:1;padding-top:4px}
+.design-heading{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.design-body{font-family:'EB Garamond',serif;font-size:17px;line-height:1.7;color:var(--text-mid)}
+.design-body strong{color:var(--navy);font-weight:600}
+.design-family{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule-light);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.05em;color:var(--gold);text-transform:uppercase}
+.design-family::before{content:'Family-specific: '}
+
+/* MISTAKES GRID */
+.mistakes-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule-light);border:1px solid var(--rule-light);margin:48px 0}
+.mistake-card{background:var(--cream);padding:26px 24px;transition:background .2s}
+.mistake-card:hover{background:var(--cream-dark)}
+.mistake-icon{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:rgba(122,31,31,.55);margin-bottom:8px}
+.mistake-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.28}
+.mistake-body{font-family:'EB Garamond',serif;font-size:15px;line-height:1.6;color:var(--text-mid)}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,rgba(196,154,60,.07),rgba(196,154,60,.02));border:1px solid rgba(196,154,60,.28);padding:40px 44px;margin:48px 0}
+.highlight-box-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.highlight-box p{font-size:17px;line-height:1.72;color:var(--text-mid);margin-bottom:16px}
+.highlight-box p:last-child{margin-bottom:0}
+.highlight-box p strong{color:var(--navy)}
+
+/* ORNAMENT */
+.ornament{display:flex;align-items:center;gap:16px;margin:52px 0}
+.ornament::before,.ornament::after{content:'';flex:1;height:1px;background:var(--rule)}
+.ornament-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* CLOSING */
+.closing-section{padding:64px 0;border-top:2px solid var(--navy);margin-top:80px}
+.closing-title{font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:var(--navy);margin-bottom:28px}
+.closing-body p{font-size:18px;line-height:1.78;color:var(--text-mid);margin-bottom:22px;max-width:700px}
+.closing-body p strong{color:var(--navy)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 64px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);margin-top:80px}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.footer-note{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(244,241,236,.32);text-transform:uppercase}
+
+@media(max-width:768px){.masthead,.hero,.article-wrap,.footer{padding-left:22px;padding-right:22px}.circles-grid,.mistakes-grid{grid-template-columns:1fr}.gen-stage{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Strategic Thinking at the Highest Level</div>
+</header>
+
+<section class="hero">
+  <div class="hero-watermark" aria-hidden="true">legacy</div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF Insights · Family Enterprise</div>
+      <h1 class="hero-headline">
+        Corporate Governance for<br>
+        Family-Owned Enterprises:<br>
+        <em>The Transition That Defines<br>the Next Generation</em>
+      </h1>
+      <p class="hero-deck">
+        The governance transition in a family enterprise is not primarily a structural design challenge. It is a human challenge — one that happens to require structural solutions. Getting the sequence wrong is what breaks families, not the design itself.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">By <span>Luis Fernando Jiménez M.</span></div>
+        <div class="hero-meta-item">Category <span>Family Enterprise · Governance</span></div>
+        <div class="hero-meta-item">Read <span>~12 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="article-wrap">
+
+<div class="lead-block">
+  <p class="lead-text">The governance transition in a family-owned enterprise is the single most consequential inflection point in the company's lifecycle. It determines not just the quality of future decision-making and the health of the business — it determines the quality of family relationships for the generation that must navigate it. The families that get it right do not do so because they found a better governance consultant or a more sophisticated legal structure. They get it right because they understood that the governance design is secondary to the relational process that makes any design viable.</p>
+</div>
+
+<!-- I -->
+<section class="section">
+  <div class="section-label">I — Why Family Enterprise Governance Is Different</div>
+  <h2 class="section-title">The specific complexity that standard governance frameworks do not address</h2>
+  <div class="body-copy">
+    <p>Standard corporate governance frameworks were designed for the agency problem: how do shareholders — who cannot observe the company's operations directly — ensure that the managers who run it on their behalf act in the shareholders' interest? The Board of Directors is the institutional solution to this problem. It represents shareholders, supervises management, and ensures accountability.</p>
+    <p>In a family enterprise, this framework applies — but it operates on top of a set of relationships that are categorically different from the institutional relationships the framework was designed for. Family shareholders share a history, a set of obligations, an emotional investment, and often a shared identity that is inseparable from the company. These relationships are not separable from the governance architecture — they determine whether the governance architecture can function or not. A Board composition that would be entirely appropriate for an institutional company may be experienced as a betrayal by a founding family member who expected a role. A succession plan that would be considered excellent practice in a professional management context may fracture a sibling relationship that has defined two people's lives for decades.</p>
+    <p>The result is that family enterprise governance requires a framework that operates simultaneously on two levels: the institutional level (the governance architecture that ensures good decision-making and appropriate accountability) and the relational level (the family dynamics that determine whether that architecture will be accepted, honored, and sustained over time). <strong>A governance design that succeeds at the institutional level but fails at the relational level will not produce the governance it was designed for — because the people who must operate within it will not.</strong></p>
+  </div>
+
+  <!-- THREE CIRCLES -->
+  <div class="three-circles">
+    <div class="three-circles-title">The three overlapping systems — and where conflicts originate</div>
+    <div class="circles-grid">
+      <div class="circle-col ownership">
+        <div class="circle-label">System 1</div>
+        <div class="circle-title">The Ownership System</div>
+        <div class="circle-body">Who owns what percentage of the company, with what rights, and under what conditions can ownership be transferred. The ownership system is the foundation — but in family enterprises, it is entangled with the family's narrative of who contributed what to build the company, and who "deserves" what as a result.</div>
+        <div class="circle-conflict">Inheritance assumptions vs. earned ownership — the most frequent silent conflict</div>
+      </div>
+      <div class="circle-col governance">
+        <div class="circle-label">System 2 — Center</div>
+        <div class="circle-title">The Governance System</div>
+        <div class="circle-body">The mechanisms that determine how decisions are made, who has authority over what, and how accountability flows between ownership, governance, and management. In family enterprises, governance sits at the intersection of the other two systems — and absorbs their conflicts when they are not resolved elsewhere.</div>
+        <div class="circle-conflict">The governance system cannot resolve conflicts it did not create — it can only structure them</div>
+      </div>
+      <div class="circle-col management">
+        <div class="circle-label">System 3</div>
+        <div class="circle-title">The Management System</div>
+        <div class="circle-body">Who runs the business, with what authority, and how are they selected and evaluated. The most politically charged element in family governance transitions — because it determines which family members have active roles and which are relegated to the investor relationship.</div>
+        <div class="circle-conflict">Family member employment expectations vs. meritocratic management — the second most frequent conflict</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>In institutional companies, governance structures shape behavior. In family companies, family dynamics shape governance structures — and if the family dynamics are not managed explicitly, they will produce a governance structure that reflects the family's conflicts rather than the company's strategic needs.</p>
+    <cite>— Cretta SLF · SLF Insights</cite>
+  </div>
+</section>
+
+<!-- II -->
+<section class="section">
+  <div class="section-label">II — The Generational Transition Stages</div>
+  <h2 class="section-title">How governance needs evolve across generations — and where each stage fails</h2>
+  <div class="body-copy">
+    <p>The governance challenges of a family enterprise are not static — they evolve as the company grows and as the family expands across generations. Each generational transition has a distinct governance challenge, a distinct risk of failure, and a distinct set of design requirements.</p>
+  </div>
+
+  <div class="gen-stages">
+    <div class="gen-stages-title">Generational transition stages — governance needs and failure risks</div>
+    <div class="gen-stage">
+      <div class="gen-stage-label">
+        <div class="gen-stage-gen">Generation 1</div>
+        <div class="gen-stage-tag">Founder stage</div>
+      </div>
+      <div class="gen-stage-content">
+        <div class="gen-stage-title">Personalized governance — the founder IS the governance</div>
+        <div class="gen-stage-desc">The founder's judgment, values, and relationships constitute the de facto governance system. This is efficient and coherent — but entirely dependent on a single individual. Formal governance structures may exist on paper but are rarely the primary mechanism of coordination.</div>
+        <div class="gen-stage-risk">Sudden incapacitation or death of the founder with no succession architecture in place — the company has no governance without the person who was the governance</div>
+      </div>
+    </div>
+    <div class="gen-stage">
+      <div class="gen-stage-label">
+        <div class="gen-stage-gen">Generation 2</div>
+        <div class="gen-stage-tag">Sibling partnership</div>
+      </div>
+      <div class="gen-stage-content">
+        <div class="gen-stage-title">Sibling partnership — shared ownership, potentially divergent vision</div>
+        <div class="gen-stage-desc">The founder's children inherit ownership collectively. They may have grown up with different relationships to the business, different career trajectories, and different expectations for what the company should be for them financially, professionally, and personally. The governance challenge is to create structures that allow diverse interests to coexist while maintaining strategic coherence.</div>
+        <div class="gen-stage-risk">Sibling conflict that is initially relational but becomes structural — when governance mechanisms do not exist to manage it, the business becomes the arena for family conflict rather than the subject of family collaboration</div>
+      </div>
+    </div>
+    <div class="gen-stage">
+      <div class="gen-stage-label">
+        <div class="gen-stage-gen">Generation 3</div>
+        <div class="gen-stage-tag">Cousin consortium</div>
+      </div>
+      <div class="gen-stage-content">
+        <div class="gen-stage-title">Cousin consortium — ownership dispersed, identity diluted</div>
+        <div class="gen-stage-desc">By the third generation, ownership may be distributed across a dozen or more shareholders — cousins who may not know each other well, who did not grow up with the same relationship to the business, and whose financial needs and personal situations vary significantly. The shared family identity that gave second-generation governance its informal coherence is no longer sufficient to hold the governance system together.</div>
+        <div class="gen-stage-risk">The company cannot make strategic decisions because the shareholder base cannot form the consensus that strategic decisions require — leading either to paralysis or to conflict that risks the company's viability</div>
+      </div>
+    </div>
+    <div class="gen-stage">
+      <div class="gen-stage-label">
+        <div class="gen-stage-gen">Transition</div>
+        <div class="gen-stage-tag">Institutionalization</div>
+      </div>
+      <div class="gen-stage-content">
+        <div class="gen-stage-title">Institutionalization — separating family from enterprise governance</div>
+        <div class="gen-stage-desc">At some point in the generational progression — often between the second and third generation — the company must develop governance structures that function independently of the personal relationships of the shareholders. This is the institutionalization transition: the moment when the company's governance stops being primarily relational and becomes primarily structural.</div>
+        <div class="gen-stage-risk">The institutionalization process is managed as a governance design project rather than as a relational process — producing structures that are technically correct but relationally unacceptable, leading to their rejection or non-compliance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament"><div class="ornament-diamond"></div></div>
+
+<!-- III -->
+<section class="section">
+  <div class="section-label">III — The Governance Design Elements</div>
+  <h2 class="section-title">What a functioning governance system for a family enterprise actually requires</h2>
+  <div class="body-copy">
+    <p>A governance system for a family enterprise must do something that institutional governance systems do not: it must simultaneously govern the company well and govern the family's relationship with the company well. These are different objectives with different requirements — and the design must serve both.</p>
+  </div>
+
+  <div class="design-list">
+    <div class="design-item">
+      <div class="design-num">01</div>
+      <div class="design-content">
+        <div class="design-heading">A shared ownership narrative — before any structural decisions</div>
+        <div class="design-body">Before designing governance structures, family enterprises need a shared narrative about ownership: what it means to own this company, what obligations it carries, and what it provides to owners who are not active in the business. Without this shared narrative, structural decisions become the arena for negotiating the narrative — a much more expensive and damaging process. <strong>The family that agrees on what ownership means can design governance structures that reflect that agreement. The family that disagrees on what ownership means will disagree on every governance structure that makes the implications of ownership concrete.</strong></div>
+        <div class="design-family">The ownership narrative must address both active and passive shareholders — their interests diverge significantly and both must be legible in the governance design</div>
+      </div>
+    </div>
+    <div class="design-item">
+      <div class="design-num">02</div>
+      <div class="design-content">
+        <div class="design-heading">A family governance system — separate from the company governance system</div>
+        <div class="design-body">The family needs its own governance structures: a family council or assembly where family members discuss their shared interests, a family constitution that articulates the family's values and its relationship to the company, and a set of family policies (on employment of family members, on liquidity, on philanthropy, on entry criteria for the next generation) that are established through family deliberation rather than Board decision. <strong>When the company's Board is the only forum for family conversations about the company, the Board becomes politicized by family dynamics — and governance quality suffers for both functions.</strong></div>
+        <div class="design-family">The family council should have sufficient authority to address family interests without needing to use the Board as a proxy — it is the separation of these forums that preserves the quality of both</div>
+      </div>
+    </div>
+    <div class="design-item">
+      <div class="design-num">03</div>
+      <div class="design-content">
+        <div class="design-heading">An employment and succession policy that is explicit, fair, and pre-agreed</div>
+        <div class="design-body">The question of which family members can work in the company, in what roles, under what evaluation criteria, and with what compensation relative to market standards is the most politically charged governance question in most family enterprises. It must be resolved through explicit policy that is established by family consensus before specific family members are considered for specific roles. <strong>Policies established before specific cases arise feel like principles. Policies established to address specific cases feel like personal judgments — and trigger the defensive responses that destroy governance processes.</strong></div>
+        <div class="design-family">The succession policy is separate from the employment policy — who can work in the company and who can lead it are questions with different stakes and different criteria</div>
+      </div>
+    </div>
+    <div class="design-item">
+      <div class="design-num">04</div>
+      <div class="design-content">
+        <div class="design-heading">A Board composition that balances family representation with independent governance capacity</div>
+        <div class="design-body">The Board of a family enterprise must fulfill two functions that can be in tension: representing family shareholders' interests and providing the independent governance capacity that protects the company's strategic quality. Family-only Boards frequently sacrifice the second function for the first. Boards with no family representation frequently sacrifice family legitimacy. The right composition depends on the company's stage, the family's governance maturity, and the specific strategic challenges the Board must address. <strong>The independent directors who provide the highest governance value in family enterprises are not the ones with the most impressive credentials — they are the ones who can engage with family dynamics productively while maintaining their governance independence.</strong></div>
+        <div class="design-family">Independent directors in family enterprises need interpersonal skills that are rarely in the standard director recruitment criteria — their effectiveness depends as much on relational intelligence as on strategic expertise</div>
+      </div>
+    </div>
+    <div class="design-item">
+      <div class="design-num">05</div>
+      <div class="design-content">
+        <div class="design-heading">Liquidity mechanisms for passive shareholders</div>
+        <div class="design-body">One of the most structurally destabilizing elements in a family enterprise governance is the presence of passive shareholders — family members who own equity but are not active in the business and who may have financial needs that the company's dividend policy does not address. Without a mechanism for these shareholders to achieve liquidity — through share buybacks, a family office, or a structured secondary market — the pressure on dividend policy becomes a source of persistent strategic conflict. <strong>Passive shareholders who cannot achieve liquidity will become active in governance in ways that prioritize short-term cash flow over long-term company value — a rational response to a structural problem that governance design should address.</strong></div>
+        <div class="design-family">Liquidity mechanisms are often introduced too late — after passive shareholders have already become disruptive governance actors. They are most effective when designed before the conflict they prevent becomes active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IV -->
+<section class="section">
+  <div class="section-label">IV — The Common Mistakes</div>
+  <h2 class="section-title">Six ways family enterprise governance transitions fail — and why they were avoidable</h2>
+  <div class="body-copy">
+    <p>The governance transitions that fail are not random. They fail in predictable ways — ways that are recognizable in advance and that are avoidable with the right process and the right sequencing. The following six failure patterns appear across family enterprises of different sizes, sectors, and geographies.</p>
+  </div>
+
+  <div class="mistakes-grid">
+    <div class="mistake-card">
+      <div class="mistake-icon">Mistake 01</div>
+      <div class="mistake-title">Starting with the legal structure instead of the family conversation</div>
+      <div class="mistake-body">The attorney is engaged before the family has reached agreement on what they want the governance to achieve. The resulting structure reflects the attorney's template — not the family's actual needs and agreements. The family then argues about the structure instead of the substance, and the legal process becomes the arena for the family conflict rather than the instrument for resolving it.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon">Mistake 02</div>
+      <div class="mistake-title">Designing governance for the current generation without anticipating the next</div>
+      <div class="mistake-body">The governance system that works well for the founder and two active children may be entirely inadequate for the five grandchildren who will inherit the company. Governance systems designed for one generation without explicit provisions for the next create structural crises that were entirely foreseeable — and that produce the "cousin consortium problem" described earlier.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon">Mistake 03</div>
+      <div class="mistake-title">Using the Board to manage family dynamics that should be managed in the family forum</div>
+      <div class="mistake-body">When the family does not have its own governance forum, family members use Board sessions to raise and resolve issues that are properly family issues. The result is a Board that cannot govern because it spends its time managing family dynamics — and a family whose dynamics are not resolved because the Board is the wrong forum for resolving them.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon">Mistake 04</div>
+      <div class="mistake-title">Treating the governance transition as a one-time event</div>
+      <div class="mistake-body">A governance system designed and implemented once is not a governance system — it is a snapshot of the family's agreements at a point in time. Family enterprises change: family members' situations evolve, the company's strategic needs change, the next generation develops different expectations. The governance system must be designed with regular review processes built in.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon">Mistake 05</div>
+      <div class="mistake-title">Excluding the next generation from the design process</div>
+      <div class="mistake-body">Governance systems designed by the current generation without meaningful input from the next generation frequently encounter resistance or non-compliance from the successors who must operate within them. The legitimacy of a governance system depends partly on the participation of those who will be governed by it — not just those designing it.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon">Mistake 06</div>
+      <div class="mistake-title">Assuming a governance consultant can resolve what is fundamentally a family conflict</div>
+      <div class="mistake-body">Governance consultants can design excellent structures. They cannot resolve the underlying family conflicts that will prevent those structures from functioning. A family that is in active conflict over succession, over the founder's legacy, or over the relative contributions of different family members needs a different kind of intervention before governance design can succeed — one that addresses the relational substrate that governance design cannot fix.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">The SLF mandate in family enterprise governance transitions</div>
+    <p>Family enterprise governance transitions are one of the most complex mandates Cretta undertakes — not because of the structural design complexity, but because of the simultaneous requirement to produce excellent institutional governance and to navigate the relational dynamics that determine whether that governance will actually function.</p>
+    <p>Cretta's approach to family governance mandates is sequential by design: relational alignment before structural design, family governance before company governance, shared narrative before policy detail. This sequence is slower than the conventional consulting approach of designing governance documents and presenting them for approval. It is also significantly more likely to produce governance that actually functions — because the family's agreement on substance precedes the family's confrontation with structure.</p>
+    <p><strong>The measure of success in a family enterprise governance mandate is not the quality of the governance documents produced. It is whether, five years after the engagement, the family is still together, the company is still growing, and the governance is still functioning.</strong> That longer-term standard requires a different approach — and a different kind of actor to hold it.</p>
+  </div>
+</section>
+
+<div class="closing-section">
+  <h2 class="closing-title">The governance that preserves — and the governance that divides</h2>
+  <div class="closing-body">
+    <p>The families that get governance transitions right do not necessarily produce the most sophisticated governance structures. They produce governance structures that their family can operate — that reflect their actual agreements, that address their actual tensions, and that give both active and passive family members a relationship to the company that they find meaningful and fair.</p>
+    <p>The families that struggle with governance transitions — and there are many — are not struggling because they engaged the wrong lawyer or because they chose the wrong Board structure. They are struggling because the relational work that makes any governance structure viable was not done before the structural design was attempted. And by the time the structural design reveals the relational conflict it was designed to resolve, the conflict has been given a structure — and structures are much harder to change than relationships.</p>
+    <p><strong>The governance transition in a family enterprise is an opportunity to build the architecture that makes the next generation's stewardship of the company better than the current generation's.</strong> Seizing that opportunity requires honesty about what the real challenges are — relational as much as structural — and the patience to address both in the right order.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Thinking for decisions that matter</div>
+</footer>
+
+</body>
+</html>
