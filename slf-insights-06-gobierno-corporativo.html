@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gobierno corporativo en empresas medianas: qué es, qué no es y cuándo ya es indispensable | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B3E;
+    --navy-mid: #152848;
+    --navy-light: #1E3560;
+    --gold: #C49A3C;
+    --gold-light: #D4AF6A;
+    --gold-dim: rgba(196,154,60,0.12);
+    --cream: #F4F1EC;
+    --cream-dark: #E8E3DA;
+    --text-dark: #1A1A2E;
+    --text-mid: #3A3A55;
+    --text-light: #6A6A85;
+    --rule: rgba(196,154,60,0.28);
+    --rule-light: rgba(196,154,60,0.11);
+    --green-ok: #2E5E3E;
+    --red-no: #7A2020;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px; line-height: 1.78;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--navy); padding: 18px 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 2px solid var(--gold);
+  }
+  .masthead-brand { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; }
+  .masthead-series { font-family: 'Barlow Condensed', sans-serif; font-weight: 300; font-size: 12px; letter-spacing: 0.28em; color: rgba(244,241,236,0.42); text-transform: uppercase; }
+
+  /* HERO — full navy, centered */
+  .hero {
+    background: var(--navy);
+    padding: 96px 64px 80px;
+    position: relative; overflow: hidden;
+    border-bottom: 4px solid var(--gold);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(196,154,60,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(196,154,60,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .article-wrap { max-width: 1040px; margin: 0 auto; padding: 0 64px; }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 30px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 52px);
+    font-weight: 700; line-height: 1.13;
+    color: var(--cream); max-width: 820px; margin-bottom: 24px;
+  }
+  .hero-headline em { font-style: italic; color: var(--gold-light); }
+  .hero-deck {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px; font-style: italic;
+    color: rgba(244,241,236,0.65); max-width: 660px;
+    line-height: 1.62; margin-bottom: 52px;
+  }
+  .hero-meta { display: flex; align-items: center; gap: 32px; padding-top: 28px; border-top: 1px solid rgba(196,154,60,0.2); }
+  .hero-meta-item { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(244,241,236,0.42); }
+  .hero-meta-item span { color: var(--gold-light); }
+
+  /* LEAD */
+  .lead-block { padding: 64px 0 56px; border-bottom: 1px solid var(--rule); margin-bottom: 64px; }
+  .lead-text { font-size: 21px; font-weight: 500; line-height: 1.72; color: var(--text-dark); max-width: 720px; }
+  .lead-text::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 76px; font-weight: 700;
+    float: left; line-height: 0.8;
+    margin-right: 10px; margin-top: 12px; color: var(--navy);
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 72px; }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; height: 1px; background: var(--rule); max-width: 56px; display: block; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.8vw, 34px); font-weight: 600; line-height: 1.22; color: var(--navy); margin-bottom: 30px; max-width: 660px; }
+  .section-title em { font-style: italic; }
+  .body-copy p { margin-bottom: 24px; color: var(--text-mid); font-size: 18px; line-height: 1.78; max-width: 700px; }
+  .body-copy p strong { color: var(--navy); font-weight: 600; }
+  .body-copy p:last-child { margin-bottom: 0; }
+
+  /* IS / IS NOT — two-column verdict table */
+  .verdict-wrap {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin: 52px 0;
+    border: 1px solid var(--rule);
+  }
+  .verdict-col {}
+  .verdict-col-header {
+    padding: 16px 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .verdict-col-header .icon { font-size: 14px; }
+  .col-yes .verdict-col-header { background: var(--navy); color: var(--gold); border-right: 1px solid rgba(196,154,60,0.2); }
+  .col-no  .verdict-col-header { background: rgba(122,32,32,0.08); color: var(--red-no); }
+  .verdict-item {
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--rule-light);
+    font-family: 'EB Garamond', serif;
+    font-size: 16px; line-height: 1.55;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .verdict-item:last-child { border-bottom: none; }
+  .col-yes .verdict-item { background: rgba(13,27,62,0.03); color: var(--text-mid); border-right: 1px solid var(--rule-light); }
+  .col-yes .verdict-item::before { content: '✓'; color: var(--green-ok); font-size: 13px; font-weight: 700; margin-top: 2px; flex-shrink: 0; }
+  .col-no  .verdict-item { background: rgba(122,32,32,0.02); color: var(--text-light); }
+  .col-no  .verdict-item::before { content: '✕'; color: var(--red-no); font-size: 13px; font-weight: 700; margin-top: 2px; flex-shrink: 0; }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    margin: 56px 0; padding: 40px 48px;
+    background: var(--navy); border-left: 4px solid var(--gold); position: relative;
+  }
+  .pull-quote::before {
+    content: '\201C'; font-family: 'Playfair Display', serif;
+    font-size: 130px; color: rgba(196,154,60,0.11);
+    position: absolute; top: -12px; left: 20px; line-height: 1;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(17px, 2vw, 24px); font-style: italic;
+    color: var(--cream); line-height: 1.55;
+    position: relative; z-index: 1; max-width: 580px;
+  }
+  .pull-quote cite {
+    display: block; font-family: 'Barlow Condensed', sans-serif;
+    font-style: normal; font-size: 11px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-top: 20px;
+  }
+
+  /* MATURITY MODEL — horizontal stages */
+  .maturity-model { margin: 52px 0; }
+  .maturity-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.38em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .maturity-stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule-light); }
+  .maturity-stage { padding: 28px 22px; }
+  .maturity-stage-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .maturity-stage-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 600; line-height: 1.25; margin-bottom: 10px;
+  }
+  .maturity-stage-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px; line-height: 1.58;
+  }
+  .maturity-stage-trigger {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    margin-top: 12px; padding-top: 10px;
+    border-top: 1px solid currentColor; opacity: 0.5;
+  }
+
+  .stage-1 { background: var(--cream); }
+  .stage-1 .maturity-stage-num { color: var(--text-light); }
+  .stage-1 .maturity-stage-title { color: var(--text-mid); }
+  .stage-1 .maturity-stage-desc { color: var(--text-light); }
+  .stage-1 .maturity-stage-trigger { color: var(--text-light); }
+
+  .stage-2 { background: rgba(13,27,62,0.06); }
+  .stage-2 .maturity-stage-num { color: var(--navy-light); }
+  .stage-2 .maturity-stage-title { color: var(--navy-mid); }
+  .stage-2 .maturity-stage-desc { color: var(--text-mid); }
+  .stage-2 .maturity-stage-trigger { color: var(--navy-mid); }
+
+  .stage-3 { background: rgba(13,27,62,0.14); }
+  .stage-3 .maturity-stage-num { color: var(--gold); }
+  .stage-3 .maturity-stage-title { color: var(--navy); }
+  .stage-3 .maturity-stage-desc { color: var(--text-mid); }
+  .stage-3 .maturity-stage-trigger { color: var(--navy); }
+
+  .stage-4 { background: var(--navy); }
+  .stage-4 .maturity-stage-num { color: var(--gold); }
+  .stage-4 .maturity-stage-title { color: var(--cream); }
+  .stage-4 .maturity-stage-desc { color: rgba(244,241,236,0.65); }
+  .stage-4 .maturity-stage-trigger { color: var(--gold-light); }
+
+  /* SIGNALS — numbered list */
+  .signals-list { margin: 48px 0; }
+  .signal-item {
+    display: grid; grid-template-columns: 64px 1fr;
+    padding: 28px 0; border-bottom: 1px solid var(--rule-light);
+  }
+  .signal-item:first-child { border-top: 1px solid var(--rule-light); }
+  .signal-num-col {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px; font-weight: 700;
+    color: rgba(196,154,60,0.2); line-height: 1; padding-top: 4px;
+  }
+  .signal-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .signal-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px; line-height: 1.68; color: var(--text-mid);
+  }
+  .signal-body strong { color: var(--navy); font-weight: 600; }
+
+  /* ELEMENTS GRID */
+  .elements-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; background: var(--rule-light);
+    border: 1px solid var(--rule-light); margin: 48px 0;
+  }
+  .element-card { background: var(--cream); padding: 28px 26px; transition: background 0.2s; }
+  .element-card:hover { background: var(--cream-dark); }
+  .element-icon {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .element-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 600;
+    color: var(--navy); margin-bottom: 10px; line-height: 1.28;
+  }
+  .element-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px; line-height: 1.62; color: var(--text-mid);
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(196,154,60,0.07), rgba(196,154,60,0.02));
+    border: 1px solid rgba(196,154,60,0.28);
+    padding: 40px 44px; margin: 48px 0;
+  }
+  .highlight-box-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 18px;
+  }
+  .highlight-box p { font-size: 17px; line-height: 1.72; color: var(--text-mid); margin-bottom: 16px; }
+  .highlight-box p:last-child { margin-bottom: 0; }
+  .highlight-box p strong { color: var(--navy); }
+
+  /* ORNAMENT */
+  .ornament { display: flex; align-items: center; gap: 16px; margin: 52px 0; }
+  .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornament-diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* CLOSING */
+  .closing-section { padding: 64px 0; border-top: 2px solid var(--navy); margin-top: 80px; }
+  .closing-title { font-family: 'Playfair Display', serif; font-size: 28px; font-style: italic; color: var(--navy); margin-bottom: 28px; }
+  .closing-body p { font-size: 18px; line-height: 1.78; color: var(--text-mid); margin-bottom: 22px; max-width: 700px; }
+  .closing-body p strong { color: var(--navy); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy); padding: 40px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 2px solid var(--gold); margin-top: 80px;
+  }
+  .footer-brand { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+  .footer-note { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.2em; color: rgba(244,241,236,0.32); text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    .masthead, .hero, .article-wrap, .footer { padding-left: 22px; padding-right: 22px; }
+    .verdict-wrap, .maturity-stages, .elements-grid { grid-template-columns: 1fr; }
+    .col-yes .verdict-item { border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="article-wrap">
+    <div class="hero-inner">
+      <div class="hero-label">SLF INSIGHTS™ · GOBIERNO CORPORATIVO</div>
+<h1 class="hero-headline">Gobierno corporativo en empresas medianas: <br><em>qué es, qué no es y cuándo ya es indispensable</em>
+</h1>
+<p class="hero-deck">El gobierno corporativo es la función más malentendida del mundo empresarial. Las empresas que lo necesitan creen que es para las grandes. Las que lo tienen creen que ya lo tienen bien. Y las que lo implementan mal se preguntan por qué no genera el valor que prometía.</p>
+<div class="hero-meta">
+        <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span>
+</div>
+<div class="hero-meta-item">Categoría <span>Gobierno Corporativo</span>
+</div>
+<div class="hero-meta-item">Lectura <span>~12 minutos</span>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<main class="article-wrap">
+
+  <div class="lead-block">
+    <p class="lead-text">Pocos conceptos en el mundo empresarial generan tanto consenso verbal y tanta confusión real como el gobierno corporativo. Todos coinciden en que es importante. Pocos coinciden en qué es exactamente. Y la brecha entre ambos —entre la importancia declarada y la comprensión real— produce uno de los fenómenos más costosos en organizaciones que han alcanzado niveles de complejidad en los que la coordinación informal deja de ser suficiente: organizaciones que creen tener gobierno corporativo porque tienen un Consejo, cuando en realidad tienen una reunión mensual con formato de Consejo.</p>
+</div>
+
+  <!-- I -->
+  <section class="section">
+    <div class="section-label"><strong>I — DEFINICIÓN DE BASE</strong></div>
+<h2 class="section-title">Qué es el gobierno corporativo — con precisión</h2>
+<div class="body-copy">
+      <p>El gobierno corporativo es el sistema mediante el cual una empresa es dirigida y controlada. No es un conjunto de documentos. No es un Consejo de Administración por sí solo. No es un manual de políticas ni un código de ética que nadie lee. Es un <strong>sistema</strong> — una arquitectura de mecanismos, estructuras, procesos y relaciones que determinan cómo se toman las decisiones, cómo se asigna el poder, cómo se rinde cuentas y cómo se protegen los intereses de los distintos actores con interés legítimo en la empresa.</p>
+<p>La definición más precisa proviene del Reporte Cadbury de 1992, que lo describió como el sistema mediante el cual las empresas son dirigidas y controladas. Esta definición es deliberadamente amplia porque el gobierno corporativo no es una función discreta — es la arquitectura que determina cómo funciona todo lo demás. Una empresa con buen gobierno no es necesariamente una empresa con más reuniones, más documentos o más comités. Es una empresa cuya arquitectura de decisiones produce de forma consistente los resultados que sus accionistas y stakeholders legítimamente esperan.</p>
+<p>Para cualquier organización que haya alcanzado un nivel relevante de complejidad operativa, accionaria o institucional, esta definición tiene una implicación práctica inmediata: el gobierno corporativo no comienza cuando la empresa tiene un Consejo formal. Comienza desde el momento en que hay más de un actor con interés en sus decisiones — accionistas, socios, directivos, empleados, clientes, acreedores. En ese sentido, toda empresa tiene algún nivel de gobierno corporativo. La pregunta relevante no es si lo tiene, sino si lo que tiene es adecuado para el nivel de complejidad que enfrenta.</p>
+</div>
+
+    <div class="pull-quote">
+      <p>El gobierno corporativo no es burocracia — es arquitectura. La diferencia entre una empresa que crece sin perder coherencia y otra que se fragmenta al hacerlo no radica en la calidad de sus productos ni en el talento de sus personas. Depende de la calidad de su arquitectura de decisiones.</p>
+<cite>— Cretta SLF™ · SLF Insights™</cite>
+</div>
+  </section>
+
+  <!-- II — IS / IS NOT -->
+  <section class="section">
+    <div class="section-label"><strong>II — LAS CONFUSIONES FRECUENTES</strong></div>
+<h2 class="section-title">Qué es y qué no es el gobierno corporativo</h2>
+<div class="body-copy">
+      <p>Antes de hablar de implementación, es necesario despejar el terreno de las confusiones más frecuentes. Muchas empresas medianas han intentado implementar el gobierno corporativo y han producido algo que no funciona — no porque la intención fuera incorrecta, sino porque partieron de una comprensión equivocada de lo que estaban construyendo.</p>
+</div>
+
+    <div class="verdict-wrap">
+      <div class="verdict-col col-yes">
+        <div class="verdict-col-header">✓ Gobierno Corporativo ES</div>
+<div class="verdict-item">Un sistema de rendición de cuentas que funciona hacia arriba y hacia abajo en la organización</div>
+<div class="verdict-item">Claridad sobre quién decide qué, en qué condiciones y con qué información</div>
+<div class="verdict-item">Mecanismos que alinean los incentivos de directivos con los intereses de largo plazo de los accionistas</div>
+<div class="verdict-item">Transparencia de información hacia quienes tienen el derecho y la responsabilidad de supervisar</div>
+        <div class="verdict-item">Protección de los derechos de todos los accionistas, incluyendo los minoritarios</div>
+        <div class="verdict-item">Una cultura organizacional donde decir la verdad al poder es posible y esperado</div>
+        <div class="verdict-item">Un Consejo que delibera, decide y asume responsabilidad sobre las decisiones estratégicas más importantes</div>
+      </div>
+      <div class="verdict-col col-no">
+        <div class="verdict-col-header">✕ Gobierno Corporativo NO ES</div>
+<div class="verdict-item">Una reunión mensual con formato de sesión de Consejo donde se revisan reportes sin tomar decisiones reales</div>
+<div class="verdict-item">Un manual de políticas y procedimientos que formaliza lo que ya se hacía sin cambiarlo</div>
+<div class="verdict-item">Un mecanismo para que los accionistas mayoritarios controlen más y mejor a los directivos</div>
+<div class="verdict-item">Un requisito regulatorio que se cumple en papel para satisfacer a auditores o inversionistas</div>
+        <div class="verdict-item">La incorporación de consejeros "independientes" que en la práctica no ejercen independencia real</div>
+        <div class="verdict-item">Un proceso de aprobación adicional que ralentiza las decisiones sin agregar valor</div>
+        <div class="verdict-item">Algo que se construye una vez y no requiere actualización conforme la empresa evoluciona</div>
+      </div>
+    </div>
+
+    <div class="body-copy">
+      <p>La distinción más importante de esta lista es la que separa el gobierno formal del gobierno real. Una empresa puede tener todos los instrumentos de gobierno corporativo —Consejo, comités, estatutos, código de ética, política de conflictos de interés— y al mismo tiempo tener un gobierno corporativo que no funciona, porque esos instrumentos existen en papel sin alterar la arquitectura real de decisiones de la organización. El gobierno que importa no es el que figura en los documentos. Es el que se ejerce en las salas donde realmente se toman las decisiones.</p>
+</div>
+  </section>
+
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+
+  <!-- III -->
+  <section class="section">
+    <div class="section-label"><strong>III — LOS ELEMENTOS CONSTITUTIVOS</strong></div>
+<h2 class="section-title">Qué compone un sistema de gobierno corporativo que funciona</h2>
+<div class="body-copy">
+      <p>Un sistema de gobierno corporativo efectivo en organizaciones complejas tiene seis elementos constitutivos que deben existir y funcionar de manera integrada. La ausencia de cualquiera de ellos crea una brecha que los demás no pueden compensar.</p>
+</div>
+
+    <div class="elements-grid">
+      <div class="element-card">
+        <div class="element-icon">Elemento 01</div>
+<div class="element-title">Estructura de propiedad y derechos accionarios claramente definidos</div>
+<div class="element-body">Quién es dueño de qué, con qué derechos, en qué condiciones pueden transferirse esos derechos y cómo se resuelven los conflictos entre accionistas. Sin claridad en la base de la propiedad, todo el edificio del gobierno se ve inestable.</div>
+</div>
+      <div class="element-card">
+        <div class="element-icon">Elemento 02</div>
+<div class="element-title">Consejo de Administración con mandato, composición y función reales</div>
+<div class="element-body">No un Consejo decorativo. Un órgano con consejeros que tienen la información, el tiempo, la independencia y la voluntad de tomar decisiones estratégicas reales y de exigir accountability real a la Dirección. Su composición debe reflejar las necesidades estratégicas de la empresa, no solo las preferencias de los accionistas mayoritarios.</div>
+</div>
+      <div class="element-card">
+        <div class="element-icon">Elemento 03</div>
+<div class="element-title">Arquitectura de decisiones con atribuciones claras entre Consejo y Dirección</div>
+<div class="element-body">Una matriz de atribuciones que define qué decisiones requieren la aprobación del Consejo, cuáles corresponden al CEO y cuáles a cada director funcional. Sin esta claridad, la organización genera conflictos de competencia, parálisis decisional o delegación implícita sin accountability.</div>
+</div>
+      <div class="element-card">
+        <div class="element-icon">Elemento 04</div>
+<div class="element-title">Sistema de información estratégica hacia el Consejo</div>
+<div class="element-body">El Consejo solo puede gobernar con información correcta. Esto requiere un sistema que lleve al Consejo los indicadores estratégicos —no solo financieros— que le permiten supervisar el desempeño real de la empresa y anticipar riesgos antes de que se vuelvan crisis. La información que la Dirección produce para el Consejo refleja, más que cualquier otra cosa, la calidad real del gobierno.</div>
+</div>
+      <div class="element-card">
+        <div class="element-icon">Elemento 05</div>
+<div class="element-title">Mecanismos de gestión de conflictos de interés y partes relacionadas</div>
+<div class="element-body">En empresas medianas y familiares, los conflictos de interés son frecuentes, predecibles y manejables — si existen los mecanismos adecuados. Política de partes relacionadas, comité de auditoría o equivalente, protocolo de abstención en votaciones con conflicto de interés. Sin estos mecanismos, el conflicto de interés no desaparece: simplemente opera sin fricción.</div>
+</div>
+      <div class="element-card">
+        <div class="element-icon">Elemento 06</div>
+<div class="element-title">Cultura de accountability que sostiene el sistema en el tiempo</div>
+<div class="element-body">El elemento más difícil de construir y el más fácil de perder. Una cultura donde decir la verdad al poder es seguro, donde los compromisos se cumplen o se explican, donde el error se analiza sin convertirse en castigo y donde el Consejo ejerce una supervisión genuina sin microgestionar. Sin cultura, los mecanismos son una decoración.</div>
+</div>
+    </div>
+  </section>
+
+  <!-- IV -->
+  <section class="section">
+    <div class="section-label"><strong>IV — EL MODELO DE MADUREZ</strong></div>
+<h2 class="section-title">Las cuatro etapas de madurez del gobierno corporativo organizacional</h2>
+<div class="body-copy">
+      <p>El gobierno corporativo no se establece de una sola vez. Evoluciona con la empresa a través de etapas de madurez que corresponden a distintos niveles de complejidad organizacional. Entender en qué etapa se encuentra una empresa es el primer paso para diseñar la intervención adecuada.</p>
+</div>
+
+    <div class="maturity-model">
+      <div class="maturity-title">Modelo de madurez de gobierno — Empresas medianas en crecimiento</div>
+<div class="maturity-stages">
+        <div class="maturity-stage stage-1">
+          <div class="maturity-stage-num">Etapa I</div>
+          <div class="maturity-stage-title">Gobierno implícito</div>
+          <div class="maturity-stage-desc">Las decisiones las toma el fundador o el grupo fundador. No hay estructuras formales. La coordinación opera mediante la relación personal y la confianza directa. Funciona mientras la escala lo permite.</div>
+          <div class="maturity-stage-trigger">Umbral: cuando el fundador ya no puede conocer personalmente a todos los actores relevantes</div>
+        </div>
+        <div class="maturity-stage stage-2">
+          <div class="maturity-stage-num">Etapa II</div>
+          <div class="maturity-stage-title">Gobierno emergente</div>
+          <div class="maturity-stage-desc">Aparecen los primeros mecanismos formales: estatutos, acuerdos de socios, primeros directivos que no son los fundadores. El gobierno existe, pero es incompleto e inconsistente.</div>
+          <div class="maturity-stage-trigger">Umbral: cuando los conflictos entre socios ya no se resuelven con una conversación</div>
+        </div>
+        <div class="maturity-stage stage-3">
+          <div class="maturity-stage-num">Etapa III</div>
+          <div class="maturity-stage-title">Gobierno estructurado</div>
+          <div class="maturity-stage-desc">Consejo activo con composición definida, matriz de atribuciones, sistema de información para el Consejo, políticas de partes relacionadas. El gobierno funciona como un sistema, aunque puede presentar brechas.</div>
+          <div class="maturity-stage-trigger">Umbral: cuando se considera abrir capital o incorporar socios institucionales</div>
+        </div>
+        <div class="maturity-stage stage-4">
+          <div class="maturity-stage-num">Etapa IV</div>
+          <div class="maturity-stage-title">Gobierno institucional</div>
+          <div class="maturity-stage-desc">El sistema de gobierno opera con independencia de las personas que lo ocupan. Hay comités especializados, consejeros independientes con una función real, mecanismos de sucesión y una cultura de accountability consolidada.</div>
+          <div class="maturity-stage-trigger">Umbral: acceso a mercados de capital públicos o institucionales</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-copy">
+      <p>La mayoría de las empresas medianas en LATAM operan en la Etapa I o la Etapa II y enfrentan presiones —de crecimiento, de apertura de capital, de sucesión generacional— que requieren capacidades de Etapa III. Esta brecha no se cierra con un taller de gobierno corporativo ni con la contratación de un consultor para redactar los estatutos. Se cierra con un proceso de diseño e implementación que transforma la arquitectura real de la toma de decisiones de la organización, no solo sus documentos formales.</p>
+</div>
+  </section>
+
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+
+  <!-- V -->
+  <section class="section">
+    <div class="section-label"><strong>V — EL MOMENTO CRÍTICO</strong></div>
+<h2 class="section-title">Cuando el gobierno corporativo ya es indispensable</h2>
+<div class="body-copy">
+      <p>Hay eventos y condiciones que convierten al gobierno corporativo de una buena práctica en una necesidad estructural. No son graduales ni ambiguos — son umbrales que, una vez cruzados, convierten la ausencia de gobierno en el riesgo más importante que enfrenta la empresa, independientemente de su desempeño operativo.</p>
+</div>
+
+    <div class="signals-list">
+      <div class="signal-item">
+        <div class="signal-num-col">01</div>
+        <div class="signal-text-col">
+          <div class="signal-heading">LA EMPRESA TIENE MÁS DE UN ACCIONISTA CON PODER REAL.</div>
+          <div class="signal-body">Cuando hay dos o más accionistas con participaciones significativas y capacidad de influir en las decisiones, la ausencia de gobierno corporativo no produce armonía — produce ambigüedad que eventualmente se convierte en conflicto. Los conflictos entre accionistas, sin mecanismos de gobierno, son los que con mayor frecuencia destruyen empresas que operativamente son viables. <strong>El gobierno no previene el conflicto — diseña el mecanismo para resolverlo sin destruir la empresa en el proceso</strong>.</div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num-col">02</div>
+        <div class="signal-text-col">
+          <div class="signal-heading">LA EMPRESA ESTÁ EN PROCESO DE SUCESIÓN GENERACIONAL.</div>
+          <div class="signal-body">La transición de una empresa familiar de la primera a la segunda generación —o de la segunda a la tercera— es el momento de mayor riesgo en el ciclo de vida de cualquier empresa familiar. Sin una arquitectura de gobierno que separe la propiedad de la dirección, defina cómo se distribuyen los roles y establezca mecanismos de resolución de conflictos entre los herederos, la probabilidad de fractura es alta. <strong>El gobierno corporativo en la empresa familiar no es una formalidad — es la estructura que permite que la empresa sobreviva a la transición</strong>.</div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num-col">03</div>
+        <div class="signal-text-col">
+          <div class="signal-heading">LA EMPRESA BUSCA CAPITAL DE TERCEROS —YA SEA DEUDA O EQUITY—.</div>
+          <div class="signal-body">Todo inversionista institucional —fondo de capital privado, banco de desarrollo, fondo de deuda estructurada— tiene exigencias de gobierno corporativo como condición para invertir. No es una preferencia: es un requisito. Las empresas que no cuentan con las estructuras mínimas de gobierno al iniciar el proceso de captación de capital pierden tiempo valioso construyendo lo que debería haberse construido antes, o conceden condiciones desfavorables para compensar la percepción de riesgo adicional que la ausencia de gobierno genera. El gobierno corporativo es, entre otras cosas, la señal más poderosa de madurez empresarial que una empresa puede enviar a un inversionista.</div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num-col">04</div>
+        <div class="signal-text-col">
+          <div class="signal-heading">LA EMPRESA OPERA EN SECTORES REGULADOS O CON STAKEHOLDERS INSTITUCIONALES.</div>
+          <div class="signal-body">Las empresas que operan en sectores de alta regulación —energía, salud, servicios financieros, infraestructura— o que tienen relaciones contractuales significativas con entidades gubernamentales o institucionales tienen expectativas de gobierno que sus contrapartes evaluarán explícitamente. La ausencia de gobierno no es solo un riesgo interno — es un riesgo para las relaciones que puede costar contratos, licencias y alianzas.</div>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num-col">05</div>
+        <div class="signal-text-col">
+          <div class="signal-heading">LA EMPRESA HA ALCANZADO UN NIVEL DE ESCALA EN EL QUE EL FUNDADOR YA NO PUEDE CONOCERLO TODO.</div>
+          <div class="signal-body">Existe un umbral de escala —variable según el sector y el modelo de negocio, pero siempre presente— en el que la coordinación basada en la presencia y el conocimiento directo del fundador deja de ser posible. Cuando la empresa supera ese umbral sin instalar los mecanismos de gobierno que lo reemplacen, enfrenta un riesgo de pérdida de coherencia que ningún talento individual puede compensar. <strong>El gobierno corporativo es la tecnología que escala la coordinación más allá del alcance personal del fundador</strong>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VI -->
+  <section class="section">
+    <div class="section-label"><strong>VI — EL ERROR MÁS FRECUENTE</strong></div>
+<h2 class="section-title">Por qué el gobierno corporativo mal implementado no produce valor</h2>
+<div class="body-copy">
+      <p>Las empresas que han intentado implementar gobierno corporativo y han llegado a la conclusión de que "no funciona para nosotros" comparten, casi sin excepción, un mismo error de origen: <strong>implementaron la forma sin la función</strong>.</p>
+<p>Crearon un Consejo cuyos miembros no tienen ni el tiempo ni la información ni la independencia real para ejercer un gobierno genuino. Elaboraron estatutos y códigos de ética que no alteraron ninguna de las dinámicas de decisión reales. Incorporaron consejeros independientes que, en la práctica, validan lo que la Dirección ya había decidido. Crearon comités que se reúnen sin producir decisiones. El resultado es una capa de formalidad sobre la misma arquitectura de siempre — más costosa y más lenta, sin ser más efectiva.</p>
+<p>El error tiene una causa raíz identificable: la implementación del gobierno corporativo se trató como un proyecto de cumplimiento —producir los documentos y estructuras correctos— en lugar de un proceso de transformación arquitectónica. Cambiar la arquitectura real de las decisiones de una organización es difícil, incómodo y genera resistencia — porque redistribuye poder. Producir los documentos correctos es fácil y no genera resistencia — porque no cambia nada real.</p>
+<p>La pregunta que distingue al gobierno real del gobierno decorativo es simple: <strong>¿ha cambiado el gobierno corporativo alguna decisión importante que, sin él, habría sido diferente?</strong> Si la respuesta es no, el gobierno que existe es una mera decoración, independientemente de los documentos que lo respalden.</p>
+</div>
+
+    <div class="highlight-box">
+      <div class="highlight-box-title">El rol de la SLF™ en la implementación del gobierno corporativo</div>
+<p>La implementación de gobierno corporativo en empresas medianas —y en cualquier organización que haya alcanzado un nivel de complejidad en el que la coordinación informal deja de ser suficiente— es exactamente el tipo de mandato para el que el modelo SLF™ fue diseñado. No se trata de una consultoría de cumplimiento, sino de una intervención de rediseño arquitectónico que exige presencia ejecutiva real, comprensión profunda de la organización y la capacidad de gestionar la resistencia que todo cambio estructural inevitablemente genera.</p>
+<p>Cretta SLF™ no diseña manuales de gobierno. Diseña sistemas de gobierno que funcionan — que cambian la arquitectura real de la toma de decisiones de la organización y cuentan con mecanismos de sostenibilidad para seguir operando después de que la intervención inicial haya concluido.</p>
+</div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing-section">
+    <h2 class="closing-title">El gobierno que protege lo que más importa</h2>
+<div class="closing-body">
+      <p>En el fondo, el gobierno corporativo en una empresa mediana no es una función técnica ni un requisito de madurez organizacional. Es la respuesta a una pregunta muy concreta: ¿cómo protegemos lo que hemos construido mientras seguimos construyendo lo que viene?</p>
+<p>Las empresas medianas que han crecido de manera significativa —que tienen accionistas con intereses legítimos, empleados cuyo futuro depende de su continuidad, clientes que les han confiado partes importantes de sus propias operaciones— han acumulado un valor que merece ser protegido por una arquitectura de decisiones a la altura de lo que se ha construido.</p>
+<p>El gobierno corporativo, bien implementado, no ralentiza la empresa. La hace más rápida donde importa: en las decisiones estratégicas, en la captación de capital, en la gestión de mandatos críticos y en la preservación de la coherencia cuando el crecimiento ejerce presión sobre el conjunto. <strong>Las empresas que gobiernan bien no son las más lentas. Son las que toman las decisiones correctas con más frecuencia, en menos tiempo y a menor costo.</strong></p>
+<p>Ese es el valor del gobierno corporativo que funciona. Y es lo que <strong>Cretta SLF™ ayuda a construir</strong> — no como un proyecto, sino como una arquitectura que perdura.</p>
+</div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+
+</body>
+</html>

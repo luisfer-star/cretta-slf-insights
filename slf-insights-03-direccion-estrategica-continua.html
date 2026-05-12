@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dirección Estratégica Continua: qué es, cómo funciona y cuándo ya es necesaria | Cretta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B3E;
+    --navy-mid: #152848;
+    --navy-light: #1E3560;
+    --gold: #C49A3C;
+    --gold-light: #D4AF6A;
+    --cream: #F4F1EC;
+    --cream-dark: #E8E3DA;
+    --text-dark: #1A1A2E;
+    --text-mid: #3A3A55;
+    --text-light: #6A6A85;
+    --rule: rgba(196,154,60,0.28);
+    --rule-light: rgba(196,154,60,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.78;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--navy);
+    padding: 18px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--gold);
+  }
+  .masthead-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 22px;
+    letter-spacing: 0.18em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .masthead-series {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300; font-size: 12px;
+    letter-spacing: 0.28em;
+    color: rgba(244,241,236,0.42); text-transform: uppercase;
+  }
+
+  /* HERO — dark with horizontal rule accent */
+  .hero {
+    background: var(--navy);
+    padding: 88px 64px 76px;
+    position: relative; overflow: hidden;
+  }
+  .hero-accent {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 70%);
+  }
+  .hero-circles {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .hero-circles span {
+    position: absolute; border-radius: 50%;
+    border: 1px solid rgba(196,154,60,0.09);
+  }
+  .hero-circles span:nth-child(1) { width: 480px; height: 480px; top: -180px; right: -80px; }
+  .hero-circles span:nth-child(2) { width: 260px; height: 260px; bottom: -80px; left: -40px; }
+
+  .article-wrap { max-width: 1040px; margin: 0 auto; padding: 0 64px; }
+
+  .hero-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 30px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4.2vw, 54px);
+    font-weight: 700; line-height: 1.12;
+    color: var(--cream); max-width: 800px; margin-bottom: 20px;
+  }
+  .hero-headline em { font-style: italic; color: var(--gold-light); }
+
+  .hero-deck {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px; font-style: italic;
+    color: rgba(244,241,236,0.65);
+    max-width: 660px; line-height: 1.62; margin-bottom: 50px;
+  }
+
+  .hero-meta {
+    display: flex; align-items: center; gap: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(196,154,60,0.2);
+  }
+  .hero-meta-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(244,241,236,0.42);
+  }
+  .hero-meta-item span { color: var(--gold-light); }
+
+  /* LEAD */
+  .lead-block { padding: 64px 0 56px; border-bottom: 1px solid var(--rule); margin-bottom: 64px; }
+  .lead-text {
+    font-size: 21px; font-weight: 500;
+    line-height: 1.72; color: var(--text-dark); max-width: 720px;
+  }
+  .lead-text::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 76px; font-weight: 700;
+    float: left; line-height: 0.8;
+    margin-right: 10px; margin-top: 12px; color: var(--navy);
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 72px; }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; height: 1px; background: var(--rule); max-width: 56px; display: block; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 600; line-height: 1.22;
+    color: var(--navy); margin-bottom: 30px; max-width: 660px;
+  }
+  .section-title em { font-style: italic; }
+  .body-copy p { margin-bottom: 24px; color: var(--text-mid); font-size: 18px; line-height: 1.78; max-width: 700px; }
+  .body-copy p strong { color: var(--navy); font-weight: 600; }
+  .body-copy p:last-child { margin-bottom: 0; }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    margin: 56px 0; padding: 40px 48px;
+    background: var(--navy); border-left: 4px solid var(--gold); position: relative;
+  }
+  .pull-quote::before {
+    content: '\201C'; font-family: 'Playfair Display', serif;
+    font-size: 130px; color: rgba(196,154,60,0.11);
+    position: absolute; top: -12px; left: 20px; line-height: 1;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(17px, 2vw, 24px); font-style: italic;
+    color: var(--cream); line-height: 1.55;
+    position: relative; z-index: 1; max-width: 580px;
+  }
+  .pull-quote cite {
+    display: block; font-family: 'Barlow Condensed', sans-serif;
+    font-style: normal; font-size: 11px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-top: 20px;
+  }
+
+  /* PRESENCE MODEL — timeline-style */
+  .presence-model { margin: 52px 0; }
+  .presence-model-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.38em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+  }
+  .presence-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    margin-bottom: 2px;
+  }
+  .presence-label {
+    background: var(--navy);
+    padding: 18px 24px;
+    display: flex; align-items: center;
+  }
+  .presence-label span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  .presence-content {
+    background: var(--cream-dark);
+    padding: 18px 28px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .presence-content.active { background: rgba(13,27,62,0.07); border-left: 3px solid var(--gold); }
+  .presence-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    background: var(--navy); color: var(--gold);
+    padding: 4px 10px; white-space: nowrap; flex-shrink: 0;
+  }
+  .presence-badge.advisory { background: var(--cream-dark); color: var(--text-light); border: 1px solid var(--rule); }
+  .presence-desc {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px; line-height: 1.55; color: var(--text-mid);
+  }
+
+  /* COMPARISON CARDS */
+  .comparison-wrap {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; background: var(--rule-light);
+    margin: 48px 0; border: 1px solid var(--rule-light);
+  }
+  .comparison-card { padding: 36px 32px; }
+  .comparison-card.left { background: var(--cream); }
+  .comparison-card.right { background: var(--navy); }
+  .comparison-card-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .comparison-card.left .comparison-card-label { color: var(--text-light); }
+  .comparison-card.right .comparison-card-label { color: var(--gold); }
+  .comparison-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 600;
+    line-height: 1.25; margin-bottom: 20px;
+  }
+  .comparison-card.left .comparison-card-title { color: var(--navy); }
+  .comparison-card.right .comparison-card-title { color: var(--cream); }
+  .comparison-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 14px; font-size: 16px; line-height: 1.55;
+  }
+  .comparison-item:last-child { margin-bottom: 0; }
+  .comparison-item-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    margin-top: 6px; flex-shrink: 0;
+  }
+  .comparison-card.left .comparison-item-dot { background: rgba(106,106,133,0.4); }
+  .comparison-card.right .comparison-item-dot { background: var(--gold); }
+  .comparison-card.left .comparison-item { color: var(--text-light); }
+  .comparison-card.right .comparison-item { color: rgba(244,241,236,0.78); }
+
+  /* SIGNALS — vertical numbered list */
+  .signals-list { margin: 48px 0; }
+  .signal-item {
+    display: grid; grid-template-columns: 56px 1fr;
+    gap: 0; border-bottom: 1px solid var(--rule-light);
+    padding: 28px 0;
+  }
+  .signal-item:first-child { border-top: 1px solid var(--rule-light); }
+  .signal-num-col {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700;
+    color: rgba(196,154,60,0.22); line-height: 1; padding-top: 4px;
+  }
+  .signal-text-col {}
+  .signal-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .signal-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px; line-height: 1.65; color: var(--text-mid);
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(196,154,60,0.07), rgba(196,154,60,0.02));
+    border: 1px solid rgba(196,154,60,0.28);
+    padding: 40px 44px; margin: 48px 0;
+  }
+  .highlight-box-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 18px;
+  }
+  .highlight-box p {
+    font-size: 17px; line-height: 1.72; color: var(--text-mid); margin-bottom: 16px;
+  }
+  .highlight-box p:last-child { margin-bottom: 0; }
+  .highlight-box p strong { color: var(--navy); }
+
+  /* ORNAMENT */
+  .ornament { display: flex; align-items: center; gap: 16px; margin: 52px 0; }
+  .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .ornament-diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+  /* CLOSING */
+  .closing-section { padding: 64px 0; border-top: 2px solid var(--navy); margin-top: 80px; }
+  .closing-title { font-family: 'Playfair Display', serif; font-size: 28px; font-style: italic; color: var(--navy); margin-bottom: 28px; }
+  .closing-body p { font-size: 18px; line-height: 1.78; color: var(--text-mid); margin-bottom: 22px; max-width: 700px; }
+  .closing-body p strong { color: var(--navy); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy); padding: 40px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 2px solid var(--gold); margin-top: 80px;
+  }
+  .footer-brand { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+  .footer-note { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.2em; color: rgba(244,241,236,0.32); text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    .masthead, .hero, .article-wrap, .footer { padding-left: 22px; padding-right: 22px; }
+    .comparison-wrap { grid-template-columns: 1fr; }
+    .presence-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-brand">Cretta SLF</div>
+  <div class="masthead-series">SLF Insights — Pensamiento Estratégico de Alto Nivel</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-circles" aria-hidden="true">
+    <span></span><span></span>
+  </div>
+  <div class="article-wrap" style="padding-top:0;padding-bottom:0;position:relative;z-index:1;">
+    <div class="hero-label">SLF INSIGHTS™ · MODELO DE SERVICIO</div>
+<h1 class="hero-headline">Dirección Estratégica Continua: <br><em>qué es, cómo funciona y cuándo ya es necesaria</em>
+</h1>
+<p class="hero-deck">El asesoramiento puntual resuelve problemas específicos. La Dirección Estratégica Continua resuelve la condición que provoca esos problemas de manera reiterada. Son instrumentos distintos para propósitos distintos —y confundirlos tiene un costo que pocas empresas calculan hasta que ya es tarde.</p>
+<div class="hero-meta">
+      <div class="hero-meta-item">Por <span>Luis Fernando Jiménez M.</span>
+</div>
+<div class="hero-meta-item">Categoría <span>Modelo de Servicio Cretta SLF™</span>
+</div>
+<div class="hero-meta-item">Lectura <span>~10 minutos</span>
+</div>
+</div>
+  </div>
+  <div class="hero-accent"></div>
+</section>
+
+<!-- BODY -->
+<main class="article-wrap">
+
+  <div class="lead-block">
+    <p class="lead-text">Cuando una empresa contrata a un asesor para un proyecto específico, está comprando una respuesta a una pregunta que ya sabe formular. Pero las situaciones que más cuestan a las organizaciones —las que erosionan el valor de manera silenciosa, las que impiden el siguiente nivel de desarrollo, las que generan crisis que parecen surgir de la nada— son exactamente las que la empresa todavía no sabe cómo nombrar. Para esas, el asesoramiento puntual siempre llega demasiado tarde.</p>
+</div>
+
+  <!-- I -->
+  <section class="section">
+    <div class="section-label"><strong>I — LA FUNCIÓN</strong></div>
+<h2 class="section-title">Qué es la Dirección Estratégica Continua</h2>
+<div class="body-copy">
+      <p>La Dirección Estratégica Continua (DEC) es un modelo de presencia ejecutiva permanente —no episódica— mediante el cual una Strategic Leadership Firm™ actúa como una extensión funcional de la dirección superior de una empresa. No es una retención de consultoría. No es un advisory board. No es un mentor ejecutivo. Es una función viva, activa y con mandato real, que opera en el espacio entre el Consejo de Administración y la Dirección General.</p>
+<p>Lo que distingue a la DEC de cualquier otra modalidad de asesoramiento es su naturaleza temporal: no tiene inicio ni fin definidos por un proyecto. Su horizonte es el de la empresa misma —o al menos el del ciclo estratégico en curso—. Esto no es un detalle comercial. Es una condición estructural que lo cambia todo: cambia la calidad de la información disponible, la velocidad de respuesta ante situaciones críticas, la profundidad del conocimiento institucional y, en última instancia, la calidad de las decisiones que se toman.</p>
+<p>Un asesor que entra a una empresa para un proyecto de tres meses pasa las primeras semanas aprendiendo la arquitectura real de la organización —no la del organigrama, sino la de los flujos de poder, las dinámicas entre los actores clave, los acuerdos no escritos, las tensiones latentes—. En una DEC, ese conocimiento es permanente y acumulativo. No hay una curva de aprendizaje en cada intervención. Hay profundidad creciente.</p>
+</div>
+
+    <div class="pull-quote">
+      <p>El asesor puntual llega cuando la empresa ya sabe que tiene un problema. La Dirección Estratégica Continua identifica el problema antes de que la empresa sepa que lo tiene — y esa brecha de tiempo es, con frecuencia, la que separa una corrección de una crisis.</p>
+<cite>— Cretta SLF™ · SLF Insights™</cite>
+</div>
+  </section>
+
+  <!-- II -->
+  <section class="section">
+    <div class="section-label"><strong>II — EL MECANISMO</strong></div>
+<h2 class="section-title">Cómo funciona en la práctica</h2>
+<div class="body-copy">
+      <p>La DEC opera a través de cuatro mecanismos que se refuerzan mutuamente: <strong>presencia ejecutiva continua, agenda estratégica activa, gestión de mandatos críticos e integración del ecosistema asesor.</strong> Cada uno es necesario; ninguno es suficiente por sí solo.</p>
+<p>La <strong>presencia ejecutiva continua</strong> significa que Cretta SLF™ no espera a ser convocada ante un problema. Tiene ritmos propios de revisión, de interlocución con el CEO y el Consejo, y de monitoreo de los indicadores estratégicos que importan. Esta presencia no es intrusiva —opera en el nivel correcto, sin interferir con la gestión operativa diaria—, pero es real y permanente. La empresa sabe que hay alguien que mantiene actualizado en todo momento el mapa estratégico del conjunto.</p>
+<p>La <strong>agenda estratégica activa</strong> es la capacidad de plantear las preguntas correctas antes de que se vuelvan urgentes. ¿Está la estructura de gobierno preparada para la siguiente etapa de crecimiento? ¿Los incentivos de los directivos están alineados con la estrategia de largo plazo? ¿La arquitectura financiera actual puede sostener el ritmo de expansión proyectado? Estas preguntas no surgen solas en las empresas centradas en operar —alguien debe mantenerlas vivas y en la agenda de la dirección superior.</p>
+<p>La <strong>gestión de mandatos críticos</strong> es la capacidad de asumir el liderazgo ejecutivo de situaciones que superan la banda operativa del CEO: procesos de M&amp;A, reestructuraciones financieras, captación de capital privado, expansiones internacionales, transiciones de gobierno. En estos mandatos, Cretta SLF™ no asesora desde afuera —lidera desde adentro, con el mandato explícito de la dirección superior y con accountability real sobre el resultado.</p>
+<p>La integración del ecosistema asesor es quizás la función menos visible, pero la más valiosa, de la DEC. La mayoría de las empresas trabajan con un conjunto de asesores especializados que rara vez se comunican entre sí: el abogado corporativo, el despacho fiscal, el banco de inversión, el consultor de RRHH, el auditor externo. En ausencia de un integrador estratégico, cada uno optimiza su función sin considerar el impacto en las demás. Cretta SLF™ actúa como ese integrador: traduce entre disciplinas, coordina al ecosistema hacia el resultado estratégico y asegura que las decisiones locales no produzcan efectos contraproducentes a nivel del sistema.</p>
+</div>
+
+    <!-- PRESENCE MODEL -->
+    <div class="presence-model">
+      <div class="presence-model-title">Modelo de presencia — Dirección Estratégica Continua</div>
+<div class="presence-row">
+        <div class="presence-label"><span>Ritmo base</span></div>
+<div class="presence-content active">
+<div class="presence-badge">DEC</div>
+<div class="presence-desc">Sesiones ejecutivas recurrentes con CEO y Consejo — revisión de agenda estratégica, indicadores de cohesión y señales de alerta temprana</div>
+</div>
+</div>
+      <div class="presence-row">
+        <div class="presence-label"><span>Mandatos activos</span></div>
+<div class="presence-content active">
+<div class="presence-badge">DEC</div>
+<div class="presence-desc">Liderazgo ejecutivo de procesos críticos en curso: transacciones, reestructuraciones, captación, expansión — con dedicación proporcional a la complejidad</div>
+</div>
+</div>
+      <div class="presence-row">
+        <div class="presence-label"><span>Integración</span></div>
+<div class="presence-content active">
+<div class="presence-badge">DEC</div>
+<div class="presence-desc">Coordinación activa del ecosistema asesor — abogados, banqueros, consultores — hacia la coherencia estratégica del conjunto</div>
+</div>
+</div>
+      <div class="presence-row">
+        <div class="presence-label"><span>Advisory puntual</span></div>
+<div class="presence-content">
+<div class="presence-badge advisory">Modalidad distinta</div>
+<div class="presence-desc">Entrega un análisis o recomendación para un problema específico ya identificado — sin presencia continua, sin mandato ejecutivo, sin integración del conjunto</div>
+</div>
+</div>
+    </div>
+  </section>
+
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+
+  <!-- III -->
+  <section class="section">
+    <div class="section-label"><strong>III — LA DISTINCIÓN CRÍTICA</strong></div>
+<h2 class="section-title">Por qué no es lo mismo que el advisory puntual</h2>
+<div class="body-copy">
+      <p>La diferencia entre la DEC y el asesoramiento puntual no es de intensidad —es de naturaleza. No se trata de contratar más horas de consultoría ni de contar con un asesor disponible con mayor frecuencia. Se trata de dos modelos completamente distintos para abordar el problema estratégico.</p>
+</div>
+
+    <div class="comparison-wrap">
+      <div class="comparison-card left">
+        <div class="comparison-card-label">Advisory Puntual</div>
+<div class="comparison-card-title">Responde preguntas ya formuladas</div>
+<div class="comparison-item">Entra cuando el problema ya es visible y urgente</div>
+<div class="comparison-item">Aprende la organización en cada engagement</div>
+<div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>Entrega un producto: análisis, plan, recomendación</div>
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>El cliente implementa solo lo que recibe</div>
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>No tiene accountability sobre el resultado final</div>
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>Costo percibido como bajo — costo real frecuentemente alto por lo que no resuelve</div>
+        </div>
+      </div>
+      <div class="comparison-card right">
+        <div class="comparison-card-label">Dirección Estratégica Continua</div>
+<div class="comparison-card-title">Formula las preguntas antes de que sean urgentes</div>
+<div class="comparison-item">Opera antes de que el problema sea visible — y lo resuelve mientras aún es manejable</div>
+<div class="comparison-item">Conocimiento institucional profundo y acumulativo</div>
+<div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>Entrega resultados: decisiones tomadas, mandatos ejecutados, valor creado</div>
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>Acompaña y lidera la implementación como extensión de la dirección</div>
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>Accountability estructural sobre los resultados del mandato</div>
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-item-dot"></div>
+          <div>Inversión mayor con retorno medible — y sin el costo oculto de los problemas que no llegan a serlo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-copy">
+      <p>Esta distinción tiene una implicación práctica que pocas empresas calculan explícitamente: el costo del advisory puntual no es solo el honorario que se paga. Es también el valor que se deja de capturar porque nadie estaba mirando cuando la oportunidad era óptima, el valor que se destruye porque el problema se identificó tarde, y el valor que se pierde por la fricción de un ecosistema asesor que no integra su trabajo. Ese costo invisible es, en la mayoría de los casos, significativamente mayor que la diferencia de honorarios entre ambos modelos.</p>
+</div>
+  </section>
+
+  <!-- IV -->
+  <section class="section">
+    <div class="section-label"><strong>IV — EL PERFIL DE EMPRESA</strong></div>
+<h2 class="section-title">Para qué tipo de organización está diseñada la DEC</h2>
+<div class="body-copy">
+      <p>La DEC no es para todas las organizaciones — y CRETTA SLF™ no pretende ser una solución universal. Está diseñada para empresas, grupos y estructuras de liderazgo que han alcanzado un nivel de complejidad estratégica en el que la asesoría fragmentada, episódica o puramente consultiva deja de ser suficiente, y en el que la organización requiere una capa continua de dirección estratégica capaz de integrar governance, ejecución, crecimiento y creación de valor de forma coherente, transversal y con accountability.</p>
+<p>Son empresas que han crecido más rápido que su arquitectura de gobierno. Que enfrentan una transición crítica —apertura de capital, expansión internacional, sucesión familiar, ingreso de socios institucionales— que supera la experiencia acumulada de su equipo directivo. Que operan en entornos de alta complejidad regulatoria, geopolítica o sectorial donde el costo del error es asimétrico. Que han intentado resolver el problema con consultoras y han descubierto que los entregables no se traducen automáticamente en resultados.</p>
+<p>El rango de escala relevante es amplio: desde empresas familiares con facturación superior a $20 millones de dólares que están considerando abrir su capital por primera vez, hasta grupos industriales con presencia multinacional que necesitan un actor de integración estratégica para mantener la coherencia del conjunto mientras crecen. Lo que las une no es el tamaño — es el umbral de complejidad que han alcanzado y la brecha entre esa complejidad y su capacidad estratégica instalada.</p>
+</div>
+
+    <div class="highlight-box">
+      <div class="highlight-box-title">El umbral de complejidad — una definición operativa</div>
+<p>Una empresa ha alcanzado el umbral de complejidad que justifica la DEC cuando el costo de no contar con una integración estratégica permanente supera el costo de contar con ella. Este cálculo no siempre es explícito, pero sus componentes son concretos: <strong>oportunidades perdidas por falta de capacidad de respuesta estratégica rápida, valor destruido en mandatos críticos gestionados sin el liderazgo adecuado, tiempo del CEO consumido en funciones que no son su responsabilidad principal, y fricción generada por un ecosistema asesor no integrado</strong>.</p>
+<p>Cuando la suma de estos costos — que raramente se calculan de manera explícita pero que son siempre reales — supera el costo de una DEC bien estructurada, la pregunta deja de ser "¿podemos permitírnoslo?" y se convierte en "¿podemos permitirnos no tenerlo?".</p>
+</div>
+  </section>
+
+  <div class="ornament"><div class="ornament-diamond"></div></div>
+
+  <!-- V -->
+  <section class="section">
+    <div class="section-label"><strong>V — LAS SEÑALES</strong></div>
+<h2 class="section-title">Cuándo la DEC ya es necesaria: seis señales verificables</h2>
+<div class="body-copy">
+      <p>Hay señales concretas que indican que una empresa ha alcanzado el punto en el que la DEC no es una mejora opcional sino una necesidad estructural. Son señales que, tomadas individualmente, pueden parecer manejables. Juntas, describen una organización que opera por encima de su capacidad estratégica instalada.</p>
+</div>
+
+    <div class="signals-list">
+      <div class="signal-item">
+        <div class="signal-num-col">01</div>
+<div class="signal-text-col">
+<div class="signal-heading">EL CEO NO TIENE TIEMPO PARA PENSAR ESTRATÉGICAMENTE</div>
+<div class="signal-body">Si el director general revisa su agenda de las últimas cuatro semanas y no puede identificar bloques de tiempo dedicados exclusivamente a pensar en el futuro de la empresa —sin reuniones operativas, sin apagado de incendios, sin gestión del día a día—, la organización tiene un problema estructural, no de gestión del tiempo. La solución no es un curso de productividad. Es redistribuir la carga estratégica.</div>
+</div>
+</div>
+      <div class="signal-item">
+        <div class="signal-num-col">02</div>
+<div class="signal-text-col">
+<div class="signal-heading">EL CONSEJO SESIONA, PERO NO GOBIERNA</div>
+<div class="signal-body">Cuando las sesiones del Consejo se dedican principalmente a revisar reportes de gestión —en lugar de deliberar sobre decisiones estratégicas— el Consejo no está gobernando: está supervisando. Esta degradación de la función es casi siempre consecuencia de la ausencia del SLL™, que debería ser la instancia que prepara, filtra y estructura la información estratégica que el Consejo necesita para gobernar.</div>
+</div>
+</div>
+      <div class="signal-item">
+        <div class="signal-num-col">03</div>
+<div class="signal-text-col">
+<div class="signal-heading">HAY UN MANDATO CRÍTICO EN EL HORIZONTE INMEDIATO</div>
+<div class="signal-body">Una transacción de M&amp;A, una captación de capital privado, una reestructuración de deuda, una expansión internacional o un proceso de sucesión familiar son mandatos que no pueden gestionarse adecuadamente con el modelo operativo habitual de la empresa. Si alguno de estos está en el horizonte de los próximos 18 meses, la ventana para instalar capacidad estratégica es ahora — no cuando el proceso ya haya comenzado.</div>
+</div>
+</div>
+      <div class="signal-item">
+        <div class="signal-num-col">04</div>
+<div class="signal-text-col">
+<div class="signal-heading">LOS ASESORES EXTERNOS NO HABLAN ENTRE SÍ</div>
+<div class="signal-body">Si el CEO se encuentra actuando de facto como coordinador entre el abogado, el contador, el asesor financiero y el consultor de estrategia —recibiendo recomendaciones de cada uno y tratando de integrarlas manualmente—, la empresa está pagando por una integración estratégica sin recibirla. Y el CEO está pagando ese costo con su tiempo y energía.</div>
+</div>
+</div>
+      <div class="signal-item">
+        <div class="signal-num-col">05</div>
+<div class="signal-text-col">
+<div class="signal-heading">LA ESTRATEGIA ES UN DOCUMENTO, NO UNA FUNCIÓN</div>
+<div class="signal-body">Si la última planificación estratégica produjo un documento que vive en una presentación que nadie revisa con regularidad y las decisiones importantes del día a día no se toman con referencia explícita a ese documento, la empresa no tiene estrategia operativa. Tiene una fotografía de intenciones tomada en un momento ya pasado. La DEC convierte esa fotografía en un proceso vivo.</div>
+</div>
+</div>
+      <div class="signal-item">
+        <div class="signal-num-col">06</div>
+<div class="signal-text-col">
+<div class="signal-heading">EL CRECIMIENTO HA SUPERADO LA ARQUITECTURA ORGANIZACIONAL</div>
+<div class="signal-body">Cuando la empresa ha crecido en escala, geografía o complejidad, y el modelo de gobierno, la estructura de toma de decisiones y los procesos de coordinación no han crecido a la par, la arquitectura organizacional se ha vuelto un techo. Las señales son reconocibles: los tiempos de decisión se alargan, la coordinación entre unidades se deteriora, las iniciativas se fragmentan. El siguiente crecimiento requiere rediseñar la arquitectura — y eso es trabajo del SLL™.</div>
+</div>
+</div>
+    </div>
+  </section>
+
+  <!-- VI -->
+  <section class="section">
+    <div class="section-label"><strong>VI — EL MODELO CRETTA SLF™</strong></div>
+<h2 class="section-title">Cómo Cretta SLF™ implementa la Dirección Estratégica Continua</h2>
+<div class="body-copy">
+      <p>La DEC de Cretta SLF™ no es un paquete estándar. Es una arquitectura de presencia diseñada específicamente para cada empresa en función de su perfil de complejidad, de su momento de desarrollo y de los mandatos críticos que enfrenta. Sin embargo, hay elementos invariables que definen el modelo en todos los casos.</p>
+<p>El primero es el <strong>mandato explícito</strong>. La DEC de Cretta SLF™ no opera en modo de recomendación —opera con un mandato ejecutivo real, respaldado por la dirección superior. Esto significa que Cretta SLF™ puede hablar en nombre de la empresa ante terceros, convocar y coordinar al ecosistema asesor, y tomar posiciones en los procesos críticos sin necesidad de consultar cada paso. Ese mandato es el que posibilita la velocidad de respuesta que la complejidad exige.</p>
+<p>El segundo es la <strong>alineación de incentivos</strong>. La compensación de Cretta SLF™ en el modelo DEC siempre incluye un componente variable vinculado a los resultados de los mandatos críticos que gestiona. Esto no es un gesto comercial —es el mecanismo que garantiza que los intereses de Cretta SLF™ y los del cliente son idénticos. Cuando el mandato produce resultados, ambos ganan proporcionalmente. Cuando no los produce, ambos sufren las consecuencias. Esta alineación cambia la naturaleza de la relación de manera fundamental.</p>
+<p>El tercero es la <strong>integración como función central</strong>, no periférica. Cretta SLF™ no es un actor más en el ecosistema de asesoría de la empresa — es quien organiza a todos los demás. Esta posición requiere respeto por las especialidades ajenas y capacidad de liderazgo sobre el conjunto. Y requiere una visión del sistema que ningún especialista puede tener desde dentro de su propio carril.</p>
+<p>El resultado, para la empresa, es contar con la capacidad de una oficina de estrategia de primer nivel —con presencia ejecutiva real, conocimiento institucional profundo y alineación de incentivos completa— sin el costo fijo de construirla internamente ni la fricción de un modelo de asesoramiento externo que no tiene piel en el juego.</p>
+</div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing-section">
+    <h2 class="closing-title">La pregunta que pocas empresas se hacen antes de necesitarla</h2>
+<div class="closing-body">
+      <p>La mayoría de las empresas que adoptan un modelo de Dirección Estratégica Continua lo hacen después de un evento crítico que evidenció la brecha: una transacción que no se cerró como debía, un mandato que se gestionó mal, una crisis que se identificó demasiado tarde. Esa secuencia tiene un costo que se paga antes de que la solución llegue.</p>
+<p>La pregunta que las organizaciones más sofisticadas se hacen —y que define la diferencia entre gestionar estratégicamente y reaccionar estratégicamente— es esta: <strong>¿tiene nuestra empresa hoy la capacidad instalada para identificar y gestionar la siguiente situación crítica antes de que se convierta en una crisis?</strong></p>
+<p>Si la respuesta es no —o si no se puede responder con convicción— la Dirección Estratégica Continua no es una opción entre otras. Es la respuesta estructural a una brecha que ya existe y que el tiempo por sí solo no resuelve.</p>
+<p><strong>Cretta SLF™ existe para cerrar esa brecha.</strong> No con recomendaciones que el cliente debe implementar solo, sino con presencia ejecutiva real, un mandato claro y la piel en el juego, que garantizan que ambos tienen exactamente los mismos intereses cuando importa.</p>
+</div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Cretta SLF · Strategic Leadership Firm</div>
+  <div class="footer-note">SLF Insights — Pensamiento para decisiones que importan</div>
+</footer>
+
+</body>
+</html>
